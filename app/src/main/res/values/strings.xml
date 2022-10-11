@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RiseUp_Users</string>
+
+
+    <!-- Titulos de pantallas de configuracion -->
+
+    <string name="config">Configuración</string>
+
+    <string name="Atrás_btn"><![CDATA[<-]]></string>
+
 </resources>

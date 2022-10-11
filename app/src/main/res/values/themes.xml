@@ -13,4 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="PoppinsBold_20" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>
