@@ -6,4 +6,19 @@
 
     <string name="config">Configuración</string>
 
+    <string name="GeneraltTV">General</string>
+    <string name="infoPersonal">Información personal</string>
+    <string name="historialDiamantes">Historial de diamantes</string>
+    <string name="PrivYseguridad">Privacidad y seguridad</string>
+    <string name="caracteristicas">Características</string>
+    <string name="permitirNotifi">Permitir Notificaciones</string>
+    <string name="pagos">Pagos</string>
+    <string name="idioma">Idioma</string>
+    <string name="servicios">Servicios</string>
+    <string name="info">Información</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="cache">Borrar caché</string>
+    <string name="appVersion">App Version - V1.0.0</string>
+
+
 </resources>
