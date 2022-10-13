@@ -5,7 +5,6 @@
     <!-- Titulos de pantallas de configuracion -->
 
     <string name="config">Configuración</string>
-
     <string name="GeneraltTV">General</string>
     <string name="infoPersonal">Información personal</string>
     <string name="historialDiamantes">Historial de diamantes</string>

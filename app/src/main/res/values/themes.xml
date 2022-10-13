@@ -50,7 +50,12 @@
     <style name="BackArrowButton" parent="Widget.AppCompat.ImageButton">
         <item name="srcCompat">@drawable/arrowback</item>
         <item name="android:gravity">center</item>
-        <item name="background">#00FFFFFF</item>
+        <item name="background">@color/transparent</item>
+    </style>
+
+    <style name="checkBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:buttonTint">@color/white</item>
+        <item name="android:checked">true</item>
     </style>
 
 </resources>

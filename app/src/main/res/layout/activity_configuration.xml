@@ -34,18 +34,18 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
-            android:text="@string/app_name"
+            android:text="@string/config"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="@+id/imageButton"
-            tools:text="@string/config" />
+            app:layout_constraintTop_toTopOf="@+id/imageButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="679dp"
+        android:id="@+id/scView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +151,7 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView3" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View style="@style/Divider.Horizontal"/>
+            <View style="@style/Divider.Horizontal" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -199,7 +199,8 @@
                     android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:buttonTint="#FFFFFF"
                     android:checked="true"
                     app:layout_constraintBottom_toBottomOf="@+id/textView8"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -258,7 +259,7 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView6" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View style="@style/Divider.Horizontal"/>
+            <View style="@style/Divider.Horizontal" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -358,6 +359,16 @@
                     android:text="@string/appVersion"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="34dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
