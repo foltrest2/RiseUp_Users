@@ -13,9 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RiseUp_Users"
         tools:targetApi="31">
-
         <activity
-            android:name=".ConfigurationActivity"
+            android:name=".view.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigurationActivity"
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
