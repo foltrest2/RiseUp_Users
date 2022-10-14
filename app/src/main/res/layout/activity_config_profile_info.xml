@@ -43,7 +43,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1001"
+        android:id="@+id/riseUpTitleLY"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -84,10 +84,10 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1001" />
+        app:layout_constraintTop_toBottomOf="@+id/riseUpTitleLY" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1002"
+        android:id="@+id/loginInfoLY"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:layout_marginTop="24dp"
@@ -123,13 +123,13 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
+        android:id="@+id/loginForgetPassLY"
         android:layout_width="0dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1002">
+        app:layout_constraintTop_toBottomOf="@+id/loginInfoLY">
 
         <TextView
             android:id="@+id/emailLoginTV"
@@ -159,12 +159,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1005"
+        android:id="@+id/otextLY"
         android:layout_width="0dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/loginForgetPassLY">
 
         <TextView
             android:id="@+id/loginPasswordTV"
@@ -198,7 +198,7 @@
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1005">
+        app:layout_constraintTop_toBottomOf="@+id/otextLY">
 
         <TextView
             android:id="@+id/rememberMeTV"

@@ -8,7 +8,7 @@
     tools:context=".view.ConfigDiamondHistorialActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1003"
+        android:id="@+id/loginOptionLY"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -47,7 +47,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1003">
+        app:layout_constraintTop_toBottomOf="@+id/loginOptionLY">
 
         <TextView
             android:id="@+id/oTV"

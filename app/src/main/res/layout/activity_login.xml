@@ -9,7 +9,7 @@
     tools:context=".view.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1000"
+        android:id="@+id/logAndRegBtnLY"
         android:layout_width="325dp"
         android:layout_height="96dp"
         android:layout_marginBottom="24dp"
@@ -44,7 +44,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1001"
+        android:id="@+id/riseUpTitleLY"
         android:layout_width="228dp"
         android:layout_height="136dp"
         android:layout_marginTop="68dp"
@@ -74,7 +74,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1002"
+        android:id="@+id/loginInfoLY"
         android:layout_width="326dp"
         android:layout_height="201dp"
         android:layout_marginBottom="304dp"
@@ -139,16 +139,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1003"
+        android:id="@+id/loginOptionLY"
         android:layout_width="325dp"
         android:layout_height="95dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1002">
+        app:layout_constraintTop_toBottomOf="@+id/loginInfoLY">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout5"
+            android:id="@+id/loginForgetPassLY"
             android:layout_width="139dp"
             android:layout_height="95dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -177,7 +177,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout1004"
+            android:id="@+id/rememberMeLY"
             android:layout_width="139dp"
             android:layout_height="95dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -217,12 +217,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout1005"
+            android:id="@+id/otextLY"
             android:layout_width="46dp"
             android:layout_height="95dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout5"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout1004"
+            app:layout_constraintEnd_toStartOf="@+id/loginForgetPassLY"
+            app:layout_constraintStart_toEndOf="@+id/rememberMeLY"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -230,8 +230,6 @@
                 style="@style/PoppinsMed_13"
                 android:layout_width="33dp"
                 android:layout_height="31dp"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="7dp"
                 android:text="@string/orTV"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -241,11 +239,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1006"
+        android:id="@+id/socialNetLY"
         android:layout_width="325dp"
         android:layout_height="62dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout1000"
+        app:layout_constraintBottom_toTopOf="@+id/logAndRegBtnLY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
