@@ -29,7 +29,7 @@
             app:srcCompat="@drawable/arrowback" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/tituloHistorialTransTV"
             style="@style/PoppinsBold_20"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -52,8 +52,8 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHistorialtrans">
 
         <TextView
-            android:id="@+id/textView22"
-            style="@style/PoppinsRegular_10"
+            android:id="@+id/infoHistDiamantesTrans"
+            style="@style/PoppinsRegular_12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -62,8 +62,10 @@
             android:text="@string/infoHistDiamantes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

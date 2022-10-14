@@ -132,7 +132,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCorreo">
 
         <TextView
-            android:id="@+id/configInfoCorreoInstructivo"
+            android:id="@+id/configInfoTel"
             style="@style/PoppinsRegular_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -155,7 +155,7 @@
             android:text="@string/tel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/configInfoCorreoInstructivo" />
+            app:layout_constraintTop_toBottomOf="@+id/configInfoTel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
