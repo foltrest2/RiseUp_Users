@@ -5,7 +5,6 @@
     <!-- Titulos de pantallas de configuracion -->
 
 
-
     <string name="config">Configuración</string>
     <string name="GeneraltTV">General</string>
     <string name="infoPersonal">Información personal</string>
@@ -21,6 +20,22 @@
     <string name="cache">Borrar caché</string>
     <string name="appVersion">App Version - V1.0.0</string>
     <string name="Juliana">Juliana Riascos</string>
+    <string name="correoIndicativo">Dirección de correo electrónico</string>
+    <string name="kamcak">kamcak@hotmail.es</string>
+    <string name="telInfo">Número de teléfono</string>
+    <string name="tel">+573104101801</string>
+    <string name="sexoInfo">Sexo</string>
+    <string name="HombreET">Hombre</string>
+    <string name="fechaInfo">Fecha de nacimiento</string>
+    <string name="fechaNaci">2 ago. 2001</string>
+    <string name="historial_transac">Historial de transacciones</string>
+    <string name="infoHistDiamantes">Revisa en qué discotecas has redimido tus diamantes.</string>
+    <string name="diezSesentaName">Espacio 10-60</string>
+    <string name="FechaTitle">Fecha:</string>
+    <string name="fechaTexto">8-10-2022</string>
+    <string name="IDTitle">ID:</string>
+    <string name="idNumber">52583270</string>
+    <string name="numDiamantes">50</string>
 
 
 </resources>
