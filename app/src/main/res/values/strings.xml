@@ -33,9 +33,12 @@
     <string name="diezSesentaName">Espacio 10-60</string>
     <string name="FechaTitle">Fecha:</string>
     <string name="fechaTexto">8-10-2022</string>
+    <string name="fechaTexto2">1-10-2022</string>
     <string name="IDTitle">ID:</string>
     <string name="idNumber">52583270</string>
+    <string name="idNumber2">52343530</string>
     <string name="numDiamantes">50</string>
+    <string name="numDiamantes2">30</string>
 
 
 </resources>
