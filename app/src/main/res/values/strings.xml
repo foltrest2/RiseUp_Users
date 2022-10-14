@@ -4,6 +4,8 @@
 
     <!-- Titulos de pantallas de configuracion -->
 
+
+
     <string name="config">Configuración</string>
     <string name="GeneraltTV">General</string>
     <string name="infoPersonal">Información personal</string>
@@ -18,6 +20,7 @@
     <string name="ayuda">Ayuda</string>
     <string name="cache">Borrar caché</string>
     <string name="appVersion">App Version - V1.0.0</string>
+    <string name="Juliana">Juliana Riascos</string>
 
 
 </resources>

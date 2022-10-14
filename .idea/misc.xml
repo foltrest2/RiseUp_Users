@@ -22,7 +22,9 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/notifications24p.xml" value="0.2435" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/payments24p.xml" value="0.2435" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/font/poppins_bold.xml" value="0.278125" />
-        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.33" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_profile_info.xml" value="0.5" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_profile_info.xml" value="0.24791666666666667" />
       </map>
     </option>
   </component>
