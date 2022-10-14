@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/logAndRegBtnLY"
         android:layout_width="325dp"
-        android:layout_height="96dp"
+        android:layout_height="108dp"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,6 @@
             android:id="@+id/userRegBtn"
             style="@style/RectangleWGradientStroke"
             android:layout_width="228dp"
-            android:layout_height="39dp"
             android:text="@string/registerBtn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,14 +31,14 @@
             android:id="@+id/userLoginBtn"
             style="@style/RectangleWGradient"
             android:layout_width="228dp"
-            android:layout_height="39dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/blue_green_gradient"
             android:text="@string/loginBtnTV"
             app:layout_constraintBottom_toTopOf="@+id/userRegBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -53,6 +53,7 @@
     <string name="idNumber2">52343530</string>
     <string name="numDiamantes">50</string>
     <string name="numDiamantes2">30</string>
+    <string name="registerTitle">Registrarse</string>
 
 
 </resources>
