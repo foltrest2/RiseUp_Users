@@ -14,13 +14,38 @@
         android:theme="@style/Theme.RiseUp_Users"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".view.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ConfigurationActivity"
+=======
+            android:name=".ConfigProfileInfoActivity"
             android:exported="false" />
         <activity
+            android:name=".ProfileInfoActivity"
+            android:exported="false" />
+        <!--
+        <activity
+>>>>>>> 2a124d8459b23084eb011c5e34f553200db6cc00
+            android:name=".view.ConfigurationActivity"
+            android:exported="false" />
+
+
+        <activity
             android:name=".view.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigurationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
