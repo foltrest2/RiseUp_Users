@@ -8,7 +8,7 @@
     tools:context=".view.ConfigurationActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayoutConfigSuperior"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/atrasBtnConfigMain"
             style="@style/BackArrowButton"
             android:layout_width="48dp"
             android:layout_marginStart="8dp"
@@ -26,30 +26,30 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/registerTV"
+            android:id="@+id/configTitleMain"
             style="@style/PoppinsBold_20"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
             android:text="@string/config"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+            app:layout_constraintBottom_toBottomOf="@+id/atrasBtnConfigMain"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintStart_toEndOf="@+id/atrasBtnConfigMain"
 
-            app:layout_constraintTop_toTopOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="@+id/atrasBtnConfigMain"
             app:layout_constraintVertical_bias="0.0"
             tools:text="@string/config" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:id="@+id/scView"
+        android:id="@+id/scViewConfigMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutConfigSuperior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                 android:layout_height="42dp">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textViewGeneralTittle"
                     style="@style/PoppinsMed_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/profileLogoImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -88,15 +88,15 @@
                     app:srcCompat="@drawable/accountcircle" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/infoPersonalTV"
                     style="@style/PoppinsMed_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/infoPersonal"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+                    app:layout_constraintBottom_toBottomOf="@+id/profileLogoImg"
+                    app:layout_constraintStart_toEndOf="@+id/profileLogoImg"
+                    app:layout_constraintTop_toTopOf="@+id/profileLogoImg" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -104,7 +104,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/diamondImgHist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -114,15 +114,15 @@
                     app:srcCompat="@drawable/diamond24p" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/historialTVDiamantes"
                     style="@style/PoppinsMed_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/historialDiamantes"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                    app:layout_constraintStart_toEndOf="@+id/imageView2"
-                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/diamondImgHist"
+                    app:layout_constraintStart_toEndOf="@+id/diamondImgHist"
+                    app:layout_constraintTop_toTopOf="@+id/diamondImgHist" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -130,7 +130,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/lockProfileImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -140,15 +140,15 @@
                     app:srcCompat="@drawable/lock24p" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/privAndSecureTV"
                     style="@style/PoppinsMed_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/PrivYseguridad"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
-                    app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                    app:layout_constraintBottom_toBottomOf="@+id/lockProfileImg"
+                    app:layout_constraintStart_toEndOf="@+id/lockProfileImg"
+                    app:layout_constraintTop_toTopOf="@+id/lockProfileImg" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View style="@style/Divider.Horizontal" />
@@ -158,7 +158,7 @@
                 android:layout_height="42dp">
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/caractTVProfile"
                     style="@style/PoppinsMed_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/notificationsCampImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -185,26 +185,26 @@
                     app:srcCompat="@drawable/notifications24p" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/perimitirNotfTV"
                     style="@style/PoppinsMed_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/permitirNotifi"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="@+id/imageView4" />
+                    app:layout_constraintBottom_toBottomOf="@+id/notificationsCampImg"
+                    app:layout_constraintStart_toEndOf="@+id/notificationsCampImg"
+                    app:layout_constraintTop_toTopOf="@+id/notificationsCampImg" />
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/allowNotfCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:buttonTint="#FFFFFF"
                     android:checked="true"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                    app:layout_constraintBottom_toBottomOf="@+id/perimitirNotfTV"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView8" />
+                    app:layout_constraintTop_toTopOf="@+id/perimitirNotfTV" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -212,7 +212,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/cardsImgProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -222,15 +222,15 @@
                     app:srcCompat="@drawable/payments24p" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/pagosTVProfile"
                     style="@style/PoppinsMed_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/pagos"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-                    app:layout_constraintStart_toEndOf="@+id/imageView5"
-                    app:layout_constraintTop_toTopOf="@+id/imageView5" />
+                    app:layout_constraintBottom_toBottomOf="@+id/cardsImgProfile"
+                    app:layout_constraintStart_toEndOf="@+id/cardsImgProfile"
+                    app:layout_constraintTop_toTopOf="@+id/cardsImgProfile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -238,7 +238,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/worldImgProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -248,15 +248,15 @@
                     app:srcCompat="@drawable/language24p" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/idiomaTVProfile"
                     style="@style/PoppinsMed_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/idioma"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-                    app:layout_constraintStart_toEndOf="@+id/imageView6"
-                    app:layout_constraintTop_toTopOf="@+id/imageView6" />
+                    app:layout_constraintBottom_toBottomOf="@+id/worldImgProfile"
+                    app:layout_constraintStart_toEndOf="@+id/worldImgProfile"
+                    app:layout_constraintTop_toTopOf="@+id/worldImgProfile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View style="@style/Divider.Horizontal" />
@@ -266,7 +266,7 @@
                 android:layout_height="42dp">
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/serviciosTVProfile"
                     style="@style/PoppinsMed_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/infoLogoImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -293,15 +293,15 @@
                     app:srcCompat="@drawable/info24p" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/informacionTVProfile"
                     style="@style/PoppinsMed_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/info"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toTopOf="@+id/imageView7" />
+                    app:layout_constraintBottom_toBottomOf="@+id/infoLogoImg"
+                    app:layout_constraintStart_toEndOf="@+id/infoLogoImg"
+                    app:layout_constraintTop_toTopOf="@+id/infoLogoImg" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -309,7 +309,7 @@
                 android:layout_height="56dp">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/ayudaImgProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -319,15 +319,15 @@
                     app:srcCompat="@drawable/help24p" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/ayudaTVProfile"
                     style="@style/PoppinsMed_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:text="@string/ayuda"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8"
-                    app:layout_constraintTop_toTopOf="@+id/imageView8" />
+                    app:layout_constraintBottom_toBottomOf="@+id/ayudaImgProfile"
+                    app:layout_constraintStart_toEndOf="@+id/ayudaImgProfile"
+                    app:layout_constraintTop_toTopOf="@+id/ayudaImgProfile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -335,7 +335,7 @@
                 android:layout_height="52dp">
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/borrarCacheTVProfile"
                     style="@style/PoppinsMed_14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -351,7 +351,7 @@
                 android:layout_height="56dp">
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/versionAppTVProfile"
                     style="@style/PoppinsSemiBold_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -362,11 +362,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/logOutBtnProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="34dp"
-                    android:text="Button"
+                    android:text="@string/salir"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

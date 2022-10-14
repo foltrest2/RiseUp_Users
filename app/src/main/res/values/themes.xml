@@ -200,6 +200,14 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="PoppinsRegular_12" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="PoppinsLight_14" parent="Widget.AppCompat.TextView">
         <item name="fontFamily">@font/poppins_light</item>
         <item name="android:textColor">@color/white</item>

@@ -1,7 +1,5 @@
 package com.riseup.riseup_users.view
 
-
-
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader

@@ -54,6 +54,12 @@
     <string name="numDiamantes">50</string>
     <string name="numDiamantes2">30</string>
     <string name="registerTitle">Registrarse</string>
+    <string name="ContraseñaTittle">Contraseña</string>
+    <string name="infoPasswordChange">Por favor asegúrese que su contraseña tenga al menos seis caracteres e incluir una combinación de números, letras y caracteres especiales (!&amp;%/$)</string>
+    <string name="actualPass">Contraseña actual</string>
+    <string name="newPass">Contraseña nueva</string>
+    <string name="repeatPass">Repetir contraseña nueva</string>
+    <string name="salir">Salir</string>
 
 
 </resources>
