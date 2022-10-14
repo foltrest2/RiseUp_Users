@@ -8,16 +8,17 @@
     tools:context=".view.ConfigDiamondHistorialActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout7"
+        android:id="@+id/constraintLayoutHistorialtrans"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/atrasHistTrans"
             style="@style/BackArrowButton"
             android:layout_width="52dp"
             android:layout_height="0dp"
@@ -31,23 +32,24 @@
             android:id="@+id/textView19"
             style="@style/PoppinsBold_20"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="24dp"
             android:text="@string/historial_transac"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            app:layout_constraintTop_toTopOf="@+id/imageButton3" />
+            app:layout_constraintStart_toEndOf="@+id/atrasHistTrans"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout8"
+        android:id="@+id/constraintLayoutInfoHistTrans"
         android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHistorialtrans">
 
         <TextView
             android:id="@+id/textView22"
@@ -62,15 +64,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/dividerHistTrans"
         style="@style/Divider.HorizontalLight"
         android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutInfoHistTrans" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/diamondHistorialRecycler"
@@ -83,6 +89,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/dividerHistTrans" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

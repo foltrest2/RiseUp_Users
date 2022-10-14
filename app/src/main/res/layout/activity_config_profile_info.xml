@@ -8,7 +8,7 @@
     tools:context=".view.ConfigProfileInfoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/constraintLayoutinfoP"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/atrasBtnInfoP"
             style="@style/BackArrowButton"
             android:layout_width="48dp"
             android:layout_height="0dp"
@@ -29,43 +29,43 @@
             app:srcCompat="@drawable/arrowback" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tituloInfoPConfig"
             style="@style/PoppinsBold_20"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
             android:text="@string/infoPersonal"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+            app:layout_constraintBottom_toBottomOf="@+id/atrasBtnInfoP"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toTopOf="@+id/imageButton2" />
+            app:layout_constraintStart_toEndOf="@+id/atrasBtnInfoP"
+            app:layout_constraintTop_toTopOf="@+id/atrasBtnInfoP" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/constraintLayoutJuliana"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutinfoP">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
+            android:id="@+id/profileInfoPImg"
             android:layout_width="69dp"
             android:layout_height="69dp"
             android:layout_marginStart="14dp"
+            android:src="@drawable/juliana2"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/juliana2"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/userNameProfileConfig"
             style="@style/PoppinsSemiBold_18"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -73,30 +73,30 @@
             android:text="@string/Juliana"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+            app:layout_constraintStart_toEndOf="@+id/profileInfoPImg"
+            app:layout_constraintTop_toTopOf="@+id/profileInfoPImg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/dividerInfoP"
         style="@style/Divider.HorizontalLight"
         android:layout_width="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutJuliana" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/constraintLayoutCorreo"
         android:layout_width="0dp"
         android:layout_height="90dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
+        app:layout_constraintTop_toBottomOf="@+id/dividerInfoP">
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/configInfoCorreoInstructivo"
             style="@style/PoppinsRegular_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/correoETConfigUser"
             style="@style/editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -119,20 +119,20 @@
             android:text="@string/kamcak"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+            app:layout_constraintTop_toBottomOf="@+id/configInfoCorreoInstructivo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
+        android:id="@+id/constraintLayoutTelConfig"
         android:layout_width="0dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutCorreo">
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/configInfoCorreoInstructivo"
             style="@style/PoppinsRegular_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/telETConfigUser"
             style="@style/editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -155,19 +155,19 @@
             android:text="@string/tel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            app:layout_constraintTop_toBottomOf="@+id/configInfoCorreoInstructivo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
+        android:id="@+id/constraintLayoutSexo"
         android:layout_width="0dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTelConfig">
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/configInfoSexoInstructivo"
             style="@style/PoppinsRegular_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/configETSexoUser"
             style="@style/editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -190,18 +190,19 @@
             android:text="@string/HombreET"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/configInfoSexoInstructivo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayoutFechaNac"
         android:layout_width="0dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutSexo">
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/configInfoFechaInstructivo"
             style="@style/PoppinsRegular_10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -212,7 +213,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/configETFechaUser"
             style="@style/editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -224,7 +225,7 @@
             android:text="@string/fechaNaci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+            app:layout_constraintTop_toBottomOf="@+id/configInfoFechaInstructivo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

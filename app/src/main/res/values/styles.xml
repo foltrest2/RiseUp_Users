@@ -24,6 +24,9 @@
         <item name="android:layout_height">0.5dp</item> // You can change thickness here.
     </style>
 
+
+
+
     <style name="Divider.Vertical" parent="Divider">
         <item name="android:background">@color/white</item>
         <item name="android:layout_width">0.5dp</item>

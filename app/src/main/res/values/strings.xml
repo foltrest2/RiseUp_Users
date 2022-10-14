@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">RiseUp_Users</string>
 
+    <!-- Titulos de pantalla de Login-->
+    <string name="riseup">Rise Up</string>
+
 
     <!-- Titulos de pantallas de configuracion -->
 
@@ -20,6 +23,17 @@
     <string name="cache">Borrar caché</string>
     <string name="appVersion">App Version - V1.0.0</string>
     <string name="Juliana">Juliana Riascos</string>
+
+    <string name="emailTV">Correo electrónico</string>
+    <string name="EmailTV">Correo electrónico</string>
+    <string name="passwordTV">Contraseña</string>
+    <string name="rememberMeTV">Recuérdame</string>
+    <string name="forgotTV">¿Olvidaste tu contraseña?</string>
+    <string name="loginBtnTV">Iniciar sesión</string>
+    <string name="registerBtn">Registrarse</string>
+    <string name="orTV">O</string>
+    <string name="registerWithTV">Registrate con</string>
+
     <string name="correoIndicativo">Dirección de correo electrónico</string>
     <string name="kamcak">kamcak@hotmail.es</string>
     <string name="telInfo">Número de teléfono</string>
@@ -39,6 +53,12 @@
     <string name="idNumber2">52343530</string>
     <string name="numDiamantes">50</string>
     <string name="numDiamantes2">30</string>
+    <string name="ContraseñaTittle">Contraseña</string>
+    <string name="infoPasswordChange">Por favor asegúrese que su contraseña tenga al menos seis caracteres e incluir una combinación de números, letras y caracteres especiales (!&amp;%/$)</string>
+    <string name="actualPass">Contraseña actual</string>
+    <string name="newPass">Contraseña nueva</string>
+    <string name="repeatPass">Repetir contraseña nueva</string>
+    <string name="salir">Salir</string>
 
 
 </resources>

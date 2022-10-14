@@ -14,22 +14,114 @@
         <!-- Customize your theme here. -->
     </style>
 
+    //Estilo Titulo RiseUp
+
+    <style name="RiseUpTitle" parent="Widget.AppCompat.TextView">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">1.37</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:textColor">@color/teal_200</item>
+        <item name="android:textSize">64dp</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/poppins_light</item>
+
+    </style>
+    <style name="Poppins_16_Light" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">start</item>
+    </style>
+    <style name="SocialAppIcons" parent="Widget.AppCompat.Button">
+        <item name="android:drawableStart">@drawable/login_circle_icon</item>
+        <item name="android:background">@drawable/googleicon</item>
+    </style>
+
+        <style name="PoppinsMed_13" parent="Widget.AppCompat.TextView">
+            <item name="fontFamily">@font/poppins_medium</item>
+            <item name="android:textColor">@color/white</item>
+            <item name="android:textSize">13dp</item>
+            <item name="android:textAlignment">textStart</item>
+            <item name="android:gravity">center</item>
+        </style>
+        <style name="PoppinsMed_11" parent="Widget.AppCompat.TextView">
+            <item name="fontFamily">@font/poppins_medium</item>
+            <item name="android:textColor">@color/white</item>
+            <item name="android:textSize">11dp</item>
+            <item name="android:textAlignment">textStart</item>
+            <item name="android:gravity">center</item>
+        </style>
+     <style name="PoppinsSemiBold_13" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextField" parent="Widget.AppCompat.EditText">
+
+        <item name="android:radius">24dp</item>
+        <item name="android:background">@drawable/text_field_shape</item>
+        <item name="android:layout_height">58dp</item>
+
+
+    </style>
+    <style name="SocialAppIconsTw" parent="Widget.AppCompat.Button">
+
+    <item name="android:drawableStart">@drawable/login_circle_icon</item>
+    <item name="android:background">@drawable/twittericon</item>
+    </style>
+
+    <style name="SocialAppIconsFb" parent="Widget.AppCompat.Button">
+
+        <item name="android:drawableStart">@drawable/login_circle_icon</item>
+        <item name="android:background">@drawable/facebookicon</item>
+    </style>
+
+    <style name="RectangleWGradientStroke" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/gradient_button</item>
+        <item name="android:drawableRight">@drawable/addicon</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textColor">@color/teal_700</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16dp</item>
+
+    </style>
+    <style name="RectangleWGradient" parent="Widget.AppCompat.Button">
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16dp</item>
+
+    </style>
 
 
 
+    <style name="Divider.Horizontal2" parent="Divider">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/white</item>// You can change thickness here.
 
 
+    </style>
+    <style name="switchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:trackTint">@drawable/switch_track_selector</item>
+        <item name="android:thumbTint">@drawable/switch_thumb_selector</item>
 
 
-
-
-
-
-
-
-
-
-
+    </style>
 
 
     <style name="PoppinsBold_20" parent="Widget.AppCompat.TextView">
@@ -104,6 +196,14 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="PoppinsRegular_12" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="PoppinsLight_14" parent="Widget.AppCompat.TextView">
         <item name="fontFamily">@font/poppins_light</item>
         <item name="android:textColor">@color/white</item>
@@ -113,20 +213,23 @@
     </style>
 
 
+
     <style name="BackArrowButton" parent="Widget.AppCompat.ImageButton">
         <item name="srcCompat">@drawable/arrowback</item>
         <item name="android:gravity">center</item>
+
         <item name="android:background">@color/transparent</item>
         <item name="android:layout_width">48dp</item>
         <item name="android:layout_height">0dp</item>
     </style>
 
-
-
     <style name="checkBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:buttonTint">@color/white</item>
         <item name="android:checked">true</item>
+
     </style>
+
+
 
     <style name="editText" parent="Widget.AppCompat.EditText">
         <item name="android:textColor">@color/gray</item>
