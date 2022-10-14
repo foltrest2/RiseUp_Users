@@ -8,7 +8,7 @@
     tools:context=".view.ConfigDiamondHistorialActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout7"
+        android:id="@+id/constraintLayout1003"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -47,10 +47,10 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1003">
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/oTV"
             style="@style/PoppinsRegular_10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                     app:layout_constraintGuide_begin="205dp" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/socialNRegTV"
                     style="@style/PoppinsSemiBold_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
                     android:layout_marginTop="8dp"
                     android:text="@string/FechaTitle"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                    app:layout_constraintTop_toBottomOf="@+id/socialNRegTV" />
 
                 <TextView
                     android:id="@+id/textView25"
@@ -138,7 +138,7 @@
                     app:layout_constraintTop_toTopOf="@+id/textView24" />
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/loginForgetPassTV"
                     style="@style/PoppinsLight_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

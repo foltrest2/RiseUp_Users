@@ -13,51 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RiseUp_Users"
         tools:targetApi="31">
-<<<<<<< HEAD
         <activity
-<<<<<<< HEAD
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.LoginActivity"
-            android:exported="false" />
-        <activity
-=======
-            android:name=".ConfigProfileInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileInfoActivity"
-            android:exported="false" />
-=======
-
->>>>>>> feb9055f1df054f2165f67b05ce89e926e0d98b7
-        <!--
-        <activity
->>>>>>> 2a124d8459b23084eb011c5e34f553200db6cc00
-            android:name=".view.ConfigurationActivity"
-            android:exported="false" />
-
-
-        <activity
-            android:name=".view.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        -->
-        <activity
-            android:name=".view.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.ConfigurationActivity"
             android:exported="false" />
         <activity
             android:name=".view.ConfigProfileInfoActivity"
             android:exported="false" />
-
-            <activity
-                android:name=".view.ConfigDiamondHistorialActivity"
-                android:exported="true">
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigurationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigDiamondHistorialActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

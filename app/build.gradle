@@ -51,11 +51,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.9.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-<<<<<<< HEAD
-
-
-
-=======
     implementation 'de.hdodenhof:circleimageview:3.1.0'
->>>>>>> feb9055f1df054f2165f67b05ce89e926e0d98b7
+
 }

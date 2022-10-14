@@ -5,8 +5,6 @@
     <string name="riseup">Rise Up</string>
 
 
-
-
     <!-- Titulos de pantallas de configuracion -->
 
 
@@ -55,7 +53,6 @@
     <string name="idNumber2">52343530</string>
     <string name="numDiamantes">50</string>
     <string name="numDiamantes2">30</string>
-
 
 
 </resources>
