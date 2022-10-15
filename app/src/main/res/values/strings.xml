@@ -17,6 +17,7 @@
     <string name="permitirNotifi">Permitir Notificaciones</string>
     <string name="pagos">Pagos</string>
     <string name="idioma">Idioma</string>
+    <string name="idiomasDisponibles">Idiomas disponibles</string>
     <string name="servicios">Servicios</string>
     <string name="info">Información</string>
     <string name="ayuda">Ayuda</string>
@@ -46,8 +47,6 @@
     <string name="infoHistDiamantes">Revisa en qué discotecas has redimido tus diamantes.</string>
     <string name="diezSesentaName">Espacio 10-60</string>
     <string name="FechaTitle">Fecha:</string>
-    <string name="fechaTexto">8-10-2022</string>
-    <string name="fechaTexto2">1-10-2022</string>
     <string name="IDTitle">ID:</string>
     <string name="idNumber">52583270</string>
     <string name="idNumber2">52343530</string>
@@ -68,6 +67,31 @@
     <string name="menuItemHome">Inicio</string>
     <string name="menuItemCarrito">Carrito</string>
     <string name="menuItemConfiguracion">Configuración</string>
+
+    <string name="Confirmar">Confirmar</string>
+    <string name="Transacciones">Transacciones</string>
+    <string name="Tarjetas">Tarjetas</string>
+    <string name="ultimos_pagos">Últimos pagos</string>
+    <string name="infoNotarjetas">Aún no tienes un medio de pago configurado.</string>
+    <string name="crear">Crear</string>
+    <string name="addCard">Añadir tarjeta</string>
+    <string name="infoAddCard">Ingresa los datos de tu tarjeta</string>
+    <string name="cardNumberUserConfigAdd">1244 1234 1345 3255</string>
+    <string name="titularNameTitle">Nombre del Titular</string>
+    <string name="yessie">Yessie</string>
+    <string name="expCard">Expiración</string>
+    <string name="simulDateExpCard">02/25</string>
+    <string name="numCardET">Número de Tarjeta</string>
+    <string name="nameCardeET">Nombre del Titular</string>
+    <string name="expCardET">Fecha de Expiración</string>
+    <string name="secureCodeCardET">Código de Seguridad</string>
+    <string name="sugeridos">Sugeridos</string>
+    <string name="espanolLang">Español (ESP)</string>
+    <string name="ingleslLang">Inglés (US)</string>
+    <string name="mandarinlLang">Mandarín</string>
+    <string name="fancesLang">Francés</string>
+    <string name="rusolLang">Ruso</string>
+    <string name="alemanLang">Alemán</string>
 
 
 
