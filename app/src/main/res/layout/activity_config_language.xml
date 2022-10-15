@@ -54,11 +54,10 @@
     <RadioGroup
         android:id="@+id/radioGroupidiomasConfig"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:flow_horizontalAlign="start"
         app:flow_verticalAlign="center"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idiomasIdiomaTV2">
@@ -68,6 +67,7 @@
             style="@style/radioBtnCompleto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/espanolLang"
             android:textAllCaps="false" />
 

@@ -1,5 +1,6 @@
 package com.riseup.riseup_users.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -28,6 +29,10 @@ class ConfigDiamondHistorialActivity : AppCompatActivity() {
 
         adapter = DiamondHistAdapter()
         diamondHistorialRecycler.adapter = adapter
+
+        binding.atrasHistTrans.setOnClickListener {
+            startActivity(Intent(this@ConfigDiamondHistorialActivity, ConfigurationActivity::class.java))
+        }
 
     }
 }

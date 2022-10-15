@@ -78,6 +78,10 @@
     <string name="fancesLang">Francés</string>
     <string name="rusolLang">Ruso</string>
     <string name="alemanLang">Alemán</string>
+    <string name="politicaPrivTittle">Política de privacidad</string>
+    <string name="condUso">Condiciones de uso</string>
+    <string name="biblioCodAbi">Bibliotecas de código abierto</string>
+    <string name="reportarProblema">Reportar un problema</string>
 
 
 </resources>

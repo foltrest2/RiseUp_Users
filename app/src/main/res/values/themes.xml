@@ -287,8 +287,11 @@
         <item name="android:textSize">16dp</item>
         <item name="android:layoutDirection">rtl</item>
         <item name="android:textAlignment">textStart</item>
-        <item name="android:paddingStart">250dp</item>
+        <item name="android:paddingStart">200dp</item>
         <item name="android:layout_gravity">start</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
     </style>
 
 

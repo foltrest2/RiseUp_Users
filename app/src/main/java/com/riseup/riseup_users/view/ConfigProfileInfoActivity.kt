@@ -1,5 +1,6 @@
 package com.riseup.riseup_users.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.riseup.riseup_users.databinding.ActivityConfigProfileInfoBinding
@@ -12,5 +13,11 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityConfigProfileInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        binding.atrasBtnInfoP.setOnClickListener {
+            startActivity(Intent(this@ConfigProfileInfoActivity, ConfigurationActivity::class.java))
+        }
+
     }
 }
