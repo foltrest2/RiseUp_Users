@@ -63,5 +63,12 @@
     <string name="oRegister">O</string>
     <string name="registerUserBtn">Registrarse</string>
 
+    //Strings menu
+
+    <string name="menuItemHome">Inicio</string>
+    <string name="menuItemCarrito">Carrito</string>
+    <string name="menuItemConfiguracion">Configuración</string>
+
+
 
 </resources>
