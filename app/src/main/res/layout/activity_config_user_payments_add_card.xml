@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="82dp"
         android:text="@string/cardNumberUserConfigAdd"
         app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
         app:layout_constraintTop_toTopOf="@+id/addCardSimulationImg" />
@@ -199,7 +199,7 @@
         android:id="@+id/masterCardSimulImg"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/addCardSimulationNumber"
         app:layout_constraintTop_toTopOf="@+id/addCardSimulationImg"
         app:srcCompat="@mipmap/mastercard_logo" />

@@ -155,6 +155,14 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="PoppinsBold_18" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="PoppinsMed_14" parent="Widget.AppCompat.TextView">
         <item name="fontFamily">@font/poppins_medium</item>
         <item name="android:textColor">@color/white</item>
@@ -268,6 +276,20 @@
 
     </style>
 
+    <style name="radioBtn" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@color/white</item>
+    </style>
+
+    <style name="radioBtnCompleto" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:buttonTint">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:paddingStart">250dp</item>
+        <item name="android:layout_gravity">start</item>
+    </style>
 
 
     <style name="editText" parent="Widget.AppCompat.EditText">

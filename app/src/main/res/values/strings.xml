@@ -17,6 +17,7 @@
     <string name="permitirNotifi">Permitir Notificaciones</string>
     <string name="pagos">Pagos</string>
     <string name="idioma">Idioma</string>
+    <string name="idiomasDisponibles">Idiomas disponibles</string>
     <string name="servicios">Servicios</string>
     <string name="info">Información</string>
     <string name="ayuda">Ayuda</string>
@@ -70,6 +71,13 @@
     <string name="nameCardeET">Nombre del Titular</string>
     <string name="expCardET">Fecha de Expiración</string>
     <string name="secureCodeCardET">Código de Seguridad</string>
+    <string name="sugeridos">Sugeridos</string>
+    <string name="espanolLang">Español (ESP)</string>
+    <string name="ingleslLang">Inglés (US)</string>
+    <string name="mandarinlLang">Mandarín</string>
+    <string name="fancesLang">Francés</string>
+    <string name="rusolLang">Ruso</string>
+    <string name="alemanLang">Alemán</string>
 
 
 </resources>
