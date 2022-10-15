@@ -59,6 +59,17 @@
     <string name="ultimos_pagos">Últimos pagos</string>
     <string name="infoNotarjetas">Aún no tienes un medio de pago configurado.</string>
     <string name="crear">Crear</string>
+    <string name="addCard">Añadir tarjeta</string>
+    <string name="infoAddCard">Ingresa los datos de tu tarjeta</string>
+    <string name="cardNumberUserConfigAdd">1244 1234 1345 3255</string>
+    <string name="titularNameTitle">Nombre del Titular</string>
+    <string name="yessie">Yessie</string>
+    <string name="expCard">Expiración</string>
+    <string name="simulDateExpCard">02/25</string>
+    <string name="numCardET">Número de Tarjeta</string>
+    <string name="nameCardeET">Nombre del Titular</string>
+    <string name="expCardET">Fecha de Expiración</string>
+    <string name="secureCodeCardET">Código de Seguridad</string>
 
 
 </resources>

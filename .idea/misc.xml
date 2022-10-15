@@ -28,13 +28,17 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/morado_background.xml" value="0.287" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/notifications24p.xml" value="0.2435" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/payments24p.xml" value="0.2435" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/plain_text_typecard_info.xml" value="0.2605" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/profilecircle.xml" value="0.2525" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/profileimg.xml" value="0.2525" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/prueba.xml" value="0.2815" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/rectanglecard_1.xml" value="0.2595" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/font/poppins_bold.xml" value="0.278125" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_diamond_historial.xml" value="0.33" />
-        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_profile_info.xml" value="0.33" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_language.xml" value="0.30625" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_profile_info.xml" value="0.22" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_security.xml" value="0.25" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_user_payments_add_card.xml" value="0.25" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_user_pays.xml" value="0.22" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_login.xml" value="0.33" />
