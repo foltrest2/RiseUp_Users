@@ -60,6 +60,8 @@
     <string name="newPass">Contraseña nueva</string>
     <string name="repeatPass">Repetir contraseña nueva</string>
     <string name="salir">Salir</string>
+    <string name="oRegister">O</string>
+    <string name="registerUserBtn">Registrarse</string>
 
 
 </resources>

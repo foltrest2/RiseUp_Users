@@ -40,6 +40,10 @@
     <style name="SocialAppIcons" parent="Widget.AppCompat.Button">
         <item name="android:drawableStart">@drawable/login_circle_icon</item>
         <item name="android:background">@drawable/googleicon</item>
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name= "android:layout_margin">5dp</item>
     </style>
 
         <style name="PoppinsMed_13" parent="Widget.AppCompat.TextView">
@@ -78,12 +82,20 @@
 
     <item name="android:drawableStart">@drawable/login_circle_icon</item>
     <item name="android:background">@drawable/twittericon</item>
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name= "android:layout_margin">5dp</item>
     </style>
 
     <style name="SocialAppIconsFb" parent="Widget.AppCompat.Button">
 
         <item name="android:drawableStart">@drawable/login_circle_icon</item>
         <item name="android:background">@drawable/facebookicon</item>
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name= "android:layout_margin">5dp</item>
     </style>
 
     <style name="RectangleWGradientStroke" parent="Widget.AppCompat.Button">
@@ -104,6 +116,7 @@
         <item name="fontFamily">@font/poppins_semibold</item>
         <item name="android:textSize">16dp</item>
         <item name="android:layout_height">48dp</item>
+        <item name= "android:background">@drawable/gradient_buttonwithoutborder</item>
 
     </style>
 
@@ -119,6 +132,8 @@
         <item name="android:background">@color/white</item>// You can change thickness here.
 
 
+
+
     </style>
     <style name="switchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
         <item name="android:trackTint">@drawable/switch_track_selector</item>
@@ -127,6 +142,56 @@
 
     </style>
 
+    //Estilos de Pantalla de registro
+
+
+    <style name="LinearLYStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">410dp</item>
+        <item name="android:padding">15dp</item>
+
+    </style>
+
+    <style name="ConstraintLayoutWhiteStroke" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/textfield_w_whitestroke</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+
+    </style>
+
+    <style name="TextFieldRegister" parent= "Widget.AppCompat.EditText" >
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+
+    <style name="RegisterIconsStyle" >
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">32dp</item>
+
+    </style>
+
+    <style name="Divider.Horizontal3" parent="Divider">
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/white</item>
+
+
+    </style>
+
+    <style name="LinearLayoutStyle" >
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 
     <style name="PoppinsBold_20" parent="Widget.AppCompat.TextView">
         <item name="fontFamily">@font/poppins_bold</item>

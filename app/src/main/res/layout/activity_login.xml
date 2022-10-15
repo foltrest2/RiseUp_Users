@@ -8,6 +8,62 @@
     android:background="@drawable/linear_gradient_background"
     tools:context=".view.LoginActivity">
 
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/returnLognLY"
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginRegWithLY">
+
+        <Button
+            android:id="@+id/googleLoginBtn"
+            style="@style/SocialAppIcons"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toEndOf="@+id/twLoginBtn" />
+
+        <Button
+            android:id="@+id/twLoginBtn"
+            style="@style/SocialAppIconsTw"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="148dp" />
+
+        <Button
+            android:id="@+id/fbLoginBtn"
+            style="@style/SocialAppIconsFb"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/twLoginBtn"
+            app:layout_constraintHorizontal_bias="0.866"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginRegWithLY"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginOptionLY">
+
+        <TextView
+            android:id="@+id/loginRegTV"
+            style="@style/PoppinsMed_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registerWithTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/logAndRegBtnLY"
         android:layout_width="325dp"
@@ -32,7 +88,6 @@
             style="@style/RectangleWGradient"
             android:layout_width="228dp"
             android:layout_marginBottom="12dp"
-            android:background="@drawable/blue_green_gradient"
             android:text="@string/loginBtnTV"
             app:layout_constraintBottom_toTopOf="@+id/userRegBtn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -166,6 +221,7 @@
                 android:id="@+id/loginForgetPassTV"
                 style="@style/PoppinsMed_11"
                 android:layout_width="wrap_content"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:layout_marginBottom="42dp"
@@ -173,6 +229,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -235,55 +292,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/socialNetLY"
-        android:layout_width="325dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/logAndRegBtnLY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/googleLoginBtn"
-            style="@style/SocialAppIcons"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.123"
-            app:layout_constraintStart_toEndOf="@+id/twLoginBtn" />
-
-        <Button
-            android:id="@+id/fbLoginBtn"
-            style="@style/SocialAppIconsFb"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/twLoginBtn"
-            app:layout_constraintHorizontal_bias="0.866"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/socialNRegTV"
-            style="@style/PoppinsMed_13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/registerWithTV"
-            app:layout_constraintBottom_toTopOf="@+id/twLoginBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/twLoginBtn"
-            style="@style/SocialAppIconsTw"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="148dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

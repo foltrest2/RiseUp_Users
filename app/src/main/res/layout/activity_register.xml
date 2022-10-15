@@ -8,7 +8,7 @@
     tools:context=".view.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/returnLognLY"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/returnToLoginButton"
             style="@style/BackArrowButton"
             android:layout_width="48dp"
             android:layout_marginStart="8dp"
@@ -32,12 +32,330 @@
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
             android:text="@string/registerTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+            app:layout_constraintBottom_toBottomOf="@+id/returnToLoginButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintStart_toEndOf="@+id/returnToLoginButton"
 
-            app:layout_constraintTop_toTopOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="@+id/returnToLoginButton"
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/retLogLY"
+        style="@style/LinearLYStyle"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/returnLognLY">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nameConstraintLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <ImageView
+                android:id="@+id/iconousuarioregistro"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/accountcircle" />
+
+            <EditText
+                android:id="@+id/nameRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Ingresar nombre"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/iconousuarioregistro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iconousuarioregistro"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sexConstraintLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <EditText
+                android:id="@+id/sexRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Ingresar sexo"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                style="@style/RegisterIconsStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_unisex_symbol_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emailRegLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <EditText
+                android:id="@+id/emailRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Ingresar email"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                style="@style/RegisterIconsStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_email_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/birthdayregLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <EditText
+                android:id="@+id/birthdayRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Ingresar fecha de cumpleaños"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                style="@style/RegisterIconsStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/birthday_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/celRegLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <EditText
+                android:id="@+id/cellPhoneRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Ingresar número de teléfono"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="@+id/imageView4"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                style="@style/RegisterIconsStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cellphone_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/passwordRegLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <EditText
+                android:id="@+id/passwordRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Ingresar contraseña "
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                style="@style/RegisterIconsStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/password_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/confPassLY"
+            style="@style/ConstraintLayoutWhiteStroke">
+
+            <EditText
+                android:id="@+id/confPassRegTF"
+                style="@style/TextFieldRegister"
+                android:ems="10"
+                android:hint="Confirmar contraseña "
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="@+id/imageView6"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                style="@style/RegisterIconsStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/password_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/retLogLY">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/LinearLayoutStyle"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewRegister"
+                style="@style/Divider.Horizontal3"
+                android:layout_marginLeft="15dp"
+                android:background="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="59dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/oRegisterTV"
+                style="@style/PoppinsMed_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oRegister"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/LinearLayoutStyle"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewRegister2"
+                style="@style/Divider.Horizontal3"
+                android:layout_marginRight="15dp"
+                android:background="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/registerWithLY"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/snetworkRegTV"
+            style="@style/PoppinsMed_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registerWithTV"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/regIconLY"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerWithLY">
+
+        <Button
+            android:id="@+id/googleRegBtn"
+            style="@style/SocialAppIcons"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toEndOf="@+id/twLoginBtn" />
+
+        <Button
+            android:id="@+id/twRegBtn"
+            style="@style/SocialAppIconsTw"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="148dp" />
+
+        <Button
+            android:id="@+id/fbRegBtn"
+            style="@style/SocialAppIconsFb"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/twLoginBtn"
+            app:layout_constraintHorizontal_bias="0.866"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/RectangleWGradient"
+        android:layout_width="243dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/registerUserBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regIconLY" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
