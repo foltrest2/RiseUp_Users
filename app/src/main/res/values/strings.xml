@@ -46,19 +46,19 @@
     <string name="infoHistDiamantes">Revisa en qué discotecas has redimido tus diamantes.</string>
     <string name="diezSesentaName">Espacio 10-60</string>
     <string name="FechaTitle">Fecha:</string>
-    <string name="fechaTexto">8-10-2022</string>
-    <string name="fechaTexto2">1-10-2022</string>
     <string name="IDTitle">ID:</string>
-    <string name="idNumber">52583270</string>
-    <string name="idNumber2">52343530</string>
-    <string name="numDiamantes">50</string>
-    <string name="numDiamantes2">30</string>
     <string name="ContraseñaTittle">Contraseña</string>
     <string name="infoPasswordChange">Por favor asegúrese que su contraseña tenga al menos seis caracteres e incluir una combinación de números, letras y caracteres especiales (!&amp;%/$)</string>
     <string name="actualPass">Contraseña actual</string>
     <string name="newPass">Contraseña nueva</string>
     <string name="repeatPass">Repetir contraseña nueva</string>
     <string name="salir">Salir</string>
+    <string name="Confirmar">Confirmar</string>
+    <string name="Transacciones">Transacciones</string>
+    <string name="Tarjetas">Tarjetas</string>
+    <string name="ultimos_pagos">Últimos pagos</string>
+    <string name="infoNotarjetas">Aún no tienes un medio de pago configurado.</string>
+    <string name="crear">Crear</string>
 
 
 </resources>
