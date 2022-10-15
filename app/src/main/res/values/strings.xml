@@ -82,6 +82,7 @@
     <string name="condUso">Condiciones de uso</string>
     <string name="biblioCodAbi">Bibliotecas de código abierto</string>
     <string name="reportarProblema">Reportar un problema</string>
+    <string name="CambiarCorreo">Cambiar correo electrónico</string>
 
 
 </resources>

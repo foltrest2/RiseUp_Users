@@ -13,6 +13,8 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/arrowminiright24p.xml" value="0.343" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/bookmark48p.xml" value="0.173" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/check24p.xml" value="0.2185" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/close24p.xml" value="0.2185" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/combinado.xml" value="0.179" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/creditcard24p.xml" value="0.107" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/diamond24p.xml" value="0.2435" />
@@ -39,6 +41,7 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_help.xml" value="0.33" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_information.xml" value="0.2" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_language.xml" value="0.2" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_profile_change_email.xml" value="0.2" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_profile_info.xml" value="0.33" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_security.xml" value="0.25" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_user_payments_add_card.xml" value="0.33" />

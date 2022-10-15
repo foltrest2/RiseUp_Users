@@ -19,5 +19,9 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigProfileInfoActivity, ConfigurationActivity::class.java))
         }
 
+        binding.correoETConfigUser.setOnClickListener {
+            startActivity(Intent(this@ConfigProfileInfoActivity, ConfigProfileChangeEmailActivity::class.java))
+        }
+
     }
 }

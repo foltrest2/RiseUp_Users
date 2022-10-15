@@ -160,7 +160,7 @@
         android:backgroundTintMode="multiply"
         android:ems="10"
         android:hint="@string/expCardET"
-        android:inputType="textPersonName"
+        android:inputType="date|textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/addCardSimulationImg"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"

@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RiseUp_Users"
         tools:targetApi="31">
-
+        <activity
+            android:name=".view.ConfigProfileChangeEmailActivity"
+            android:exported="false" />
         <activity
             android:name=".view.LoginActivity"
             android:exported="false" />
@@ -40,15 +42,13 @@
             android:exported="false" />
         <activity
             android:name=".view.ConfigInformationActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".view.ConfigHelpActivity"
             android:exported="false" />
-
-            <activity
-                android:name=".view.ConfigurationActivity"
-                android:exported="true">
+        <activity
+            android:name=".view.ConfigurationActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
