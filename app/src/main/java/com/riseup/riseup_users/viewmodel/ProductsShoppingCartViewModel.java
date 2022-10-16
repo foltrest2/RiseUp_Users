@@ -1,6 +1,6 @@
 package com.riseup.riseup_users.viewmodel;
 
-public class productsShoppingCartViewModel {
+public class ProductsShoppingCartViewModel {
 
 
 }

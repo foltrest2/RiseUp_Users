@@ -107,6 +107,9 @@
     <string name="discountPriceTxt">$30.000</string>
     <string name="payBtnText">Pagar</string>
     <string name="payWDiamondtxt">Redimir con diamantes</string>
+    <string name="liqueurMenuTitle">Menú de licores</string>
+    <string name="youHaveXDiamondstxt">¡Tienes 150 diamantes!</string>
+    <string name="addProductPLBtnTxt">Agregar</string>
 
 
 </resources>

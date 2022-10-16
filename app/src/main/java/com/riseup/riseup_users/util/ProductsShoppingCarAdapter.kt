@@ -6,24 +6,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.ProductsShoppingCarModel
-import com.riseup.riseup_users.view.productsShoppingCarView
-import kotlinx.android.synthetic.main.activity_register.view.*
+import com.riseup.riseup_users.view.ProductsShoppingCarView
 
 
-class productsShoppingCarAdapter: RecyclerView.Adapter<productsShoppingCarView>() {
+class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>() {
 
 
     private val productShCar = ArrayList<ProductsShoppingCarModel>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): productsShoppingCarView {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsShoppingCarView {
 
         //inflate: XML->View
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.products_shoppingcarrow,parent,false)
-        val productSHViewHolder = productsShoppingCarView(view)
+        val productSHViewHolder = ProductsShoppingCarView(view)
         return productSHViewHolder
     }
 
-    override fun onBindViewHolder(holder: productsShoppingCarView, position: Int) {
+    override fun onBindViewHolder(holder: ProductsShoppingCarView, position: Int) {
         val producn = productShCar[position]
         holder.productPrice.text = producn.price.toBigDecimal().toString()
         holder.productName.text = producn.name

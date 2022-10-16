@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.riseup.riseup_users.databinding.FragmentPaymentSelectionBinding
 import com.riseup.riseup_users.databinding.FragmentShoppingCarBinding
-import com.riseup.riseup_users.util.productsShoppingCarAdapter
+import com.riseup.riseup_users.util.ProductsShoppingCarAdapter
 
 
 class ShoppingCarFragment : Fragment() {
@@ -17,7 +16,7 @@ class ShoppingCarFragment : Fragment() {
     private val binding get() = _binding!!
 
     //STATE
-    private val adapter = productsShoppingCarAdapter()
+    private val adapter = ProductsShoppingCarAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
