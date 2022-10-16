@@ -98,6 +98,25 @@
     <string name="disco_selection_btn">disco_selection_btn</string>
     <string name="proximas_rumbas">Próximas rumbas</string>
     <string name="background_disco_selected">background_disco_selected</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="PaymentTitle">Pagar</string>
+    <string name="selectpaymenttextmain">Selecciona el método de pago</string>
+    <string name="pagarNequiTV">Pagar con Nequi</string>
+    <string name="pagarConDaviTV">Pagar con Daviplata</string>
+    <string name="pagarTarjetaTV">Pagar con Tarjeta</string>
+    <string name="pagarConDiamantesTV">Pagar con Diamantes</string>
+    <string name="yourOrderTitleText">Tu pedido</string>
+    <string name="orderProductListTitle">Productos</string>
+    <string name="totalPriceTitle">Total</string>
+    <string name="pricewithoutdiscountText">$180.000</string>
+    <string name="discountPriceTxt">$30.000</string>
+    <string name="payBtnText">Pagar</string>
+    <string name="payWDiamondtxt">Redimir con diamantes</string>
+    <string name="liqueurMenuTitle">Menú de licores</string>
+    <string name="youHaveXDiamondstxt">¡Tienes 150 diamantes!</string>
+    <string name="addProductPLBtnTxt">Agregar</string>
+>>>>>>> origin/alejandro
 
 
 </resources>

@@ -16,13 +16,25 @@
 
         <activity
             android:name=".view.LoginActivity"
-            android:exported="false" />
+            android:exported="false"/>
+
+        <activity android:name=".view.RegisterActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".view.MainActivity"
-            android:exported="false" />
+            android:exported="true" />
+
         <activity
             android:name=".view.MenuActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".view.ConfigurationActivity"
             android:exported="false" />
@@ -46,14 +58,7 @@
             android:exported="false"/>
         <activity
             android:name=".view.DiscoSelectionActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:exported="false"/>
 
         <meta-data
             android:name="preloaded_fonts"
