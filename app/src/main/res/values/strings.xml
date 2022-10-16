@@ -100,6 +100,13 @@
     <string name="pagarConDaviTV">Pagar con Daviplata</string>
     <string name="pagarTarjetaTV">Pagar con Tarjeta</string>
     <string name="pagarConDiamantesTV">Pagar con Diamantes</string>
+    <string name="yourOrderTitleText">Tu pedido</string>
+    <string name="orderProductListTitle">Productos</string>
+    <string name="totalPriceTitle">Total</string>
+    <string name="pricewithoutdiscountText">$180.000</string>
+    <string name="discountPriceTxt">$30.000</string>
+    <string name="payBtnText">Pagar</string>
+    <string name="payWDiamondtxt">Redimir con diamantes</string>
 
 
 </resources>

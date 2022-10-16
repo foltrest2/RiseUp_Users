@@ -5,12 +5,14 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.riseup.riseup_users.PaymentSelectionFragment
 import com.riseup.riseup_users.R
+import com.riseup.riseup_users.ShoppingCarFragment
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMenuBinding
     private lateinit var newPaymentSelectionFragment: PaymentSelectionFragment
+    private lateinit var shoppingCarFragment: ShoppingCarFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,12 +21,13 @@ class MenuActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         newPaymentSelectionFragment = PaymentSelectionFragment.newInstance()
+        shoppingCarFragment = ShoppingCarFragment.newInstance()
         showFragment(newPaymentSelectionFragment)
 
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){
             }else if(menuItem.itemId == R.id.carOpMenu){
-                showFragment(newPaymentSelectionFragment)
+                showFragment(shoppingCarFragment)
 
             }else if(menuItem.itemId == R.id.configmOpMenu){
             }
