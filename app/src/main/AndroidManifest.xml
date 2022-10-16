@@ -41,17 +41,19 @@
         <activity
             android:name=".view.ConfigUserPaymentsAddCardActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".view.ConfigLanguageActivity"
-            android:exported="true" >
+            android:exported="false"/>
+        <activity
+            android:name=".view.DiscoSelectionActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

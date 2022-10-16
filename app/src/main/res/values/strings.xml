@@ -92,7 +92,12 @@
     <string name="fancesLang">Francés</string>
     <string name="rusolLang">Ruso</string>
     <string name="alemanLang">Alemán</string>
-
+    <string name="espacio_10_60">Espacio 10-60</string>
+    <string name="tienes_150_diamantes">¡Tienes 150 diamantes!</string>
+    <string name="menu_de_licores">Menú de licores</string>
+    <string name="disco_selection_btn">disco_selection_btn</string>
+    <string name="proximas_rumbas">Próximas rumbas</string>
+    <string name="background_disco_selected">background_disco_selected</string>
 
 
 </resources>
