@@ -92,7 +92,14 @@
     <string name="fancesLang">Francés</string>
     <string name="rusolLang">Ruso</string>
     <string name="alemanLang">Alemán</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="PaymentTitle">Pagar</string>
+    <string name="selectpaymenttextmain">Selecciona el método de pago</string>
+    <string name="pagarNequiTV">Pagar con Nequi</string>
+    <string name="pagarConDaviTV">Pagar con Daviplata</string>
+    <string name="pagarTarjetaTV">Pagar con Tarjeta</string>
+    <string name="pagarConDiamantesTV">Pagar con Diamantes</string>
 
 
 </resources>
