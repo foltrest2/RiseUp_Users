@@ -18,6 +18,10 @@ class ConfigProfileChangeTelActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigProfileChangeTelActivity, ConfigProfileInfoActivity::class.java))
         }
 
+        binding.confirmarCambioTelBtn.setOnClickListener {
+            startActivity(Intent(this@ConfigProfileChangeTelActivity, ConfigProfileChangePassVerifActivity::class.java))
+        }
+
     }
 
 }

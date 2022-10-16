@@ -86,6 +86,17 @@
     <string name="NumeroTelCambiarTitle">Número de teléfono</string>
     <string name="ingresarNumTel">Ingresa tu número de teléfono</string>
     <string name="infoNotifiSMS">Es posible que te enviemos notificaciones\n por SMS con fines de seguridad\n e inicio de sesión.</string>
+    <string name="cambiar_contrasena">Cambiar contraseña</string>
+    <string name="ingresar_cod_verif">Ingresar código de verificación</string>
+    <string name="change_pass_instructions">Ingresa el código que te enviamos al\ncorreo kamcak@hotmail.es</string>
+    <string name="verificar">Verificar</string>
+    <string name="reenviar_cod">Reenviar código</string>
+    <string name="notepreocupes">No te preocupes, no será público</string>
+    <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
+    <string name="personalizado">Personalizado</string>
+    <string name="nodecir">Prefiero no decir</string>
+    <string name="soporteYPreguntas">Soporte y preguntas frecuentes</string>
 
 
 </resources>

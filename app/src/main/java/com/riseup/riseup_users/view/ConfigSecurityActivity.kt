@@ -17,5 +17,10 @@ class ConfigSecurityActivity : AppCompatActivity() {
         binding.atrasBtnContrasenaConfig.setOnClickListener {
             startActivity(Intent(this@ConfigSecurityActivity, ConfigurationActivity::class.java))
         }
+
+        binding.configCambiarContraConfiBtn.setOnClickListener {
+            startActivity(Intent(this@ConfigSecurityActivity, ConfigProfileChangePassVerifActivity::class.java))
+        }
+
     }
 }

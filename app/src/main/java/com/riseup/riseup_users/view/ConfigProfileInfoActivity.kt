@@ -27,5 +27,9 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigProfileInfoActivity, ConfigProfileChangeTelActivity::class.java))
         }
 
+        binding.configETSexoUser.setOnClickListener{
+            startActivity(Intent(this@ConfigProfileInfoActivity, ConfigProfileChangeSexActivity::class.java))
+        }
+
     }
 }
