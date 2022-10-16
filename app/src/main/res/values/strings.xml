@@ -83,6 +83,9 @@
     <string name="biblioCodAbi">Bibliotecas de código abierto</string>
     <string name="reportarProblema">Reportar un problema</string>
     <string name="CambiarCorreo">Cambiar correo electrónico</string>
+    <string name="NumeroTelCambiarTitle">Número de teléfono</string>
+    <string name="ingresarNumTel">Ingresa tu número de teléfono</string>
+    <string name="infoNotifiSMS">Es posible que te enviemos notificaciones\n por SMS con fines de seguridad\n e inicio de sesión.</string>
 
 
 </resources>

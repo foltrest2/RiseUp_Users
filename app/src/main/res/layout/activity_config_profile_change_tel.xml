@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_gradient_background"
+    tools:context=".view.ConfigProfileChangeTelActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cambiarTelConstraintConfigUser"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/cancelChangeTelBtn1"
+            style="@style/BackArrowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/close24p" />
+
+        <TextView
+            android:id="@+id/titleCambiarTelTV"
+            style="@style/PoppinsBold_20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/NumeroTelCambiarTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelChangeTelBtn1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cancelChangeTelBtn1"
+            app:layout_constraintTop_toTopOf="@+id/cancelChangeTelBtn1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/instruccionesIngresTelTV"
+        style="@style/PoppinsBold_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/ingresarNumTel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cambiarTelConstraintConfigUser" />
+
+    <EditText
+        android:id="@+id/entryNewTelET"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_border_white"
+        android:ems="10"
+        android:hint="@string/NumeroTelCambiarTitle"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instruccionesIngresTelTV" />
+
+    <Button
+        android:id="@+id/confirmarCambioTelBtn"
+        style="@style/PrincipalRectangleRound"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/Confirmar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entryNewTelET" />
+
+    <TextView
+        android:id="@+id/infoSobreCambioTelTV"
+        style="@style/PoppinsMed_14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:text="@string/infoNotifiSMS"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/confirmarCambioTelBtn"
+        app:layout_constraintStart_toStartOf="@+id/confirmarCambioTelBtn"
+        app:layout_constraintTop_toBottomOf="@+id/confirmarCambioTelBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

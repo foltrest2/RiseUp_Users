@@ -20,6 +20,5 @@ class ConfigProfileChangeEmailActivity : AppCompatActivity() {
         bindig.checkChangeEmailBtn.setOnClickListener {
             startActivity(Intent(this@ConfigProfileChangeEmailActivity, ConfigurationActivity::class.java))
         }
-
     }
 }

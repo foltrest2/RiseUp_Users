@@ -23,5 +23,9 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigProfileInfoActivity, ConfigProfileChangeEmailActivity::class.java))
         }
 
+        binding.telETConfigUser.setOnClickListener {
+            startActivity(Intent(this@ConfigProfileInfoActivity, ConfigProfileChangeTelActivity::class.java))
+        }
+
     }
 }
