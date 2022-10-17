@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/linear_gradient_background">
+
+    <LinearLayout
+        android:id="@+id/LLYCardPU"
+        android:layout_width="290dp"
+        android:layout_height="185dp"
+        android:background="@drawable/special_green_gradient"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewPU"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/transparent">
+
+            <ImageView
+                android:id="@+id/cardImagePU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/mcardicon" />
+
+            <TextView
+                android:id="@+id/expiresTitleTVPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="135dp"
+                android:layout_marginTop="100dp"
+                android:text="@string/expiresTitlePUtxt"
+                android:textAppearance="@style/PoppinsSemiBold_11_2" />
+
+            <TextView
+                android:id="@+id/userExpireDateTextPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="135dp"
+                android:layout_marginTop="140dp"
+                android:text="TextView"
+                android:textAppearance="@style/PoppinsSemiBold_11_2" />
+
+            <TextView
+                android:id="@+id/userCardNumberTVPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="60dp"
+                android:text="TextView"
+                android:textAppearance="@style/PoppinsSemiBold_16_2" />
+
+            <TextView
+                android:id="@+id/cardHolderTitleTVPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="100dp"
+                android:text="@string/cardHolderTitlePU"
+                android:textAppearance="@style/PoppinsSemiBold_11_2"
+
+                />
+
+            <TextView
+                android:id="@+id/userCardHolderTVPU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="140dp"
+                android:text="TextView"
+                android:textAppearance="@style/PoppinsSemiBold_11_2" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
