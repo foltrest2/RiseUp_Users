@@ -3,6 +3,7 @@ package com.riseup.riseup_users.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.riseup.riseup_users.databinding.ActivityConfigInformationBinding
 
 class ConfigInformationActivity : AppCompatActivity() {
@@ -20,5 +21,13 @@ class ConfigInformationActivity : AppCompatActivity() {
         binding.politicaPrivConstraint.setOnClickListener {
             startActivity(Intent(this@ConfigInformationActivity, ConfigPoliticInformationActivity::class.java))
         }
+        binding.condUsoConstraint.setOnClickListener {
+            startActivity(Intent(this@ConfigInformationActivity, ConfigUsageConditionsActivity::class.java))
+        }
+        binding.bibCodAbirConstraint.setOnClickListener {
+            Toast.makeText(this@ConfigInformationActivity,"Información no disponible",Toast.LENGTH_SHORT).show()
+        }
+
+
     }
 }
