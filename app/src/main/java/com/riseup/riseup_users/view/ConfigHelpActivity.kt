@@ -19,5 +19,8 @@ class ConfigHelpActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigHelpActivity, ConfigurationActivity::class.java))
         }
 
+        binding.soporteYpreguntasFreqConstraint.setOnClickListener {
+            startActivity(Intent(this@ConfigHelpActivity, ConfigHelpCenterActivity::class.java))
+        }
     }
 }

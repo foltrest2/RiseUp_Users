@@ -115,6 +115,17 @@
 
     </style>
 
+    <style name="RectangleWGradientsemiBold_15" parent="Widget.AppCompat.Button">
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+        <item name="android:background">@drawable/blue_green_gradient</item>
+
+    </style>
+
     <style name="PrincipalRectangleRound" parent="Widget.AppCompat.Button">
         <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
