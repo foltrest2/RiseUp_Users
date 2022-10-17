@@ -4,17 +4,19 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.riseup.riseup_users.databinding.ShowCardsDialogBinding
 
 class PaymentDialog(
     private val onSubmitClickListener: (String) -> Unit
 ):DialogFragment() {
+
+    //STATE
+    private val adapter = UserAddedCardsAdapter()
+
 
     private lateinit var binding : ShowCardsDialogBinding
 
@@ -28,7 +30,11 @@ class PaymentDialog(
 
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
-
+        val useraddedcardsRecycler = binding.rVAddedCards
+        useraddedcardsRecycler.setHasFixedSize(true)
+        useraddedcardsRecycler.layoutManager = LinearLayoutManager(activity)
+        useraddedcardsRecycler.adapter = adapter
+        useraddedcardsRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         val dialog = builder.create()
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))

@@ -2,8 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:padding="15dp"
     android:background="@drawable/linear_gradient_background">
 
     <LinearLayout
@@ -20,7 +21,9 @@
             android:id="@+id/cardViewPU"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/transparent">
+            app:cardBackgroundColor="@color/transparent"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp">
 
             <ImageView
                 android:id="@+id/cardImagePU"

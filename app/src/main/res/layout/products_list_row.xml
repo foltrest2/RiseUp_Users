@@ -64,7 +64,11 @@
                 style="@style/RectangleWGradientPL"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="@string/addProductPLBtnTxt" />
+                android:theme="@style/RectangleWGradientPL"
+                android:text="@string/addProductPLBtnTxt"
+                android:backgroundTint="@null"
+
+                />
         </LinearLayout>
 
     </LinearLayout>

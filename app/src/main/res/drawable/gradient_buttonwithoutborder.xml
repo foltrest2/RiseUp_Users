@@ -9,8 +9,6 @@
                 android:endColor="#8000D9F5"
                 android:type="linear"
                 android:angle="0"/>
-            <size android:width="24dp"
-                android:height="24dp"/>
         </shape>
     </item>
 
