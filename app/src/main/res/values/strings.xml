@@ -110,6 +110,9 @@
     <string name="liqueurMenuTitle">Menú de licores</string>
     <string name="youHaveXDiamondstxt">¡Tienes 150 diamantes!</string>
     <string name="addProductPLBtnTxt">Agregar</string>
+    <string name="orderCodeTitleTxt">Reclamar pedido</string>
+    <string name="paymentCodeNTxt">N5KCV</string>
+    <string name="codeDesMessageTxt">Por favor muéstrele este código al bartender para reclamar su pedido</string>
 
 
 </resources>

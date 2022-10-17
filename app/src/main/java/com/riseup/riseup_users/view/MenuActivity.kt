@@ -3,11 +3,8 @@ package com.riseup.riseup_users.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.riseup.riseup_users.PaymentSelectionFragment
-import com.riseup.riseup_users.R
-import com.riseup.riseup_users.ShoppingCarFragment
+import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
-import com.riseup.riseup_users.ProductListFragment
 
 class MenuActivity : AppCompatActivity() {
 
@@ -15,6 +12,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var newPaymentSelectionFragment: PaymentSelectionFragment
     private lateinit var shoppingCarFragment: ShoppingCarFragment
     private lateinit var productListFragment: ProductListFragment
+    private lateinit var paymentCodeFragment: PaymentCodeFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,15 +23,20 @@ class MenuActivity : AppCompatActivity() {
         newPaymentSelectionFragment = PaymentSelectionFragment.newInstance()
         shoppingCarFragment = ShoppingCarFragment.newInstance()
         productListFragment = ProductListFragment.newInstance()
+        paymentCodeFragment = PaymentCodeFragment.newInstance()
         showFragment(newPaymentSelectionFragment)
 
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){
+                showFragment(shoppingCarFragment)
+
             }else if(menuItem.itemId == R.id.carOpMenu){
                 //showFragment(shoppingCarFragment)
-                showFragment(productListFragment)
+                //showFragment(productListFragment)
+                showFragment(paymentCodeFragment)
 
             }else if(menuItem.itemId == R.id.configmOpMenu){
+                showFragment(productListFragment)
             }
             true
         }
