@@ -36,7 +36,7 @@
     <string name="registerWithTV">Registrate con</string>
 
     <string name="correoIndicativo">Dirección de correo electrónico</string>
-    <string name="kamcak">kamcak@hotmail.es</string>
+    <string name="kamcak"><b>kamcak@hotmail.es</b></string>
     <string name="telInfo">Número de teléfono</string>
     <string name="tel">+573104101801</string>
     <string name="sexoInfo">Sexo</string>
@@ -97,6 +97,12 @@
     <string name="personalizado">Personalizado</string>
     <string name="nodecir">Prefiero no decir</string>
     <string name="soporteYPreguntas">Soporte y preguntas frecuentes</string>
+    <string name="politicaTitulo1">1. Tipos de datos que recolectamos</string>
+    <string name="politicInfoParrafo1">Recopilamos los siguientes tipos de información.\nInformación que nos envías directamente:\n\nTu nombre de usuario, contraseña y dirección de correo electrónico al registrarte en una cuenta de RiseUp.\nInformación que nos proporcionas en tu perfil de usuario (por ejemplo, nombre y apellidos, foto, número de teléfono). Esta información nos permite ayudarte a ti o a otros usuarios a estar \"localizados\" en RiseUp.\nContenido de usuario (por ejemplo, fotos, comentarios y otros materiales) que publiques en el Servicio.\nComunicaciones que mantengas con RiseUp. Por ejemplo, podemos enviarte correos electrónicos relacionados con el Servicio (como verificación de la cuenta, cambios o actualizaciones de funciones del Servicio, avisos técnicos y de seguridad). Ten en cuenta que no puedes renunciar a recibir correos electrónicos relacionados con el Servicio.</string>
+    <string name="politicaTitulo2">2. Uso de tu información personal</string>
+    <string name="politicInfoParrafo2">Utilizamos herramientas de análisis de terceros que nos ayudan a medir el tráfico y las tendencias de uso del Servicio. Estas herramientas recopilan la información que envió tu dispositivo o nuestro Servicio, incluidas las páginas web que visites, los complementos y otra información que nos ayude a mejorar el Servicio. Recopilamos y utilizamos esta información de análisis con información de análisis de otros Usuarios, por lo que no puede utilizarse razonablemente para identificar a cualquier Usuario individual en particular.</string>
+    <string name="politicaTitulo3">3. Divulgación de tus datos personales</string>
+    <string name="politicInfoParrafo3">No procederemos al alquiler o venta de la información que nos proporciones a terceros que no sean RiseUp (o el grupo de empresas del que forma parte RiseUp) sin tu consentimiento, excepto en los términos estipulados en esta Política.</string>
 
 
 </resources>

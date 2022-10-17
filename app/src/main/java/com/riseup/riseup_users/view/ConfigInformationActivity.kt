@@ -17,5 +17,8 @@ class ConfigInformationActivity : AppCompatActivity() {
         binding.atrasArrowInfoAppBtn.setOnClickListener {
             startActivity(Intent(this@ConfigInformationActivity, ConfigurationActivity::class.java))
         }
+        binding.politicaPrivConstraint.setOnClickListener {
+            startActivity(Intent(this@ConfigInformationActivity, ConfigPoliticInformationActivity::class.java))
+        }
     }
 }
