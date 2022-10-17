@@ -20,15 +20,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="350dp"
+        android:isScrollContainer="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/disco_selection_rectangle"
-            android:translationY="400dp">
+            android:background="@drawable/disco_selection_rectangle">
 
             <TextView
                 android:id="@+id/title_disco_selected"
@@ -134,7 +135,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/alcohol_menu_disco_selected" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+                android:id="@+id/cardView_disco_selection"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -147,15 +148,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/next_parties_disco_selected">
 
                 <ImageView
-                    android:id="@+id/imageView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/background_party"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/background_disco_selected"
                     android:scaleType="centerCrop"
                     app:srcCompat="@mipmap/fondotarjeta1060" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/title_party"
                     style="@style/PoppinsRegular_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,7 +166,7 @@
                     android:translationY="120dp" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/catchphrase"
                     style="@style/PoppinsRegular_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,47 +175,6 @@
                     android:translationX="24dp"
                     android:translationY="170dp" />
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:forceHasOverlappingRendering="false"
-                app:cardCornerRadius="35dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-                <ImageView
-                    android:id="@+id/imageView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/background_disco_selected"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@mipmap/fondotarjeta1060" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    style="@style/PoppinsRegular_10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/espacio_10_60"
-                    android:textSize="34sp"
-                    android:translationX="24dp"
-                    android:translationY="120dp" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    style="@style/PoppinsRegular_10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/espacio_10_60"
-                    android:textSize="16sp"
-                    android:translationX="24dp"
-                    android:translationY="170dp" />
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -116,7 +116,9 @@
     <string name="liqueurMenuTitle">Menú de licores</string>
     <string name="youHaveXDiamondstxt">¡Tienes 150 diamantes!</string>
     <string name="addProductPLBtnTxt">Agregar</string>
->>>>>>> origin/alejandro
+    <string name="discotecas">Discotecas</string>
+    <string name="visits">visitas: 5</string>
+    >>>>>>> origin/alejandro
 
 
 </resources>
