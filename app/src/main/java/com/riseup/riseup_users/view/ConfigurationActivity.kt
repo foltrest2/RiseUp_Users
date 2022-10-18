@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.core.view.get
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ActivityConfigurationBinding
 import kotlinx.android.synthetic.main.activity_configuration.view.*
+import kotlinx.android.synthetic.main.cache_cleaned.view.*
 
 class ConfigurationActivity : AppCompatActivity() {
 
@@ -42,6 +44,9 @@ class ConfigurationActivity : AppCompatActivity() {
         }
         binding.scLinearLayoutConfig.logOutBtnProfile.setOnClickListener {
             startActivity(Intent(this@ConfigurationActivity, LoginActivity::class.java))
+        }
+        binding.scLinearLayoutConfig.borrarCacheTVProfile.setOnClickListener {
+            CacheCleanedDialog().show(supportFragmentManager, "dialogcache")
         }
 
     }

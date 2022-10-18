@@ -234,5 +234,48 @@
             app:layout_constraintTop_toBottomOf="@+id/configInfoFechaInstructivo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/datePickerConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/acceptDateBtn"
+            style="@style/PrincipalRectangleRound"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Confirmar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/datePickerUserConfigBith"
+            app:layout_constraintStart_toStartOf="@+id/datePickerUserConfigBith"
+            app:layout_constraintTop_toBottomOf="@+id/datePickerUserConfigBith" />
+
+        <DatePicker
+            android:id="@+id/datePickerUserConfigBith"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/linear_gradient_azulcian"
+            android:calendarTextColor="@color/white"
+            android:datePickerMode="calendar"
+            android:editTextColor="@color/white"
+            android:elevation="5dp"
+            android:headerBackground="@drawable/linear_gradient_azulverdeoscuro"
+            android:textColorPrimary="@color/white"
+            android:theme="@android:style/Widget.Material.Light.DatePicker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

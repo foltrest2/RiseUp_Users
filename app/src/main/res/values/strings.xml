@@ -42,7 +42,7 @@
     <string name="sexoInfo">Sexo</string>
     <string name="HombreET">Hombre</string>
     <string name="fechaInfo">Fecha de nacimiento</string>
-    <string name="fechaNaci">2 ago. 2001</string>
+    <string name="fechaNaci">02/08/2001</string>
     <string name="historial_transac">Historial de transacciones</string>
     <string name="infoHistDiamantes">Revisa en qué discotecas has redimido tus diamantes.</string>
     <string name="diezSesentaName">Espacio 10-60</string>
@@ -128,6 +128,10 @@
     <string name="queEsRiseUpInfo">RiseUp es la app que permite a los mejores establecimientos de rumba de la ciudad de Cali fidelizar a sus clientes mientras estos disfrutan de beneficios exclusivos.</string>
     <string name="comoUsarRiseUpInfo">RiseUp lo empiezas a usar desde que te registras, para acumular diamantes debes, por lo menos, acudir a las discotecas que hacen parte de la red RiseUp, los establecimientos recompensarán tu asistencia y consumo otorgándote una cantidad de diamantes que luego podrás redimir en consumo de productos de las discotecas.</string>
     <string name="comoUsarRiseUp">¿Cómo usar RiseUp?</string>
+    <string name="omitir">Omitir</string>
+    <string name="enviar">ENVIAR</string>
+    <string name="infoSendBug">Explica brevemente qué sucedió o lo que no funciona.</string>
+    <string name="infocache">La caché se ha borrado exitosamente</string>
 
 
 </resources>
