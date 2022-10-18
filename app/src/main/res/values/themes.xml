@@ -149,7 +149,17 @@
         <item name="android:layout_height">48dp</item>
         <item name= "android:background">@drawable/linear_gradient_azulcian_rounded_corners</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+    </style>
 
+    <style name="RectangleAzulnavi" parent="Widget.AppCompat.Button">
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name= "android:background">@drawable/azulnavi_popup</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
     </style>
 
     <style name="PrincipalRectangleRound" parent="Widget.AppCompat.Button">
