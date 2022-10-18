@@ -38,6 +38,7 @@
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/login_circle_icon.xml" value="0.2015" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/morado_azul_gradient_btn2.xml" value="0.1545" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/morado_background.xml" value="0.2015" />
+        <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/morado_border_w_radius.xml" value="0.253" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/nav_item_selector.xml" value="0.2015" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/nequi_icon.xml" value="0.1545" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/notifications24p.xml" value="0.2015" />
@@ -92,9 +93,11 @@
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/fragment_shopping_car.xml" value="0.33" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/fragment_succesfull_payment.xml" value="0.33" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/fragment_user_credit_cards_payments.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/morado_border_w_radius.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/products_list_row.xml" value="0.67" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/products_shoppingcarrow.xml" value="0.67" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/show_cards_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/show_order_dialog.xml" value="0.365625" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/layout/succesfull_payment.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/menu/menu_config_user_pays.xml" value="0.3625" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/menu/menuapp.xml" value="0.3614583333333333" />

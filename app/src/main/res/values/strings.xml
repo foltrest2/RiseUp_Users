@@ -130,6 +130,8 @@
     <string name="TotalPayedTxt">Total</string>
     <string name="dateOrderResultTxt">13 Jul, 11:18 p.m</string>
     <string name="totalPayedResultTxt">$190.000</string>
+    <string name="showOrderCodeTxtMain">Ver código</string>
+    <string name="OrderPopUpDetailTitle">Pedido</string>
 
 
 </resources>
