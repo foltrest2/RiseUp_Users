@@ -13,6 +13,7 @@ import com.riseup.riseup_users.util.PaymentDialog
 class PaymentSelectionFragment : Fragment() {
     private var _binding: FragmentPaymentSelectionBinding? = null
     private val binding get() = _binding!!
+    private lateinit var paymentCodeFragment: PaymentCodeFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +35,24 @@ class PaymentSelectionFragment : Fragment() {
             ).show(parentFragmentManager,"dialog")
 
         }
+        binding.pagarNequiBtn.setOnClickListener {
+
+            paymentCodeFragment = PaymentCodeFragment.newInstance()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer, paymentCodeFragment)
+            transaction.commit()
+
+        }
+
+        binding.pagarDaviplataBtn.setOnClickListener {
+
+            paymentCodeFragment = PaymentCodeFragment.newInstance()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer, paymentCodeFragment)
+            transaction.commit()
+
+        }
+
     }
 
     companion object {

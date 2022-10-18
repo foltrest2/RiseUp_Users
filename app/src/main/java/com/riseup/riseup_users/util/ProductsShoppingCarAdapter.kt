@@ -33,6 +33,7 @@ class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>(
 
     }
 
+
     override fun getItemCount(): Int {
         return productShCar.size
         TODO("Not yet implemented")

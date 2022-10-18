@@ -1,6 +1,7 @@
 package com.riseup.riseup_users.util
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.riseup.riseup_users.databinding.ShowCardsDialogBinding
+import com.riseup.riseup_users.view.ConfigUserPaymentsAddCardActivity
+import com.riseup.riseup_users.view.FinishPaymentActivity
 
 class PaymentDialog(
     private val onSubmitClickListener: (String) -> Unit
@@ -37,6 +40,23 @@ class PaymentDialog(
         useraddedcardsRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         val dialog = builder.create()
+
+        binding.addNewCardMainBtnPU.setOnClickListener{
+
+            val switchActivityIntent = Intent(requireContext(), ConfigUserPaymentsAddCardActivity::class.java)
+
+            startActivity(switchActivityIntent)
+
+
+        }
+        binding.continuePaymentBtn.setOnClickListener {
+
+            val switchActivityIntent = Intent(requireContext(), FinishPaymentActivity::class.java)
+
+            startActivity(switchActivityIntent)
+
+
+        }
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window!!.setGravity(Gravity.BOTTOM)
         dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)

@@ -132,6 +132,7 @@
     <string name="totalPayedResultTxt">$190.000</string>
     <string name="showOrderCodeTxtMain">Ver código</string>
     <string name="OrderPopUpDetailTitle">Pedido</string>
+    <string name="OrderDetailsTitleTxt">Detalles pedido</string>
 
 
 </resources>

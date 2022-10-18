@@ -14,6 +14,18 @@ class ProductsShoppingCarView(itemView: View) : RecyclerView.ViewHolder(itemView
     var productPrice: TextView = itemView.findViewById(R.id.productSCPriceTV)
     var productQuantity: TextView = itemView.findViewById(R.id.productSCQuantityTV)
 
+    /*
+     fun modifyCard(){
+
+          var addBtn: ImageView = itemView.findViewById(R.id.addProductsSHIV)
+          var deleteBtn:ImageView = itemView.findViewById(R.id.deleteProductsSHIV)
+                    addBtn.visibility = View.GONE
+                    deleteBtn.visibility = View.GONE
+                    productQuantity.visibility = View.GONE
+
+     }
+     */
+
     init{
 
 

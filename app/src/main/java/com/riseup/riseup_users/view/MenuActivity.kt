@@ -1,7 +1,8 @@
 package com.riseup.riseup_users.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
@@ -26,17 +27,28 @@ class MenuActivity : AppCompatActivity() {
         paymentCodeFragment = PaymentCodeFragment.newInstance()
         showFragment(newPaymentSelectionFragment)
 
+        val intentFragment = intent.extras?.getString("PaymentSelection")
+        if(intentFragment!=null){
+            when(intentFragment){
+
+                "PaymentSelection"-> showFragment(newPaymentSelectionFragment)
+
+            }
+        }
+
+
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){
                 showFragment(shoppingCarFragment)
 
             }else if(menuItem.itemId == R.id.carOpMenu){
-                //showFragment(shoppingCarFragment)
-                //showFragment(productListFragment)
-                showFragment(paymentCodeFragment)
+
+                showFragment(shoppingCarFragment)
 
             }else if(menuItem.itemId == R.id.configmOpMenu){
-                showFragment(productListFragment)
+
+                val switchActivityIntent = Intent(this, ConfigurationActivity::class.java)
+                startActivity(switchActivityIntent)
             }
             true
         }
