@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RiseUp_Users"
         tools:targetApi="31">
-
         <activity
             android:name=".view.LoginActivity"
             android:exported="false"/>
@@ -34,7 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.ConfigurationActivity"
             android:exported="false" />
@@ -59,7 +57,13 @@
         <activity
             android:name=".view.DiscoSelectionActivity"
             android:exported="false">
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
         </activity>
 
         <meta-data

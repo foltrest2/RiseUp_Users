@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.riseup.riseup_users.databinding.FragmentPaymentSelectionBinding
+import com.riseup.riseup_users.util.PaymentDialog
 
 
 class PaymentSelectionFragment : Fragment() {
@@ -20,6 +22,18 @@ class PaymentSelectionFragment : Fragment() {
         _binding = FragmentPaymentSelectionBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.pagarTarjetaBtn.setOnClickListener {
+           PaymentDialog(
+                onSubmitClickListener =  {
+                    Toast.makeText(requireContext(), "usted ingreso", Toast.LENGTH_SHORT).show()
+                }
+            ).show(parentFragmentManager,"dialog")
+
+        }
     }
 
     companion object {

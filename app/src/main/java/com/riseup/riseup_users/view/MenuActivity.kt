@@ -14,6 +14,8 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var productListFragment: ProductListFragment
     private lateinit var principalFragment: PrincipalFragment
     private lateinit var diamondPaymentFragment: DiamondsPaymentFragment
+    private lateinit var paymentCodeFragment: PaymentCodeFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,16 +27,21 @@ class MenuActivity : AppCompatActivity() {
         productListFragment = ProductListFragment.newInstance()
         principalFragment = PrincipalFragment.newInstance()
         diamondPaymentFragment = DiamondsPaymentFragment.newInstance()
+        paymentCodeFragment = PaymentCodeFragment.newInstance()
 
         showFragment(principalFragment)
 
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){
-                showFragment(principalFragment)
+                showFragment(shoppingCarFragment)
+
             }else if(menuItem.itemId == R.id.carOpMenu){
                 //showFragment(shoppingCarFragment)
+                //showFragment(productListFragment)
+                //showFragment(paymentCodeFragment)
                 showFragment(diamondPaymentFragment)
             }else if(menuItem.itemId == R.id.configmOpMenu){
+                showFragment(productListFragment)
             }
             true
         }
