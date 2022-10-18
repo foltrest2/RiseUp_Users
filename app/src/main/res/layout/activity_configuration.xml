@@ -358,7 +358,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp">
+                android:layout_height="52dp">
 
                 <TextView
                     android:id="@+id/versionAppTVProfile"
@@ -375,12 +375,13 @@
                     android:id="@+id/logOutBtnProfile"
                     style="@style/PrincipalRectangleRound"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="34dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="-10dp"
+                    android:background="@drawable/logout_btn"
                     android:text="@string/salir"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

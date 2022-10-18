@@ -40,6 +40,9 @@ class ConfigurationActivity : AppCompatActivity() {
         binding.scLinearLayoutConfig.contraintHelpAppGo.setOnClickListener{
             startActivity(Intent(this@ConfigurationActivity, ConfigHelpActivity::class.java))
         }
+        binding.scLinearLayoutConfig.logOutBtnProfile.setOnClickListener {
+            startActivity(Intent(this@ConfigurationActivity, LoginActivity::class.java))
+        }
 
     }
 }

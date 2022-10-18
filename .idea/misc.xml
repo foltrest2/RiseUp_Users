@@ -40,6 +40,7 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/linear_gradient_azulcian.xml" value="0.194" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/linear_gradient_background.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/lock24p.xml" value="0.2435" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/logout_btn.xml" value="0.241" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/morado_azul_gradient_btn2.xml" value="0.2815" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/morado_background.xml" value="0.287" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/notifications24p.xml" value="0.2435" />
@@ -68,7 +69,7 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_usage_conditions.xml" value="0.2989520132377275" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_user_payments_add_card.xml" value="0.33" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_user_pays.xml" value="0.33" />
-        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.33" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_main.xml" value="0.24791666666666667" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_profile_info.xml" value="0.24791666666666667" />
