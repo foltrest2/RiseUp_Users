@@ -43,13 +43,17 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navSuperiorConfigHelpCenter"
+        style="@style/BackArrowButton"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textAlignment="center"
+        app:itemBackground="@android:color/transparent"
         app:itemPaddingBottom="20dp"
         app:itemPaddingTop="0dp"
+        app:itemTextAppearanceActive="@style/PoppinsMed_16"
+        app:itemTextAppearanceInactive="@style/PoppinsMed_16"
         app:itemTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -70,22 +70,68 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        style="@style/TextField"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contraintLayoutSearch"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/layout_bg_morado"
-        android:ems="10"
-        android:hint="@string/buscar"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:textColorHint="@color/grayFigma"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalFaqSCV" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalFaqSCV">
+
+        <EditText
+            android:id="@+id/searchFAQET"
+            style="@style/TextField"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/layout_bg_morado"
+            android:ems="10"
+            android:hint="@string/buscar"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textColorHint="@color/grayFigma"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/configFilterFAQImg"
+            app:layout_constraintStart_toEndOf="@+id/searchFAQImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/searchFAQImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search24p" />
+
+        <ImageView
+            android:id="@+id/configFilterFAQImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/settings24p" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFAQBlocks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraintLayoutSearch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

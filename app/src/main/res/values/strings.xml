@@ -124,6 +124,10 @@
     <string name="buscar">Buscar</string>
     <string name="whatsapp">Whatsapp</string>
     <string name="instagram">Instagram</string>
+    <string name="queEsRiseUp">¿Qué es RiseUp?</string>
+    <string name="queEsRiseUpInfo">RiseUp es la app que permite a los mejores establecimientos de rumba de la ciudad de Cali fidelizar a sus clientes mientras estos disfrutan de beneficios exclusivos.</string>
+    <string name="comoUsarRiseUpInfo">RiseUp lo empiezas a usar desde que te registras, para acumular diamantes debes, por lo menos, acudir a las discotecas que hacen parte de la red RiseUp, los establecimientos recompensarán tu asistencia y consumo otorgándote una cantidad de diamantes que luego podrás redimir en consumo de productos de las discotecas.</string>
+    <string name="comoUsarRiseUp">¿Cómo usar RiseUp?</string>
 
 
 </resources>
