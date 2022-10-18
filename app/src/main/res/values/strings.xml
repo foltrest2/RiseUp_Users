@@ -119,6 +119,17 @@
     <string name="addedCardTitlePU">Tarjetas existentes</string>
     <string name="cardHolderTitlePU">Card holder</string>
     <string name="expiresTitlePUtxt">Expires</string>
+    <string name="succesfullOrderMessageTV">¡Tu orden fue exitosa!</string>
+    <string name="orderTitleSPTV">Pedido</string>
+    <string name="showOrderDetailSPBtn">Ver pedido</string>
+    <string name="paymentTypeTxtMain">**** **** **** 4556</string>
+    <string name="payTypeTitleTxt">Método de pago</string>
+    <string name="orderAgainTxtMain">Pedir de nuevo</string>
+    <string name="confirmPaymentMainBtn">Confirmar</string>
+    <string name="dateTxtMain">Fecha</string>
+    <string name="TotalPayedTxt">Total</string>
+    <string name="dateOrderResultTxt">13 Jul, 11:18 p.m</string>
+    <string name="totalPayedResultTxt">$190.000</string>
 
 
 </resources>
