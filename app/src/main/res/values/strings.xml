@@ -118,7 +118,8 @@
     <string name="addProductPLBtnTxt">Agregar</string>
     <string name="discotecas">Discotecas</string>
     <string name="visits">visitas: 5</string>
-    >>>>>>> origin/alejandro
-
+    <string name="diamond">diamond</string>
+    <string name="_8">8</string>
+    <string name="_23">23</string>
 
 </resources>

@@ -6,39 +6,38 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.riseup.riseup_users.databinding.FragmentDiamondsPaymentBinding
 import com.riseup.riseup_users.databinding.FragmentPrincipalBinding
+import com.riseup.riseup_users.util.DiamondPaymentAdapter
 import com.riseup.riseup_users.util.DiscoCardsAdapter
 
-class PrincipalFragment : Fragment() {
+class DiamondsPaymentFragment : Fragment() {
 
-    private var _binding:FragmentPrincipalBinding? = null
+    private var _binding: FragmentDiamondsPaymentBinding? = null
     private val binding get() = _binding!!
 
     //STATE
-    private val adapter = DiscoCardsAdapter()
+    private val adapter = DiamondPaymentAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPrincipalBinding.inflate(inflater,container,false)
+        // Inflate the layout for this fragment
+        _binding = FragmentDiamondsPaymentBinding.inflate(inflater,container,false)
         val view = binding.root
 
         //Recrear el estado
-        val productsListRecycler = binding.recyclerPrincipalFragment
+        val productsListRecycler = binding.diamondPaymentRecycler
         productsListRecycler.setHasFixedSize(true)
         productsListRecycler.layoutManager = LinearLayoutManager(activity)
         productsListRecycler.adapter = adapter
-        return view
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return view
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() = PrincipalFragment()
+        fun newInstance() = DiamondsPaymentFragment()
     }
 }

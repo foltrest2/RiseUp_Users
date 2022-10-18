@@ -13,7 +13,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var shoppingCarFragment: ShoppingCarFragment
     private lateinit var productListFragment: ProductListFragment
     private lateinit var principalFragment: PrincipalFragment
-
+    private lateinit var diamondPaymentFragment: DiamondsPaymentFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +24,8 @@ class MenuActivity : AppCompatActivity() {
         shoppingCarFragment = ShoppingCarFragment.newInstance()
         productListFragment = ProductListFragment.newInstance()
         principalFragment = PrincipalFragment.newInstance()
+        diamondPaymentFragment = DiamondsPaymentFragment.newInstance()
+
         showFragment(principalFragment)
 
         binding.menuApp.setOnItemSelectedListener { menuItem->
@@ -31,7 +33,7 @@ class MenuActivity : AppCompatActivity() {
                 showFragment(principalFragment)
             }else if(menuItem.itemId == R.id.carOpMenu){
                 //showFragment(shoppingCarFragment)
-                showFragment(productListFragment)
+                showFragment(diamondPaymentFragment)
             }else if(menuItem.itemId == R.id.configmOpMenu){
             }
             true
