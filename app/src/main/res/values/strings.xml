@@ -131,6 +131,12 @@
     <string name="helpCenter">Centro de ayuda</string>
     <string name="faq">FAQ</string>
     <string name="contactenos">Contáctenos</string>
+    <string name="espacio_10_60">Espacio 10-60</string>
+    <string name="tienes_150_diamantes">¡Tienes 150 diamantes!</string>
+    <string name="menu_de_licores">Menú de licores</string>
+    <string name="disco_selection_btn">disco_selection_btn</string>
+    <string name="proximas_rumbas">Próximas rumbas</string>
+    <string name="background_disco_selected">background_disco_selected</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cuenta">Cuenta</string>
     <string name="servicio">Servicio</string>
@@ -161,6 +167,11 @@
     <string name="liqueurMenuTitle">Menú de licores</string>
     <string name="youHaveXDiamondstxt">¡Tienes 150 diamantes!</string>
     <string name="addProductPLBtnTxt">Agregar</string>
+    <string name="discotecas">Discotecas</string>
+    <string name="visits">visitas: 5</string>
+    <string name="diamond">diamond</string>
+    <string name="_8">8</string>
+    <string name="_23">23</string>
     <string name="orderCodeTitleTxt">Reclamar pedido</string>
     <string name="paymentCodeNTxt">N5KCV</string>
     <string name="codeDesMessageTxt">Por favor muéstrele este código al bartender para reclamar su pedido</string>

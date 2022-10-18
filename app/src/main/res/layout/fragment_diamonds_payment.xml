@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_gradient_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/diamondPaymentCL"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backArrowDiamondPayment"
+            style="@style/BackArrowButton"
+            android:layout_width="52dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/Confirmar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrowback"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/diamondPaymentTitle"
+            style="@style/PoppinsBold_20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/PaymentTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backArrowDiamondPayment"
+            app:layout_constraintTop_toTopOf="@+id/backArrowDiamondPayment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diamondPaymentCL">
+
+        <TextView
+            android:id="@+id/titleDiamondPayment"
+            style="@style/PoppinsBold_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/pagarConDiamantesTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/diamond_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:src="@drawable/diamondicon"
+            app:layout_constraintBottom_toBottomOf="@+id/titleDiamondPayment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/titleDiamondPayment"
+            android:contentDescription="@string/diamond" />
+
+        <TextView
+            android:id="@+id/diamond_quantity"
+            style="@style/PoppinsBold_18"
+            android:layout_width="13dp"
+            android:layout_height="27dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/_8"
+            app:layout_constraintBottom_toBottomOf="@+id/diamond_title"
+            app:layout_constraintEnd_toStartOf="@+id/diamond_title"
+            app:layout_constraintTop_toTopOf="@+id/diamond_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/diamond_payment_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/diamond_total_CL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleCL" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/diamond_total_CL"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diamond_payment_recycler">
+
+        <Button
+            android:id="@+id/diamondPaymentBtn"
+            style="@style/RectangleAzulCianGradient"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/PaymentTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/diamond_payment_total"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/diamond_payment_total"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/diamond_payment_total"
+            style="@style/PoppinsBold_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@string/totalPriceTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/diamond_sum"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/diamond_sum"
+            style="@style/PoppinsBold_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/_23"
+            app:layout_constraintBottom_toBottomOf="@+id/diamond_payment_total"
+            app:layout_constraintEnd_toStartOf="@+id/diamond_bottom"
+            app:layout_constraintStart_toEndOf="@+id/diamond_payment_total"
+            app:layout_constraintTop_toTopOf="@+id/diamond_payment_total" />
+
+        <ImageView
+            android:id="@+id/diamond_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:contentDescription="@string/diamond"
+            android:src="@drawable/diamondicon"
+            app:layout_constraintBottom_toBottomOf="@+id/diamond_payment_total"
+            app:layout_constraintStart_toEndOf="@+id/diamond_sum"
+            app:layout_constraintTop_toTopOf="@+id/diamond_payment_total" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

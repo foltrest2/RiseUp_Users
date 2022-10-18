@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3125" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/accountcircle.xml" value="0.2015" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/drawable/add_icon.xml" value="0.2025" />
@@ -103,12 +104,45 @@
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/menu/menuapp.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1545" />
         <entry key="..\:/Users/alejo/OneDrive - Universidad Icesi (@icesi.edu.co)/Universidad/SeptimoSemestre/AppMoviles/ProyectoFinal/AppUsers/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1545" />
+=======
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/arrowgo.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/azulNavi_popup.xml" value="0.1265" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/azulnavi_popup.xml" value="0.1265" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/disco_selection_rectangle.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/favorites_icon.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/favorites_icon_selected.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/info_icon.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/linear_gradient_azulcian.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/linear_gradient_azulcian_rounded_corners.xml" value="0.1265" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/states_favorites_icon.xml" value="0.193" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_diamond_historial.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_security.xml" value="0.20516304347826086" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_user_payments_add_card.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_user_pays.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.2" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_disco_selection.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_menu.xml" value="0.2" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_register.xml" value="0.20516304347826086" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/cards_user_payments_row.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/diamond_payment_row.xml" value="0.4" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/diamonds_trans_row.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/disco_card_row.xml" value="0.2825520833333333" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_diamonds_payment.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_principal.xml" value="0.2" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_product_list.xml" value="0.20516304347826086" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/not_enough_diamonds_dialog.xml" value="0.4" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/products_list_row.xml" value="0.20516304347826086" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/show_cards_dialog.xml" value="0.4" />
+>>>>>>> origin/julian
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/arrow_back-24px.xml" value="0.161" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.161" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/arrowback2.xml" value="0.1395" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/linear_gradient_background.xml" value="0.1945" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
+<<<<<<< HEAD
 <<<<<<< HEAD
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable-v24/bugreport24p.xml" value="0.2245" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable-v24/expand_less24p.xml" value="0.2865" />
@@ -139,11 +173,20 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/help24p.xml" value="0.2435" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/info24p.xml" value="0.2435" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/instagram_logo.xml" value="0.3655" />
+=======
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/accountcircle.xml" value="0.224" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.224" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/combinado.xml" value="0.179" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/diamond24p.xml" value="0.2435" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/help24p.xml" value="0.2435" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/info24p.xml" value="0.2435" />
+>>>>>>> origin/julian
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/language24p.xml" value="0.2435" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/layout_bg_morado.xml" value="0.22" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/linear_gradient_azulcian.xml" value="0.194" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/linear_gradient_background.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/lock24p.xml" value="0.2435" />
+<<<<<<< HEAD
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/logout_btn.xml" value="0.241" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/morado_azul_gradient_btn2.xml" value="0.2815" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/morado_background.xml" value="0.287" />
@@ -196,6 +239,19 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/font/poppins_bold.xml" value="0.278125" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
 >>>>>>> origin/alejandro
+=======
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/morado_background.xml" value="0.287" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/notifications24p.xml" value="0.2435" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/payments24p.xml" value="0.2435" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/profilecircle.xml" value="0.2525" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/profileimg.xml" value="0.2525" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/font/poppins_bold.xml" value="0.278125" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_diamond_historial.xml" value="0.33" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_config_profile_info.xml" value="0.33" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.2" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_main.xml" value="0.24791666666666667" />
+        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_profile_info.xml" value="0.24791666666666667" />
+>>>>>>> origin/julian
       </map>
     </option>
   </component>
@@ -204,5 +260,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.12" />
+      </ProjectState>
+    </option>
   </component>
 </project>

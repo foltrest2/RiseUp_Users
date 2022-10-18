@@ -13,6 +13,8 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var newPaymentSelectionFragment: PaymentSelectionFragment
     private lateinit var shoppingCarFragment: ShoppingCarFragment
     private lateinit var productListFragment: ProductListFragment
+    private lateinit var principalFragment: PrincipalFragment
+    private lateinit var diamondPaymentFragment: DiamondsPaymentFragment
     private lateinit var paymentCodeFragment: PaymentCodeFragment
 
 
@@ -24,8 +26,11 @@ class MenuActivity : AppCompatActivity() {
         newPaymentSelectionFragment = PaymentSelectionFragment.newInstance()
         shoppingCarFragment = ShoppingCarFragment.newInstance()
         productListFragment = ProductListFragment.newInstance()
+        principalFragment = PrincipalFragment.newInstance()
+        diamondPaymentFragment = DiamondsPaymentFragment.newInstance()
         paymentCodeFragment = PaymentCodeFragment.newInstance()
-        showFragment(newPaymentSelectionFragment)
+
+        showFragment(principalFragment)
 
         val intentFragment = intent.extras?.getString("PaymentSelection")
         if(intentFragment!=null){
@@ -36,15 +41,15 @@ class MenuActivity : AppCompatActivity() {
             }
         }
 
-
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){
                 showFragment(shoppingCarFragment)
 
             }else if(menuItem.itemId == R.id.carOpMenu){
-
-                showFragment(shoppingCarFragment)
-
+                //showFragment(shoppingCarFragment)
+                //showFragment(productListFragment)
+                //showFragment(paymentCodeFragment)
+                showFragment(diamondPaymentFragment)
             }else if(menuItem.itemId == R.id.configmOpMenu){
 
                 val switchActivityIntent = Intent(this, ConfigurationActivity::class.java)
@@ -54,7 +59,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
     }
-    fun showFragment(fragment: Fragment){
+    private fun showFragment(fragment: Fragment){
             val transaction = supportFragmentManager.beginTransaction()
              transaction.replace(R.id.fragmentContainer, fragment)
              transaction.commit()
