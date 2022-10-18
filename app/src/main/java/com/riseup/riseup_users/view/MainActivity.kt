@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val switchActivityIntent = Intent(this, LoginActivity::class.java)
+        val switchActivityIntent = Intent(this, MenuActivity::class.java)
         switchActivityIntent.putExtra(
             "message",
-            "From: " + LoginActivity::class.java.getSimpleName()
+            "From: " + MenuActivity::class.java.getSimpleName()
         )
         startActivity(switchActivityIntent)
     }

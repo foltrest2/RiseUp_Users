@@ -48,6 +48,8 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/morado_azul_gradient_btn"
         android:textAlignment="center"
+        app:itemPaddingBottom="20dp"
+        app:itemPaddingTop="20dp"
         app:itemTextAppearanceActive="@style/PoppinsMed_16"
         app:itemTextAppearanceInactive="@style/PoppinsMed_14"
         app:itemTextColor="@color/white"

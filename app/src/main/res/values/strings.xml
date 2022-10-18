@@ -48,12 +48,26 @@
     <string name="diezSesentaName">Espacio 10-60</string>
     <string name="FechaTitle">Fecha:</string>
     <string name="IDTitle">ID:</string>
+    <string name="idNumber">52583270</string>
+    <string name="idNumber2">52343530</string>
+    <string name="numDiamantes">50</string>
+    <string name="numDiamantes2">30</string>
+    <string name="registerTitle">Registrarse</string>
     <string name="ContraseñaTittle">Contraseña</string>
     <string name="infoPasswordChange">Por favor asegúrese que su contraseña tenga al menos seis caracteres e incluir una combinación de números, letras y caracteres especiales (!&amp;%/$)</string>
     <string name="actualPass">Contraseña actual</string>
     <string name="newPass">Contraseña nueva</string>
     <string name="repeatPass">Repetir contraseña nueva</string>
     <string name="salir">Salir</string>
+    <string name="oRegister">O</string>
+    <string name="registerUserBtn">Registrarse</string>
+
+    //Strings menu
+
+    <string name="menuItemHome">Inicio</string>
+    <string name="menuItemCarrito">Carrito</string>
+    <string name="menuItemConfiguracion">Configuración</string>
+
     <string name="Confirmar">Confirmar</string>
     <string name="Transacciones">Transacciones</string>
     <string name="Tarjetas">Tarjetas</string>
@@ -117,7 +131,6 @@
     <string name="helpCenter">Centro de ayuda</string>
     <string name="faq">FAQ</string>
     <string name="contactenos">Contáctenos</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cuenta">Cuenta</string>
     <string name="servicio">Servicio</string>
@@ -132,6 +145,44 @@
     <string name="enviar">ENVIAR</string>
     <string name="infoSendBug">Explica brevemente qué sucedió o lo que no funciona.</string>
     <string name="infocache">La caché se ha borrado exitosamente</string>
-
+    <string name="PaymentTitle">Pagar</string>
+    <string name="selectpaymenttextmain">Selecciona el método de pago</string>
+    <string name="pagarNequiTV">Pagar con Nequi</string>
+    <string name="pagarConDaviTV">Pagar con Daviplata</string>
+    <string name="pagarTarjetaTV">Pagar con Tarjeta</string>
+    <string name="pagarConDiamantesTV">Pagar con Diamantes</string>
+    <string name="yourOrderTitleText">Tu pedido</string>
+    <string name="orderProductListTitle">Productos</string>
+    <string name="totalPriceTitle">Total</string>
+    <string name="pricewithoutdiscountText">$180.000</string>
+    <string name="discountPriceTxt">$30.000</string>
+    <string name="payBtnText">Pagar</string>
+    <string name="payWDiamondtxt">Redimir con diamantes</string>
+    <string name="liqueurMenuTitle">Menú de licores</string>
+    <string name="youHaveXDiamondstxt">¡Tienes 150 diamantes!</string>
+    <string name="addProductPLBtnTxt">Agregar</string>
+    <string name="orderCodeTitleTxt">Reclamar pedido</string>
+    <string name="paymentCodeNTxt">N5KCV</string>
+    <string name="codeDesMessageTxt">Por favor muéstrele este código al bartender para reclamar su pedido</string>
+    <string name="showCVVtxt">Mostrar CVV</string>
+    <string name="addCardtxtPU">Agregar tarjeta</string>
+    <string name="continueToPayBtnPU">Continuar</string>
+    <string name="addedCardTitlePU">Tarjetas existentes</string>
+    <string name="cardHolderTitlePU">Card holder</string>
+    <string name="expiresTitlePUtxt">Expires</string>
+    <string name="succesfullOrderMessageTV">¡Tu orden fue exitosa!</string>
+    <string name="orderTitleSPTV">Pedido</string>
+    <string name="showOrderDetailSPBtn">Ver pedido</string>
+    <string name="paymentTypeTxtMain">**** **** **** 4556</string>
+    <string name="payTypeTitleTxt">Método de pago</string>
+    <string name="orderAgainTxtMain">Pedir de nuevo</string>
+    <string name="confirmPaymentMainBtn">Confirmar</string>
+    <string name="dateTxtMain">Fecha</string>
+    <string name="TotalPayedTxt">Total</string>
+    <string name="dateOrderResultTxt">13 Jul, 11:18 p.m</string>
+    <string name="totalPayedResultTxt">$190.000</string>
+    <string name="showOrderCodeTxtMain">Ver código</string>
+    <string name="OrderPopUpDetailTitle">Pedido</string>
+    <string name="OrderDetailsTitleTxt">Detalles pedido</string>
 
 </resources>
