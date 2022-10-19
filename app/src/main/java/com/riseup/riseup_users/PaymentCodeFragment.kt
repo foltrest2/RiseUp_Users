@@ -1,11 +1,13 @@
 package com.riseup.riseup_users
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.riseup.riseup_users.databinding.FragmentPaymentCodeBinding
+import com.riseup.riseup_users.view.FinishPaymentActivity
 
 
 class PaymentCodeFragment : Fragment() {
@@ -27,6 +29,13 @@ class PaymentCodeFragment : Fragment() {
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainer, paymentSelectionFragment)
             transaction.commit()
+
+        }
+
+        binding.orderCodeLYMain.setOnClickListener {
+
+            val switchActivityIntent = Intent(requireContext(), FinishPaymentActivity::class.java)
+            startActivity(switchActivityIntent)
 
         }
         return view

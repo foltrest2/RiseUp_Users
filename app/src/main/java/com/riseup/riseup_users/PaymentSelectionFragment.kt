@@ -14,6 +14,7 @@ class PaymentSelectionFragment : Fragment() {
     private var _binding: FragmentPaymentSelectionBinding? = null
     private val binding get() = _binding!!
     private lateinit var paymentCodeFragment: PaymentCodeFragment
+    private lateinit var diamondsPaymentFragment: DiamondsPaymentFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +51,13 @@ class PaymentSelectionFragment : Fragment() {
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainer, paymentCodeFragment)
             transaction.commit()
+        }
+
+        binding.pagarConDiamantesBtn.setOnClickListener {
+            diamondsPaymentFragment = DiamondsPaymentFragment.newInstance()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer,  diamondsPaymentFragment)
+            transaction.commit()
 
         }
 
@@ -57,7 +65,7 @@ class PaymentSelectionFragment : Fragment() {
 
     companion object {
 
-        // TODO: Rename and change types and number of parameters
+        // TODO: Rename and change types and number of parameter
         @JvmStatic
         fun newInstance() = PaymentSelectionFragment()
     }

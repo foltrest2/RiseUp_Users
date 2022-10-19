@@ -30,9 +30,9 @@ class MenuActivity : AppCompatActivity() {
         diamondPaymentFragment = DiamondsPaymentFragment.newInstance()
         paymentCodeFragment = PaymentCodeFragment.newInstance()
 
-        if(intent.extras?.isEmpty == true){
+//        if(intent.extras?.isEmpty == true){
             showFragment(principalFragment)
-        }else {
+      //  }else {
             val intentFragment = intent.extras?.get("principalFragment")
             if (intentFragment != null) {
                 when (intentFragment) {
@@ -53,7 +53,7 @@ class MenuActivity : AppCompatActivity() {
 
                 }
             }
-        }
+       // }
 
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){

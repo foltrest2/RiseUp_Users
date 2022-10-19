@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity(){
         }
 
         binding.userRegBtn.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
         //createTextGradient()
     }

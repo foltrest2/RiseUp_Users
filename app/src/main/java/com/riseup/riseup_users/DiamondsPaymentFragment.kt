@@ -1,5 +1,6 @@
 package com.riseup.riseup_users
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +11,15 @@ import com.riseup.riseup_users.databinding.FragmentDiamondsPaymentBinding
 import com.riseup.riseup_users.databinding.FragmentPrincipalBinding
 import com.riseup.riseup_users.util.DiamondPaymentAdapter
 import com.riseup.riseup_users.util.DiscoCardsAdapter
+import com.riseup.riseup_users.view.DiscoHomeActivity
+import com.riseup.riseup_users.view.FinishPaymentActivity
 
 class DiamondsPaymentFragment : Fragment() {
 
     private var _binding: FragmentDiamondsPaymentBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var paymentSelectionFragment: PaymentSelectionFragment
 
     //STATE
     private val adapter = DiamondPaymentAdapter()
@@ -32,6 +37,18 @@ class DiamondsPaymentFragment : Fragment() {
         productsListRecycler.setHasFixedSize(true)
         productsListRecycler.layoutManager = LinearLayoutManager(activity)
         productsListRecycler.adapter = adapter
+
+        binding.diamondPaymentBtn.setOnClickListener {
+            val switchActivityIntent = Intent(requireContext(), FinishPaymentActivity::class.java)
+            startActivity(switchActivityIntent)
+        }
+
+        binding.backArrowDiamondPayment.setOnClickListener {
+            paymentSelectionFragment = PaymentSelectionFragment.newInstance()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer, paymentSelectionFragment)
+            transaction.commit()
+        }
 
         return view
     }
