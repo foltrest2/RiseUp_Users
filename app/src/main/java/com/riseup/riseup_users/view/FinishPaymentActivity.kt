@@ -28,7 +28,7 @@ class FinishPaymentActivity : AppCompatActivity() {
             menuActivity= MenuActivity()
 
             val switchActivityIntent = Intent(this,MenuActivity::class.java)
-            switchActivityIntent.putExtra("PaymentSelection","PaymentSelection")
+            switchActivityIntent.putExtra("principalFragment","principalFragment")
             startActivity(switchActivityIntent)
 
         }

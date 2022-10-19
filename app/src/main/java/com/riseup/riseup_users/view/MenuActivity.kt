@@ -30,29 +30,38 @@ class MenuActivity : AppCompatActivity() {
         diamondPaymentFragment = DiamondsPaymentFragment.newInstance()
         paymentCodeFragment = PaymentCodeFragment.newInstance()
 
-        showFragment(principalFragment)
+        if(intent.extras?.isEmpty == true){
+            showFragment(principalFragment)
+        }else {
+            val intentFragment = intent.extras?.get("principalFragment")
+            if (intentFragment != null) {
+                when (intentFragment) {
+                    "principalFragment" -> showFragment(principalFragment)
+                }
+            }
 
-        val intentFragment = intent.extras?.getString("PaymentSelection")
-        if(intentFragment!=null){
-            when(intentFragment){
+            val intentFragment2 = intent.extras?.getString("menuLicoresFragment")
+            if (intentFragment2 != null) {
+                when (intentFragment2) {
+                    "menuLicoresFragment" -> showFragment(productListFragment)
+                }
+            }
+            val intentFragment3 = intent.extras?.getString("PrincipalFragment")
+            if (intentFragment3 != null) {
+                when (intentFragment3) {
+                    "PrincipalFragment" -> showFragment(principalFragment)
 
-                "PaymentSelection"-> showFragment(newPaymentSelectionFragment)
-
+                }
             }
         }
 
         binding.menuApp.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.homeOpMenu){
-                showFragment(shoppingCarFragment)
-
+                showFragment(principalFragment)
             }else if(menuItem.itemId == R.id.carOpMenu){
-                //showFragment(shoppingCarFragment)
-                //showFragment(productListFragment)
-                //showFragment(paymentCodeFragment)
-                showFragment(diamondPaymentFragment)
+                showFragment(shoppingCarFragment)
             }else if(menuItem.itemId == R.id.configmOpMenu){
-
-                val switchActivityIntent = Intent(this, ConfigurationActivity::class.java)
+                val switchActivityIntent = Intent(this@MenuActivity, ConfigurationActivity::class.java)
                 startActivity(switchActivityIntent)
             }
             true

@@ -29,6 +29,7 @@ class PrincipalFragment : Fragment() {
         productsListRecycler.setHasFixedSize(true)
         productsListRecycler.layoutManager = LinearLayoutManager(activity)
         productsListRecycler.adapter = adapter
+
         return view
     }
 

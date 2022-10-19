@@ -1,11 +1,16 @@
 package com.riseup.riseup_users.util
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.DiscoCardModel
 import com.riseup.riseup_users.view.DiscoCardView
+import com.riseup.riseup_users.view.DiscoHomeActivity
+
 
 class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
 
@@ -35,6 +40,11 @@ class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
         skeleton.discoName.text = discoCard.name
         skeleton.visits.text = discoCard.visits
         skeleton.discoImage.setImageResource(R.mipmap.fondotarjeta1060)
+        val context = skeleton.discoCard.context
+        val intent = Intent(context, DiscoHomeActivity::class.java)
+        skeleton.discoCard.setOnClickListener{
+            startActivity(context,intent, Bundle())
+        }
     }
 
     //Este método permite al adaptador saber cuantos elementos se tienen

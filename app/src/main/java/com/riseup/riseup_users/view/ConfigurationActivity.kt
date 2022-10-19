@@ -21,6 +21,9 @@ class ConfigurationActivity : AppCompatActivity() {
         binding = ActivityConfigurationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.constraintLayoutConfigSuperior.atrasBtnConfigMain.setOnClickListener {
+            startActivity(Intent(this@ConfigurationActivity, MenuActivity::class.java))
+        }
         binding.scLinearLayoutConfig.contraintInfoPersonalGo.setOnClickListener{
             startActivity(Intent(this@ConfigurationActivity, ConfigProfileInfoActivity::class.java))
         }
@@ -48,6 +51,5 @@ class ConfigurationActivity : AppCompatActivity() {
         binding.scLinearLayoutConfig.borrarCacheTVProfile.setOnClickListener {
             CacheCleanedDialog().show(supportFragmentManager, "dialogcache")
         }
-
     }
 }

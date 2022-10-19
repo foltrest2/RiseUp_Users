@@ -348,7 +348,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/regBtn"
         style="@style/RectangleWGradient"
         android:layout_width="243dp"
         android:layout_height="58dp"

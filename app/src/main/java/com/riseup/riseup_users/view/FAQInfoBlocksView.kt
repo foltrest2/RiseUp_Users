@@ -17,7 +17,6 @@ class FAQInfoBlocksView(itemView:View) : RecyclerView.ViewHolder(itemView) {
     var constraintBlockFAQ : ConstraintLayout = itemView.findViewById(R.id.FAQblockConstraint)
 
     fun deployInfoBlockFAQFun (){
-
         constraintBlockFAQ.setOnClickListener {
             if(!blockInfo.isVisible){
                 blockInfo.visibility = View.VISIBLE
