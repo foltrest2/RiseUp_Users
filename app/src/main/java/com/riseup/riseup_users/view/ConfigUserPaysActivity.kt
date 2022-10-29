@@ -1,5 +1,6 @@
 package com.riseup.riseup_users.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -42,10 +43,16 @@ class ConfigUserPaysActivity : AppCompatActivity() {
                 showFragment(paymentsFragment)
             } else if(menuItem.itemId == R.id.menuTarjetasItem){
                 showFragment(userCreditCardsFragment)
+
             }
             true
 
         }
+
+        binding.atrasUserConfigPaysBtn.setOnClickListener {
+            startActivity(Intent(this@ConfigUserPaysActivity, ConfigurationActivity::class.java))
+        }
+
     }
 
     fun showFragment(fragment: Fragment){

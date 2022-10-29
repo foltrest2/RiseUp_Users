@@ -1,5 +1,6 @@
 package com.riseup.riseup_users.view
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
@@ -17,6 +18,17 @@ class LoginActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.userLoginBtn.setOnClickListener {
+            val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
+                putExtra("PrincipalFragment","PrincipalFragment")
+            }
+            startActivity(switchActivityIntent)
+        }
+
+        binding.userRegBtn.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+        }
         //createTextGradient()
     }
 

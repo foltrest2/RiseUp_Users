@@ -28,7 +28,7 @@ class FinishPaymentActivity : AppCompatActivity() {
             menuActivity= MenuActivity()
 
             val switchActivityIntent = Intent(this,MenuActivity::class.java)
-            switchActivityIntent.putExtra("PaymentSelection","PaymentSelection")
+            switchActivityIntent.putExtra("menuLicoresFragment","menuLicoresFragment")
             startActivity(switchActivityIntent)
 
         }
@@ -36,6 +36,13 @@ class FinishPaymentActivity : AppCompatActivity() {
         binding.showPUOrderProducts.setOnClickListener {
 
             OrderDialog().show(supportFragmentManager,"dialog")
+        }
+        binding.confirmPaymentBtnMain.setOnClickListener {
+
+            val switchActivityIntent = Intent(this,MenuActivity::class.java)
+            switchActivityIntent.putExtra("principalFragment","principalFragment")
+            startActivity(switchActivityIntent)
+
         }
     }
 }

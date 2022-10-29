@@ -23,7 +23,8 @@
             android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/configTitleMain"
@@ -46,12 +47,14 @@
         android:id="@+id/scViewConfigMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutConfigSuperior">
 
         <LinearLayout
+            android:id="@+id/scLinearLayoutConfig"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -74,6 +77,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintInfoPersonalGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -100,6 +104,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintHistDiamantesGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -126,6 +131,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintPrivYSeguridadGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -171,6 +177,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintPermitirNotifiGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -208,6 +215,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintUserPagosGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -234,6 +242,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintIdiomaGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -279,6 +288,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintInfoAppGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -305,6 +315,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintHelpAppGo"
                 android:layout_width="match_parent"
                 android:layout_height="56dp">
 
@@ -348,7 +359,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp">
+                android:layout_height="52dp">
 
                 <TextView
                     android:id="@+id/versionAppTVProfile"
@@ -363,13 +374,15 @@
 
                 <Button
                     android:id="@+id/logOutBtnProfile"
+                    style="@style/PrincipalRectangleRound"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="34dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="-10dp"
+                    android:background="@drawable/logout_btn"
                     android:text="@string/salir"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

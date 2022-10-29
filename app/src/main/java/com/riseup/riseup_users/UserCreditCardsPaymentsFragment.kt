@@ -1,5 +1,6 @@
 package com.riseup.riseup_users
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.riseup.riseup_users.databinding.FragmentUserCreditCardsPaymentsBinding
+import com.riseup.riseup_users.view.ConfigUserPaymentsAddCardActivity
+import com.riseup.riseup_users.view.ConfigUserPaysActivity
 
 class UserCreditCardsPaymentsFragment : Fragment(){
 
@@ -24,7 +27,8 @@ class UserCreditCardsPaymentsFragment : Fragment(){
         val view = binding.root
 
         binding.createCardUserPayBtn.setOnClickListener {
-            Toast.makeText(activity,"Creando tarjeta",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(view.context, ConfigUserPaymentsAddCardActivity::class.java))
+            onDestroyView()
         }
 
         return view
