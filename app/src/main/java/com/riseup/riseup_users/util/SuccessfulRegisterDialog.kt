@@ -8,25 +8,23 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import com.riseup.riseup_users.databinding.PassNotMatchDialogBinding
+import com.riseup.riseup_users.databinding.SuccesfullRegisterDialogBinding
 
-class PassNotMatchDialog:DialogFragment() {
-    //STATE
+class SuccessfulRegisterDialog:DialogFragment() {
 
-    private lateinit var binding:PassNotMatchDialogBinding
+    private lateinit var binding: SuccesfullRegisterDialogBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        binding = PassNotMatchDialogBinding.inflate(LayoutInflater.from(context))
+        binding = SuccesfullRegisterDialogBinding.inflate(LayoutInflater.from(context))
 
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
         val dialog = builder.create()
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.window!!.setGravity(Gravity.CENTER)
-        binding.confirmPassNotMatchDialogBtn.setOnClickListener {
+        binding.confirmSuccesfulRegisterBtn.setOnClickListener {
             dialog.dismiss()
         }
         return dialog
     }
-
 }

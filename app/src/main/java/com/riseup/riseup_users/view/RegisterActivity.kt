@@ -1,13 +1,13 @@
 package com.riseup.riseup_users.view
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.riseup.riseup_users.databinding.ActivityRegisterBinding
 import com.riseup.riseup_users.util.EmailAlreadyExistsDialog
-import com.riseup.riseup_users.util.PassNotMatchDialog
+import com.riseup.riseup_users.util.ErrorDialog
 import com.riseup.riseup_users.viewmodel.RegisterViewModel
 import com.riseup.riseup_users.viewmodel.AuthResult
 import java.util.*
@@ -28,17 +28,24 @@ class RegisterActivity : AppCompatActivity() {
 
                 }
                 AuthResult.SUCCESS->{
-                    AuthResult.SUCCESS
-                    Toast
-                        .makeText(this, "Registrado con exito", Toast.LENGTH_LONG)
-                        .show()
-                    //startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
+
+                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("Dialog","showDialog"))
+
                 }
                 AuthResult.FAIL->{
-                   if(it.message == "RepeatedEmail"){
+                    when(it.message){
 
-                       EmailAlreadyExistsDialog().show(supportFragmentManager,"emailAlreadyExistDialog")
-                   }
+                        "RepeatedEmail"-> {EmailAlreadyExistsDialog().show(supportFragmentManager,"emailAlreadyExistDialog")}
+                        "WeakPass"-> {
+
+                            val dialogFragmentE = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","WeakPass")
+                            dialogFragmentE.arguments = bundle
+                            dialogFragmentE.show(supportFragmentManager,"WeakPassDialog")
+                        }
+                    }
+
                 }
             }
         }
@@ -106,7 +113,11 @@ class RegisterActivity : AppCompatActivity() {
             if(validate){
                     regBtnAction()
                 }else{
-                  PassNotMatchDialog().show(supportFragmentManager,"passnotmachDialog")
+                val dialogFragmentE = ErrorDialog()
+                val bundle = Bundle()
+                bundle.putString("TEXT","PasswordNotMatch")
+                dialogFragmentE.arguments = bundle
+                dialogFragmentE.show(supportFragmentManager,"PasswordsDoesntMatchDialog")
                 }
 
         }

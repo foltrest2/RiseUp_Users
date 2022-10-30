@@ -40,10 +40,10 @@ class RegisterViewModel: ViewModel() {
                             throw task.exception!!
                         }
                         catch (weakPassword: FirebaseAuthWeakPasswordException) {
-
+                            _authState.value = AuthState(AuthResult.FAIL, "WeakPass")
                         }
                         catch (malformedEmail: FirebaseAuthInvalidCredentialsException) {
-
+                            _authState.value = AuthState(AuthResult.FAIL, "RepeatedEmail")
 
                         } catch (existEmail: FirebaseAuthUserCollisionException) {
 
