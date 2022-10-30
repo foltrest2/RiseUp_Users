@@ -195,5 +195,7 @@
     <string name="showOrderCodeTxtMain">Ver código</string>
     <string name="OrderPopUpDetailTitle">Pedido</string>
     <string name="OrderDetailsTitleTxt">Detalles pedido</string>
+    <string name="rumba_de_halloween">Rumba de Halloween</string>
+    <string name="perrea_hasta_el_piso">Perrea hasta el piso</string>
 
 </resources>

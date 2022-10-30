@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity(){
 
         binding.userLoginBtn.setOnClickListener {
             val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
-                putExtra("PrincipalFragment","PrincipalFragment")
+                putExtra("principalFragment","principalFragment")
             }
             startActivity(switchActivityIntent)
         }
