@@ -2,14 +2,18 @@ package com.riseup.riseup_users.util
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.riseup.riseup_users.PaymentCodeFragment
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.DiscoCardModel
 import com.riseup.riseup_users.view.DiscoCardView
 import com.riseup.riseup_users.view.DiscoHomeActivity
+import com.riseup.riseup_users.view.MenuActivity
 
 
 class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
@@ -43,7 +47,10 @@ class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
         val context = skeleton.discoCard.context
         val intent = Intent(context, DiscoHomeActivity::class.java)
         skeleton.discoCard.setOnClickListener{
-            startActivity(context,intent, Bundle())
+
+            val switchActivityIntent = Intent(context, MenuActivity::class.java)
+            switchActivityIntent.putExtra("menuLicoresFragment","menuLicoresFragment")
+            context.startActivity(switchActivityIntent)
         }
     }
 

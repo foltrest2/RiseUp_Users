@@ -195,5 +195,8 @@
     <string name="showOrderCodeTxtMain">Ver código</string>
     <string name="OrderPopUpDetailTitle">Pedido</string>
     <string name="OrderDetailsTitleTxt">Detalles pedido</string>
+    <string name="passNotMatchRegisterTitle">Error</string>
+    <string name="passNotMatchTVdesc">¡las contraseñas no coinciden!</string>
+    <string name="EmailIsAlreadyRegistered">¡el correo electrónico ingresado ya se encuentra registrado!</string>
 
 </resources>
