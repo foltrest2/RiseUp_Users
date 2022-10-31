@@ -41,13 +41,10 @@ class ShoppingCarFragment : Fragment() {
         }
 
         binding.atrasBtnDiscotecaMain.setOnClickListener {
-
             productListFragment = ProductListFragment.newInstance()
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainer, productListFragment)
             transaction.commit()
-
-
         }
 
         return view
