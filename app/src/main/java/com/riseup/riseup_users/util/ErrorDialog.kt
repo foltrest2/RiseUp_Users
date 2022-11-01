@@ -41,6 +41,7 @@ class ErrorDialog:DialogFragment() {
             "UserNotFound"-> binding.passNotMatchdescTV.text = getString(R.string.ErrorDialogUserNotFoundTV)
             "WeakPass"-> binding.passNotMatchdescTV.text = getString(R.string.ErrorDialogWeakPassTV)
             "PasswordNotMatch"-> binding.passNotMatchdescTV.text = getString(R.string.ErrorDialogPassNotMatchTV)
+            "EmptyFields"-> binding.passNotMatchdescTV.text = getString(R.string.ErrorDialogEmptyFieldsTV)
 
         }
 

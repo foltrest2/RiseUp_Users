@@ -93,7 +93,18 @@ class LoginActivity : AppCompatActivity(){
         //createTextGradient()
     }
     fun logIn(){
-        viewmodel.signIn(binding.emailLoginTF.text.toString(),binding.loginPasswordTF.text.toString())
+        if(binding.emailLoginTF.text.isEmpty() || binding.loginPasswordTF.text.isEmpty() ){
+
+            val dialogFragmentE = ErrorDialog()
+            val bundle = Bundle()
+            bundle.putString("TEXT","EmptyFields")
+            dialogFragmentE.arguments = bundle
+            dialogFragmentE.show(supportFragmentManager,"EmptyFieldsDialog")
+        }else{
+            viewmodel.signIn(binding.emailLoginTF.text.toString(),binding.loginPasswordTF.text.toString())
+
+        }
+
     }
 
     fun showDialog(){

@@ -195,7 +195,6 @@
     <string name="showOrderCodeTxtMain">Ver código</string>
     <string name="OrderPopUpDetailTitle">Pedido</string>
     <string name="OrderDetailsTitleTxt">Detalles pedido</string>
-<<<<<<< HEAD
     <string name="passNotMatchRegisterTitle">Error</string>
     <string name="EmailIsAlreadyRegistered">¡El correo electrónico ingresado ya se encuentra registrado!</string>
     <string name="SuccessfullRegisterDescTV">¡El usuario ha sido registrado con éxito!</string>
@@ -205,10 +204,9 @@
     <string name="ErrorDialogInvalidEmailLoginTV">¡El correo electrónico ingresado es inválido!</string>
     <string name="ErrorDialogUserNotFoundTV">¡El usuario ingresado no existe!</string>
     <string name="ErrorDialogWeakPassTV">¡La contraseña ingresada es muy débil(menos de 6 caracteres)!</string>
+    <string name="ErrorDialogEmptyFieldsTV">Por favor completa todos los campos</string>
 
-=======
-    <string name="rumba_de_halloween">Rumba de Halloween</string>
-    <string name="perrea_hasta_el_piso">Perrea hasta el piso</string>
->>>>>>> julian
+
+
 
 </resources>

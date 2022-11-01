@@ -43,8 +43,7 @@ class LoginViewModel: ViewModel() {
                         }
                     }else{
                     }
-                }
-                    .await()
+                }.await()
 
                 withContext(Dispatchers.Main){ _authState.value = AuthState(AuthResult.SUCCESS, "Success") }
 

@@ -86,11 +86,12 @@ class RegisterActivity : AppCompatActivity() {
 
             datePickerDialog.show()
         }
-        /*
+
 
         binding.returnToLoginButton.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
         }
+        /*
         binding.regBtn.setOnClickListener {
             startActivity(Intent(this@RegisterActivity, MenuActivity::class.java))
         }
@@ -109,16 +110,27 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.regBtn.setOnClickListener {
 
-            var validate = viewmodel.validatePassword(binding.passwordRegTF.text.toString(),binding.confPassRegTF.text.toString())
-            if(validate){
-                    regBtnAction()
-                }else{
+            if(binding.cellPhoneRegTF.text.isEmpty() ||  binding.emailRegTF.text.isEmpty() ||  binding.birthdayRegTF.text.isEmpty()
+                || binding.nameRegTF.text.isEmpty() || binding.sexRegTF.text.isEmpty() ||  binding.passwordRegTF.text.isEmpty() || binding.confPassRegTF.text.isEmpty()){
                 val dialogFragmentE = ErrorDialog()
                 val bundle = Bundle()
-                bundle.putString("TEXT","PasswordNotMatch")
+                bundle.putString("TEXT","EmptyFields")
                 dialogFragmentE.arguments = bundle
-                dialogFragmentE.show(supportFragmentManager,"PasswordsDoesntMatchDialog")
+                dialogFragmentE.show(supportFragmentManager,"EmptyFieldsDialog")
+            }else{
+
+                var validate = viewmodel.validatePassword(binding.passwordRegTF.text.toString(),binding.confPassRegTF.text.toString())
+                if(validate){
+                    regBtnAction()
+                }else{
+                    val dialogFragmentE = ErrorDialog()
+                    val bundle = Bundle()
+                    bundle.putString("TEXT","PasswordNotMatch")
+                    dialogFragmentE.arguments = bundle
+                    dialogFragmentE.show(supportFragmentManager,"PasswordsDoesntMatchDialog")
                 }
+
+            }
 
         }
 
@@ -126,6 +138,8 @@ class RegisterActivity : AppCompatActivity() {
 
 
     fun regBtnAction(){
+
+
               viewmodel.signUp(
                   binding.cellPhoneRegTF.text.toString(),
                   binding.emailRegTF.text.toString(),
