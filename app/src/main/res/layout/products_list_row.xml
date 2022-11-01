@@ -5,85 +5,78 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/productLCard"
-        android:layout_width="match_parent"
-        android:layout_height="87dp"
-        android:background="@drawable/linear_gradient_background"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productTypePLTV">
-
-        <ImageView
-            android:id="@+id/productListImg"
-
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <LinearLayout
-            android:id="@+id/infoProductListLY"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/productlistnameTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:text="TextView"
-                android:textAppearance="@style/PoppinsMed_16" />
-
-            <TextView
-                android:id="@+id/productListPriceTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:text="TextView"
-                android:textAppearance="@style/PoppinsMed_16" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/pLButtonsLY"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/addProductPLBtn"
-                style="@style/RectangleWGradientPL"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:theme="@style/RectangleWGradientPL"
-                android:text="@string/addProductPLBtnTxt"
-                android:backgroundTint="@null"
-
-                />
-        </LinearLayout>
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/productTypePLTV"
-        style="@style/PoppinsMed_14"
+        style="@style/PoppinsSemiBold_20"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/morado_background"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/productLCard"
+        app:layout_constraintBottom_toTopOf="@id/productlistnameTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/productListImg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="24dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/productListPriceTV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productlistnameTV"
+        app:srcCompat="@drawable/wineimg" />
+
+    <TextView
+        android:id="@+id/productlistnameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textAppearance="@style/PoppinsMed_20"
+        app:layout_constraintBottom_toTopOf="@id/productListPriceTV"
+        app:layout_constraintLeft_toRightOf="@id/productListImg"
+        app:layout_constraintRight_toLeftOf="@id/addProductPLBtn"
+        app:layout_constraintTop_toBottomOf="@id/productTypePLTV" />
+
+    <TextView
+        android:id="@+id/productListPriceTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        android:textAppearance="@style/PoppinsMed_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/productListImg"
+        app:layout_constraintRight_toLeftOf="@id/addProductPLBtn"
+        app:layout_constraintTop_toBottomOf="@id/productlistnameTV" />
+
+    <Button
+        android:id="@+id/addProductPLBtn"
+        style="@style/RectangleWGradientPL"
+        android:layout_width="100dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="24dp"
+        android:backgroundTint="@null"
+        android:text="@string/addProductPLBtnTxt"
+        android:textAppearance="@style/PoppinsMed_20"
+        android:textSize="14sp"
+        android:theme="@style/RectangleWGradientPL"
+        app:layout_constraintBottom_toBottomOf="@+id/productListPriceTV"
+        app:layout_constraintLeft_toRightOf="@id/productlistnameTV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productlistnameTV" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

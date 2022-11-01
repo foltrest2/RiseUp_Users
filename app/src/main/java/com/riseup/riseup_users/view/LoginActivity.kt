@@ -78,6 +78,7 @@ class LoginActivity : AppCompatActivity(){
             logIn()
             /*val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
                 putExtra("PrincipalFragment","PrincipalFragment")
+            val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
             }
             startActivity(switchActivityIntent)
 
@@ -92,7 +93,6 @@ class LoginActivity : AppCompatActivity(){
         //createTextGradient()
     }
     fun logIn(){
-
         viewmodel.signIn(binding.emailLoginTF.text.toString(),binding.loginPasswordTF.text.toString())
     }
 

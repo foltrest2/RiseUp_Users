@@ -1,18 +1,12 @@
 package com.riseup.riseup_users.util
 
 import android.content.Intent
-import android.os.Bundle
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.riseup.riseup_users.PaymentCodeFragment
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.DiscoCardModel
 import com.riseup.riseup_users.view.DiscoCardView
-import com.riseup.riseup_users.view.DiscoHomeActivity
 import com.riseup.riseup_users.view.MenuActivity
 
 
@@ -21,19 +15,18 @@ class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
     private val discoCards = ArrayList<DiscoCardModel>()
 
     init {
-        discoCards.add(DiscoCardModel("Espacio 10-60","52583270"))
-        discoCards.add(DiscoCardModel("La Over","45188520"))
-        discoCards.add(DiscoCardModel("Cardinals","45187541"))
-        discoCards.add(DiscoCardModel("La Social","45185204"))
-        discoCards.add(DiscoCardModel("La Premiere","45175102"))
-        discoCards.add(DiscoCardModel("Living","45172015"))
+        discoCards.add(DiscoCardModel("Espacio 10-60", "52583270"))
+        discoCards.add(DiscoCardModel("La Over", "45188520"))
+        discoCards.add(DiscoCardModel("Cardinals", "45187541"))
+        discoCards.add(DiscoCardModel("La Social", "45185204"))
+        discoCards.add(DiscoCardModel("La Premiere", "45175102"))
+        discoCards.add(DiscoCardModel("Living", "45172015"))
     }
-
 
     //Genera un esqueleto gracias al XML
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiscoCardView {
         //XML a View
-        var inflater = LayoutInflater.from(parent.context)
+        val inflater = LayoutInflater.from(parent.context)
         val row = inflater.inflate(R.layout.disco_card_row, parent, false)
         return DiscoCardView(row)
     }
@@ -45,11 +38,9 @@ class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
         skeleton.visits.text = discoCard.visits
         skeleton.discoImage.setImageResource(R.mipmap.fondotarjeta1060)
         val context = skeleton.discoCard.context
-        val intent = Intent(context, DiscoHomeActivity::class.java)
-        skeleton.discoCard.setOnClickListener{
-
+        skeleton.discoCard.setOnClickListener {
             val switchActivityIntent = Intent(context, MenuActivity::class.java)
-            switchActivityIntent.putExtra("menuLicoresFragment","menuLicoresFragment")
+            switchActivityIntent.putExtra("discoHomeFragment", "discoHomeFragment")
             context.startActivity(switchActivityIntent)
         }
     }
@@ -58,5 +49,4 @@ class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
     override fun getItemCount(): Int {
         return discoCards.size
     }
-
 }

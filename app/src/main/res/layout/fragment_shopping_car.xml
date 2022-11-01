@@ -64,8 +64,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsSCRV"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/pricesGroupLY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -75,21 +76,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productsSCRV">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/orderPriceLY"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1">
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="145dp"
+                android:layout_height="147dp"
                 android:layout_margin="7dp"
+                android:gravity="end"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -98,31 +100,31 @@
 
                 <TextView
                     android:id="@+id/totalOriginalPriceTV"
-                    android:layout_width="match_parent"
+                    android:layout_width="143dp"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="center|left"
                     android:text="@string/totalPriceTitle"
-                    android:textAppearance="@style/PoppinsMed_32"
+                    android:textAppearance="@style/PoppinsMed_22"
                     android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/totalPriceWithNoDCTV"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/strike"
-                    android:gravity="center"
+                    android:gravity="center|end"
                     android:text="@string/pricewithoutdiscountText"
                     android:textAppearance="@style/PoppinsMed_32"
                     android:textColor="@color/grey" />
 
                 <TextView
                     android:id="@+id/DCPriceTV"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="center|end"
                     android:text="@string/discountPriceTxt"
                     android:textAppearance="@style/PoppinsMed_32"
                     android:textColor="@color/white" />
@@ -147,26 +149,26 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:orientation="horizontal"
         android:gravity="center"
-        android:paddingRight="15dp"
+        android:orientation="horizontal"
         android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pricesGroupLY">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/redimirDiamantesText"
+            style="@style/PoppinsMed_16"
             android:layout_width="178dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingLeft="15dp"
-            android:textAppearance="@style/PoppinsMed_16"
-            style="@style/PoppinsMed_16"
             android:text="@string/payWDiamondtxt"
-            />
+            android:textAppearance="@style/PoppinsMed_16" />
 
         <CheckBox
             android:id="@+id/DiamondPayCB"

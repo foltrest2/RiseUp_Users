@@ -8,10 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.riseup.riseup_users.databinding.FragmentDiamondsPaymentBinding
-import com.riseup.riseup_users.databinding.FragmentPrincipalBinding
 import com.riseup.riseup_users.util.DiamondPaymentAdapter
-import com.riseup.riseup_users.util.DiscoCardsAdapter
-import com.riseup.riseup_users.view.DiscoHomeActivity
 import com.riseup.riseup_users.view.FinishPaymentActivity
 
 class DiamondsPaymentFragment : Fragment() {
