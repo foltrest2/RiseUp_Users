@@ -2,8 +2,10 @@ package com.riseup.riseup_users.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.riseup.riseup_users.databinding.ActivityLoginBinding
 import com.riseup.riseup_users.util.ErrorDialog
 import com.riseup.riseup_users.util.SuccessfulRegisterDialog
@@ -33,8 +35,24 @@ class LoginActivity : AppCompatActivity(){
                 AuthResult.IDLE ->{
                 }
                 AuthResult.SUCCESS->{
-                    startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
+                    when(it.message){
 
+                        "NotVerified"-> {
+                            val dialogFragmentP = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","NotVerified")
+                            dialogFragmentP.arguments = bundle
+                            dialogFragmentP.show(supportFragmentManager,"notVerifiedDialog")
+
+                        }
+                        "SuccessAndVerified"->{
+                            var currentUser = FirebaseAuth.getInstance().currentUser
+                            var currentUserID = currentUser!!.uid
+                            startActivity(Intent(this@LoginActivity, MenuActivity::class.java).putExtra("Login",currentUserID))
+
+
+                        }
+                    }
                 }
                 AuthResult.FAIL->{
 

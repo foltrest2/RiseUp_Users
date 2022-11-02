@@ -2,6 +2,7 @@ package com.riseup.riseup_users.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.riseup.riseup_users.*
@@ -34,6 +35,8 @@ class MenuActivity : AppCompatActivity() {
 
         showFragment(principalFragment)
 
+
+
         val intentFragment = intent.extras?.get("principalFragment")
         if (intentFragment != null) {
             when (intentFragment) {
@@ -52,6 +55,10 @@ class MenuActivity : AppCompatActivity() {
             when (intentFragment3) {
                 "discoHomeFragment" -> showFragment(discoHomeFragment)
             }
+        }
+        val intentFragment4 = intent.extras?.getString("Login")
+        if (intentFragment4 != null) {
+          Toast.makeText(this,intent.extras?.get("Login").toString(),Toast.LENGTH_LONG).show()
         }
 
         binding.menuApp.setOnItemSelectedListener { menuItem ->

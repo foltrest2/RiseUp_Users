@@ -3,11 +3,13 @@ package com.riseup.riseup_users.view
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.riseup.riseup_users.databinding.ActivityRegisterBinding
 import com.riseup.riseup_users.util.EmailAlreadyExistsDialog
 import com.riseup.riseup_users.util.ErrorDialog
+import com.riseup.riseup_users.util.SuccessfulRegisterDialog
 import com.riseup.riseup_users.viewmodel.RegisterViewModel
 import com.riseup.riseup_users.viewmodel.AuthResult
 import java.util.*
@@ -29,7 +31,9 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 AuthResult.SUCCESS->{
 
-                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("Dialog","showDialog"))
+                  //  startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).putExtra("Dialog","showDialog"))
+                    Log.e(">>>","Hice la petición al dialogo")
+                   SuccessfulRegisterDialog().show(supportFragmentManager,"successfullyRegister")
 
                 }
                 AuthResult.FAIL->{

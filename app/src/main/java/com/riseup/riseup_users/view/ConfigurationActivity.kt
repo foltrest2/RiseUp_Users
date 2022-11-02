@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.view.get
+import com.google.firebase.auth.FirebaseAuth
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ActivityConfigurationBinding
 import kotlinx.android.synthetic.main.activity_configuration.view.*
@@ -46,6 +47,7 @@ class ConfigurationActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigurationActivity, ConfigHelpActivity::class.java))
         }
         binding.scLinearLayoutConfig.logOutBtnProfile.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
             startActivity(Intent(this@ConfigurationActivity, LoginActivity::class.java))
         }
         binding.scLinearLayoutConfig.borrarCacheTVProfile.setOnClickListener {
