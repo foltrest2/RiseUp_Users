@@ -42,6 +42,11 @@ class LoginViewModel: ViewModel() {
                            }
                         }
                     }else{
+                        if(Firebase.auth.currentUser!!.isEmailVerified){
+                            _authState.value = AuthState(AuthResult.SUCCESS, "SuccessAndVerified")
+                        }else{
+                            _authState.value = AuthState(AuthResult.SUCCESS, "NotVerified")
+                        }
                     }
                 }.await()
 
