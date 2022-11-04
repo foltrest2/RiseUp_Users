@@ -1,35 +1,133 @@
 package com.riseup.riseup_users.view
 
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.LinearGradient
-import android.graphics.Shader
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.riseup.riseup_users.databinding.ActivityLoginBinding
+import com.riseup.riseup_users.util.ErrorDialog
+import com.riseup.riseup_users.util.SuccessfulRegisterDialog
+import com.riseup.riseup_users.viewmodel.AuthResult
+import com.riseup.riseup_users.viewmodel.LoginViewModel
 
 
 class LoginActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityLoginBinding
-
+    val viewmodel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val intent = intent.extras?.get("Dialog")
+        if (intent != null) {
+            when (intent) {
+                "showDialog" -> showDialog()
+            }
+        }
+
+        viewmodel.authState.observe(this){
+            when(it.result){
+                AuthResult.IDLE ->{
+                }
+                AuthResult.SUCCESS->{
+                    when(it.message){
+
+                        "NotVerified"-> {
+                            val dialogFragmentP = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","NotVerified")
+                            dialogFragmentP.arguments = bundle
+                            dialogFragmentP.show(supportFragmentManager,"notVerifiedDialog")
+
+                        }
+                        "SuccessAndVerified"->{
+                            var currentUser = FirebaseAuth.getInstance().currentUser
+                            var currentUserID = currentUser!!.uid
+                            startActivity(Intent(this@LoginActivity, MenuActivity::class.java).putExtra("Login",currentUserID))
+
+
+                        }
+                    }
+                }
+                AuthResult.FAIL->{
+
+                    when(it.message){
+                        "wrongPassword"-> {
+                            val dialogFragmentP = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","WrongPassword")
+                            dialogFragmentP.arguments = bundle
+                            dialogFragmentP.show(supportFragmentManager,"wrongPasswordDialog")
+                        }
+                        "invalidEmail"->{
+                            val dialogFragmentE = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","InvalidEmail")
+                            dialogFragmentE.arguments = bundle
+                            dialogFragmentE.show(supportFragmentManager,"invalidEmailDialog")
+                        }
+                        "userNotFound"->{
+                            val dialogFragmentU = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","UserNotFound")
+                            dialogFragmentU.arguments = bundle
+                            dialogFragmentU.show(supportFragmentManager,"userNotFoundDialog")
+                        }
+                    }
+                    /*
+                    if(it.message == "wrongPassword"){
+
+                        dbinding.passNotMatchdescTV.text = "hola"
+                        EmailAlreadyExistsDialog().show(supportFragmentManager,"emailAlreadyExistDialog")
+
+                    }
+
+
+                     */
+                }
+            }
+        }
         binding.userLoginBtn.setOnClickListener {
-            val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
+            logIn()
+            /*val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
                 putExtra("PrincipalFragment","PrincipalFragment")
+            val switchActivityIntent = Intent(this,MenuActivity::class.java).apply {
             }
             startActivity(switchActivityIntent)
+
+            */
+
         }
 
         binding.userRegBtn.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
+
         //createTextGradient()
+    }
+    fun logIn(){
+        if(binding.emailLoginTF.text.isEmpty() || binding.loginPasswordTF.text.isEmpty() ){
+
+            val dialogFragmentE = ErrorDialog()
+            val bundle = Bundle()
+            bundle.putString("TEXT","EmptyFields")
+            dialogFragmentE.arguments = bundle
+            dialogFragmentE.show(supportFragmentManager,"EmptyFieldsDialog")
+        }else{
+            viewmodel.signIn(binding.emailLoginTF.text.toString(),binding.loginPasswordTF.text.toString())
+
+        }
+
+    }
+
+    fun showDialog(){
+
+        SuccessfulRegisterDialog().show(supportFragmentManager,"successfullyRegister")
     }
 
 

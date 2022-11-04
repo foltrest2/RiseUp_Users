@@ -9,7 +9,6 @@
         android:id="@+id/productSCCard"
         android:layout_width="match_parent"
         android:layout_height="87dp"
-        android:background="@drawable/linear_gradient_background"
         android:orientation="horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
@@ -37,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
                 android:text="TextView"
-                android:textAppearance="@style/PoppinsMed_16" />
+                android:textAppearance="@style/PoppinsMed_20" />
 
             <TextView
                 android:id="@+id/productSCPriceTV"
@@ -45,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="15dp"
                 android:text="TextView"
-                android:textAppearance="@style/PoppinsMed_16" />
+                android:textAppearance="@style/PoppinsMed_18" />
 
         </LinearLayout>
 

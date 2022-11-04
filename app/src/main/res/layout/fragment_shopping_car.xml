@@ -44,7 +44,7 @@
         android:id="@+id/imageView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/youorderimg_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         android:gravity="center_vertical"
         android:paddingLeft="25dp"
         android:text="@string/orderProductListTitle"
-        android:textAppearance="@style/PoppinsMed_14"
+        android:textAppearance="@style/PoppinsMed_18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
@@ -65,108 +65,106 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsSCRV"
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <LinearLayout
-        android:id="@+id/pricesGroupLY"
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productsSCRV">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/orderPriceLY"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="7dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/totalOriginalPriceTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/totalPriceTitle"
-                    android:textAppearance="@style/PoppinsMed_32"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/totalPriceWithNoDCTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/strike"
-                    android:gravity="center"
-                    android:text="@string/pricewithoutdiscountText"
-                    android:textAppearance="@style/PoppinsMed_32"
-                    android:textColor="@color/grey" />
-
-                <TextView
-                    android:id="@+id/DCPriceTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/discountPriceTxt"
-                    android:textAppearance="@style/PoppinsMed_32"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/payBtn"
+            style="@style/RectangleWGradientOrder"
+            android:layout_width="160dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/payBtnText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/PayBtnLY"
+            android:id="@+id/constraintLayout4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/payBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/payBtn"
-                style="@style/RectangleWGradientOrder"
-                android:text="@string/payBtnText"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/totalOriginalPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="75dp"
+                android:text="@string/totalPriceTitle"
+                android:textAppearance="@style/PoppinsMed_26"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/totalPriceWithNoDCTV"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/totalPriceWithNoDCTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/strike"
+                android:text="@string/pricewithoutdiscountText"
+                android:textAppearance="@style/PoppinsMed_30"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toTopOf="@+id/DCPriceTV"
+                app:layout_constraintStart_toStartOf="@+id/totalOriginalPriceTV"
+                app:layout_constraintTop_toBottomOf="@+id/totalOriginalPriceTV" />
+
+            <TextView
+                android:id="@+id/DCPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/discountPriceTxt"
+                android:textAppearance="@style/PoppinsMed_30"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/totalPriceWithNoDCTV"
+                app:layout_constraintTop_toBottomOf="@id/totalPriceWithNoDCTV" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingRight="15dp"
+        android:orientation="horizontal"
         android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pricesGroupLY">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/redimirDiamantesText"
+            style="@style/PoppinsMed_16"
             android:layout_width="178dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingLeft="15dp"
-            android:textAppearance="@style/PoppinsMed_16"
-            style="@style/PoppinsMed_16"
             android:text="@string/payWDiamondtxt"
-            />
+            android:textAppearance="@style/PoppinsMed_16" />
 
         <CheckBox
             android:id="@+id/DiamondPayCB"
