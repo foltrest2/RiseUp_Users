@@ -1,13 +1,16 @@
 package com.riseup.riseup_users.viewmodel
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.riseup.riseup_users.model.Usuario
+import com.riseup.riseup_users.view.LoginActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -15,12 +18,13 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
 
-class LoginViewModel: ViewModel() {
+class LoginViewModel: ViewModel(){
 
     private val _authState = MutableLiveData(
         AuthState(AuthResult.IDLE, "Starting...")
     )
     val authState : LiveData<AuthState> get() = _authState
+    var userReturn : Usuario? = null
 
     //Accion de registro
     fun signIn(correo:String, pass:String){
@@ -42,8 +46,17 @@ class LoginViewModel: ViewModel() {
                            }
                         }
                     }else{
-                        if(Firebase.auth.currentUser!!.isEmailVerified){
-                            _authState.value = AuthState(AuthResult.SUCCESS, "SuccessAndVerified")
+                        val fbuser = Firebase.auth.currentUser
+                        if(fbuser!!.isEmailVerified){
+                            //Pedimos el user en la db
+                            viewModelScope.launch (Dispatchers.IO) {
+                                Firebase.firestore.collection("Usuarios").document(fbuser.uid).get().addOnSuccessListener {
+                                    userReturn = it.toObject(Usuario::class.java)
+                                }.await()
+                                withContext(Dispatchers.Main){
+                                    _authState.value = AuthState(AuthResult.SUCCESS, "SuccessAndVerified")
+                                }
+                            }
                         }else{
                             _authState.value = AuthState(AuthResult.SUCCESS, "NotVerified")
                         }
@@ -58,6 +71,10 @@ class LoginViewModel: ViewModel() {
             }
 
         }
+    }
+
+    fun saveUserFromViewModel() : Usuario {
+            return userReturn!!
     }
 
 }

@@ -2,11 +2,13 @@ package com.riseup.riseup_users.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityLoginBinding
+import com.riseup.riseup_users.model.Usuario
 import com.riseup.riseup_users.util.ErrorDialog
 import com.riseup.riseup_users.util.SuccessfulRegisterDialog
 import com.riseup.riseup_users.viewmodel.AuthResult
@@ -46,11 +48,10 @@ class LoginActivity : AppCompatActivity(){
 
                         }
                         "SuccessAndVerified"->{
-                            var currentUser = FirebaseAuth.getInstance().currentUser
-                            var currentUserID = currentUser!!.uid
-                            startActivity(Intent(this@LoginActivity, MenuActivity::class.java).putExtra("Login",currentUserID))
-
-
+                            val thisUserToSave = viewmodel.saveUserFromViewModel()
+                            saveUser(thisUserToSave)
+                            Log.e(">>>", "SAVED: $thisUserToSave")
+                            startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
                         }
                     }
                 }
@@ -126,9 +127,15 @@ class LoginActivity : AppCompatActivity(){
     }
 
     fun showDialog(){
-
         SuccessfulRegisterDialog().show(supportFragmentManager,"successfullyRegister")
     }
+
+    private fun saveUser(user:Usuario){
+        val sp = getSharedPreferences("RiseUp", MODE_PRIVATE)
+        val json = Gson().toJson(user)
+        sp.edit().putString("user",json).apply()
+    }
+
 
 
     /*fun createTextGradient() {
