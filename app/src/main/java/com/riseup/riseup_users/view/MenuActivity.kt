@@ -35,6 +35,7 @@ class MenuActivity : AppCompatActivity() {
         //Cargar el usuario de los sp
         val user = loadUser()
         if(viewModel.isNullUser(user)){
+            Toast.makeText(this, "A LOGUEAR PAPI", Toast.LENGTH_LONG).show()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
@@ -91,6 +92,7 @@ class MenuActivity : AppCompatActivity() {
                 val switchActivityIntent =
                     Intent(this@MenuActivity, ConfigurationActivity::class.java)
                 startActivity(switchActivityIntent)
+                finish()
             }
             true
         }
