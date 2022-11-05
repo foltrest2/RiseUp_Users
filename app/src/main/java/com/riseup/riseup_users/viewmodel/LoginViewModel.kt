@@ -24,7 +24,7 @@ class LoginViewModel: ViewModel(){
         AuthState(AuthResult.IDLE, "Starting...")
     )
     val authState : LiveData<AuthState> get() = _authState
-    var userReturn : Usuario? = null
+    private lateinit var userReturn : Usuario
 
     //Accion de registro
     fun signIn(correo:String, pass:String){
@@ -51,7 +51,7 @@ class LoginViewModel: ViewModel(){
                             //Pedimos el user en la db
                             viewModelScope.launch (Dispatchers.IO) {
                                 Firebase.firestore.collection("Usuarios").document(fbuser.uid).get().addOnSuccessListener {
-                                    userReturn = it.toObject(Usuario::class.java)
+                                    userReturn = it.toObject(Usuario::class.java)!!
                                 }.await()
                                 withContext(Dispatchers.Main){
                                     _authState.value = AuthState(AuthResult.SUCCESS, "SuccessAndVerified")
@@ -74,7 +74,7 @@ class LoginViewModel: ViewModel(){
     }
 
     fun saveUserFromViewModel() : Usuario {
-            return userReturn!!
+            return userReturn
     }
 
 }

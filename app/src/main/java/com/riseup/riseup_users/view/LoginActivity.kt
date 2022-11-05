@@ -52,6 +52,7 @@ class LoginActivity : AppCompatActivity(){
                             saveUser(thisUserToSave)
                             Log.e(">>>", "SAVED: $thisUserToSave")
                             startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
+                            finish()
                         }
                     }
                 }
@@ -131,9 +132,9 @@ class LoginActivity : AppCompatActivity(){
     }
 
     private fun saveUser(user:Usuario){
-        val sp = getSharedPreferences("RiseUp", MODE_PRIVATE)
+        val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = Gson().toJson(user)
-        sp.edit().putString("user",json).apply()
+        sp.edit().putString("Usuario",json).apply()
     }
 
 

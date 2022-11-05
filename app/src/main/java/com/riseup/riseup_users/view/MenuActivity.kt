@@ -3,10 +3,15 @@ package com.riseup.riseup_users.view
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.auth.User
+import com.google.gson.Gson
 import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
+import com.riseup.riseup_users.model.Usuario
+import com.riseup.riseup_users.viewmodel.MenuViewModel
 
 class MenuActivity : AppCompatActivity() {
 
@@ -18,12 +23,28 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var diamondPaymentFragment: DiamondsPaymentFragment
     private lateinit var paymentCodeFragment: PaymentCodeFragment
     private lateinit var discoHomeFragment: DiscoHomeFragment
+    private val viewModel : MenuViewModel by viewModels()
+    private lateinit var user: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        //Cargar el usuario de los sp
+        val user = loadUser()
+        if(viewModel.isNullUser(user)){
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+            } else {
+                this.user = user!!
+                Toast.makeText(this, "Este usuario: ${this.user}", Toast.LENGTH_LONG).show()
+        }
+
+
         newPaymentSelectionFragment = PaymentSelectionFragment.newInstance()
         shoppingCarFragment = ShoppingCarFragment.newInstance()
         productListFragment = ProductListFragment.newInstance()
@@ -80,5 +101,15 @@ class MenuActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentContainer, fragment)
         transaction.commit()
+    }
+
+    private fun loadUser():Usuario?{
+        val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
+        val json = sp.getString("Usuario", "NO_USER")
+        if(json == "NO_USER"){
+            return null
+        }else{
+            return Gson().fromJson(json, Usuario::class.java)
+        }
     }
 }
