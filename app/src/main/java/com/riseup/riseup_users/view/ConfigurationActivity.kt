@@ -56,15 +56,16 @@ class ConfigurationActivity : AppCompatActivity() {
             startActivity(Intent(this@ConfigurationActivity, ConfigHelpActivity::class.java))
         }
         binding.scLinearLayoutConfig.logOutBtnProfile.setOnClickListener {
+            finish()
             val intent = Intent(this@ConfigurationActivity, LoginActivity::class.java)
             startActivity(intent)
             val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
+            //Debugguer, borrar despues
             val json = sp.getString("Usuario", "NO_USER")
             Toast.makeText(this,"A borrar tipo: $json", Toast.LENGTH_LONG).show()
+            //Hasta aqui
             sp.edit().clear().apply()
             Firebase.auth.signOut()
-            finish()
-
         }
         binding.scLinearLayoutConfig.borrarCacheTVProfile.setOnClickListener {
             CacheCleanedDialog().show(supportFragmentManager, "dialogcache")

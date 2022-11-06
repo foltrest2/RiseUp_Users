@@ -80,6 +80,13 @@ class LoginActivity : AppCompatActivity(){
                             dialogFragmentU.arguments = bundle
                             dialogFragmentU.show(supportFragmentManager,"userNotFoundDialog")
                         }
+                        "networkError"->{
+                            val dialogFragmentU = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","NetworkError")
+                            dialogFragmentU.arguments = bundle
+                            dialogFragmentU.show(supportFragmentManager,"networkError")
+                        }
                     }
                     /*
                     if(it.message == "wrongPassword"){

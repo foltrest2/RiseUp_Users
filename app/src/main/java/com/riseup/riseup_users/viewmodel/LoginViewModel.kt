@@ -50,8 +50,12 @@ class LoginViewModel: ViewModel(){
                         if(fbuser!!.isEmailVerified){
                             //Pedimos el user en la db
                             viewModelScope.launch (Dispatchers.IO) {
-                                Firebase.firestore.collection("Usuarios").document(fbuser.uid).get().addOnSuccessListener {
+                                Firebase.firestore.collection("Usuarios").document(fbuser.uid).get()
+                                    .addOnSuccessListener {
                                     userReturn = it.toObject(Usuario::class.java)!!
+                                }.addOnFailureListener {
+                                        _authState.value = AuthState(AuthResult.FAIL, "networkError")
+                                        return@addOnFailureListener
                                 }.await()
                                 withContext(Dispatchers.Main){
                                     _authState.value = AuthState(AuthResult.SUCCESS, "SuccessAndVerified")
