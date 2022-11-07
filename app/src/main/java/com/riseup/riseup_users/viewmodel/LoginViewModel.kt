@@ -1,16 +1,12 @@
 package com.riseup.riseup_users.viewmodel
 
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.*
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import com.riseup.riseup_users.model.Usuario
-import com.riseup.riseup_users.view.LoginActivity
+import com.riseup.riseup_users.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -24,7 +20,7 @@ class LoginViewModel: ViewModel(){
         AuthState(AuthResult.IDLE, "Starting...")
     )
     val authState : LiveData<AuthState> get() = _authState
-    private lateinit var userReturn : Usuario
+    private lateinit var userReturn : User
 
     //Accion de registro
     fun signIn(correo:String, pass:String){
@@ -50,9 +46,9 @@ class LoginViewModel: ViewModel(){
                         if(fbuser!!.isEmailVerified){
                             //Pedimos el user en la db
                             viewModelScope.launch (Dispatchers.IO) {
-                                Firebase.firestore.collection("Usuarios").document(fbuser.uid).get()
+                                Firebase.firestore.collection("Users").document(fbuser.uid).get()
                                     .addOnSuccessListener {
-                                    userReturn = it.toObject(Usuario::class.java)!!
+                                    userReturn = it.toObject(User::class.java)!!
                                 }.addOnFailureListener {
                                         _authState.value = AuthState(AuthResult.FAIL, "networkError")
                                         return@addOnFailureListener
@@ -77,7 +73,7 @@ class LoginViewModel: ViewModel(){
         }
     }
 
-    fun saveUserFromViewModel() : Usuario {
+    fun saveUserFromViewModel() : User {
             return userReturn
     }
 

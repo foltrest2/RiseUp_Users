@@ -3,21 +3,13 @@ package com.riseup.riseup_users.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.core.view.get
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.messaging.ktx.messaging
-import com.google.gson.Gson
-import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ActivityConfigurationBinding
-import com.riseup.riseup_users.model.Usuario
 import com.riseup.riseup_users.viewmodel.ConfigurationViewModel
 import kotlinx.android.synthetic.main.activity_configuration.view.*
-import kotlinx.android.synthetic.main.cache_cleaned.view.*
 
 class ConfigurationActivity : AppCompatActivity() {
 

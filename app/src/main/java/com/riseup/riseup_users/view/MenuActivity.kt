@@ -6,11 +6,10 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.firebase.firestore.auth.User
 import com.google.gson.Gson
 import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
-import com.riseup.riseup_users.model.Usuario
+import com.riseup.riseup_users.model.User
 import com.riseup.riseup_users.viewmodel.MenuViewModel
 
 class MenuActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var paymentCodeFragment: PaymentCodeFragment
     private lateinit var discoHomeFragment: DiscoHomeFragment
     private val viewModel : MenuViewModel by viewModels()
-    private lateinit var user: Usuario
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,13 +104,13 @@ class MenuActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun loadUser():Usuario?{
+    private fun loadUser(): User?{
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = sp.getString("Usuario", "NO_USER")
         if(json == "NO_USER"){
             return null
         }else{
-            return Gson().fromJson(json, Usuario::class.java)
+            return Gson().fromJson(json, User::class.java)
         }
     }
 }
