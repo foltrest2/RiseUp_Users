@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.riseup.riseup_users">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RiseUp_Users"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.ConfigHelpCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigUsageConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigPoliticInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigProfileChangeSexActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigProfileChangePassVerifActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigProfileChangeTelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigProfileChangeEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.FinishPaymentActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".view.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MenuActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".view.ConfigProfileInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigSecurityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigDiamondHistorialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigUserPaysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigUserPaymentsAddCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigLanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigHelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ConfigurationActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

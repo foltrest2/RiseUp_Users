@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_gradient_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLYPedidoSuperior"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/atrasBtnDiscotecaMain"
+            style="@style/BackArrowButton"
+            android:layout_width="48dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yourOrderTitle"
+            style="@style/PoppinsBold_20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/yourOrderTitleText"
+            app:layout_constraintBottom_toBottomOf="@+id/atrasBtnDiscotecaMain"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@+id/atrasBtnDiscotecaMain"
+            app:layout_constraintTop_toTopOf="@+id/atrasBtnDiscotecaMain"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/youorderimg_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLYPedidoSuperior" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+        android:text="@string/orderProductListTitle"
+        android:textAppearance="@style/PoppinsMed_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productsSCRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productsSCRV">
+
+        <Button
+            android:id="@+id/payBtn"
+            style="@style/RectangleWGradientOrder"
+            android:layout_width="160dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/payBtnText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/payBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/totalOriginalPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="75dp"
+                android:text="@string/totalPriceTitle"
+                android:textAppearance="@style/PoppinsMed_26"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/totalPriceWithNoDCTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/totalPriceWithNoDCTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/strike"
+                android:text="@string/pricewithoutdiscountText"
+                android:textAppearance="@style/PoppinsMed_30"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toTopOf="@+id/DCPriceTV"
+                app:layout_constraintStart_toStartOf="@+id/totalOriginalPriceTV"
+                app:layout_constraintTop_toBottomOf="@+id/totalOriginalPriceTV" />
+
+            <TextView
+                android:id="@+id/DCPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/discountPriceTxt"
+                android:textAppearance="@style/PoppinsMed_30"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/totalPriceWithNoDCTV"
+                app:layout_constraintTop_toBottomOf="@id/totalPriceWithNoDCTV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/redimirDiamantesText"
+            style="@style/PoppinsMed_16"
+            android:layout_width="178dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:text="@string/payWDiamondtxt"
+            android:textAppearance="@style/PoppinsMed_16" />
+
+        <CheckBox
+            android:id="@+id/DiamondPayCB"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:buttonTint="@color/white"
+            android:checked="true" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

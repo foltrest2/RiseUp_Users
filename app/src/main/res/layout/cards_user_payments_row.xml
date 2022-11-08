@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/layout_bg_morado">
+
+    <ImageView
+        android:id="@+id/cardLogoUserPaymentsImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardReferenceNameTV"
+        app:layout_constraintEnd_toStartOf="@+id/guialineaEntreCardEInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/discoTitlePayedCardTV"
+        app:srcCompat="@drawable/creditcard24p" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guialineaEntreCardEInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="57dp" />
+
+    <TextView
+        android:id="@+id/discoTitlePayedCardTV"
+        style="@style/PoppinsSemiBold_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/guialineaEntreCardEInfo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cardReferenceNameTV"
+        style="@style/PoppinsMed_12Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guialineaEntreCardEInfo"
+        app:layout_constraintTop_toBottomOf="@+id/discoTitlePayedCardTV" />
+
+    <TextView
+        android:id="@+id/amountPayedByCardTV"
+        style="@style/PoppinsSemiBold_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/datePayeduserCardTV"
+        style="@style/PoppinsMed_12Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountPayedByCardTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

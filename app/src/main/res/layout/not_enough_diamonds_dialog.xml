@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RectangleAzulCianGradient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/Confirmar">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="104dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_pico_de_minecraft_48" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/PoppinsSemiBold_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Diamantes insuficientes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/PoppinsSemiBold_14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="¡Recuerda que puedes conseguirlos al realizar compras o visitar la discoteca!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/RectangleAzulnavi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="24dp"
+        android:text="Entendido"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

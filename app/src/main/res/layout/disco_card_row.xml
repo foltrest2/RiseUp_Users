@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/disco_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="12dp"
+            android:forceHasOverlappingRendering="false"
+            app:cardCornerRadius="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/background_disco_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/background_disco_selected"
+                android:scaleType="centerCrop"
+                app:srcCompat="@mipmap/fondotarjeta1060" />
+
+            <TextView
+                android:id="@+id/title_disco_card"
+                style="@style/PoppinsRegular_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/espacio_10_60"
+                android:textSize="34sp"
+                android:translationX="24dp"
+                android:translationY="120dp" />
+
+            <TextView
+                android:id="@+id/visits_disco_card"
+                style="@style/PoppinsRegular_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/visits"
+                android:textSize="16sp"
+                android:translationX="24dp"
+                android:translationY="170dp" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/linear_gradient_background"
+    tools:context=".view.ConfigUserPaymentsAddCardActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutInfoAddCardUser"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backBtnAddCardUserPay"
+            style="@style/BackArrowButton"
+            android:layout_width="52dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrowback" />
+
+        <TextView
+            android:id="@+id/titleConfigAddCardUserTV"
+            style="@style/PoppinsBold_20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/addCard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backBtnAddCardUserPay"
+            app:layout_constraintTop_toTopOf="@+id/backBtnAddCardUserPay" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/infoConfigAdduserCardTV"
+        style="@style/PoppinsSemiBold_18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/infoAddCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutInfoAddCardUser" />
+
+    <ImageView
+        android:id="@+id/addCardSimulationImg"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoConfigAdduserCardTV"
+        app:srcCompat="@drawable/rectanglecard_1" />
+
+    <TextView
+        android:id="@+id/addCardSimulationNumber"
+        style="@style/PoppinsSemiBold_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="82dp"
+        android:text="@string/cardNumberUserConfigAdd"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toTopOf="@+id/addCardSimulationImg" />
+
+    <TextView
+        android:id="@+id/cardSimuHolderTtitleAddCard"
+        style="@style/PoppinsSemiBold_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/titularNameTitle"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toBottomOf="@+id/addCardSimulationNumber" />
+
+    <TextView
+        android:id="@+id/yessieTvSimul"
+        style="@style/PoppinsSemiBold_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/yessie"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toBottomOf="@+id/cardSimuHolderTtitleAddCard" />
+
+    <TextView
+        android:id="@+id/vencimientoCardSimuUserAddTV"
+        style="@style/PoppinsSemiBold_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="@string/expCard"
+        app:layout_constraintBottom_toBottomOf="@+id/cardSimuHolderTtitleAddCard"
+        app:layout_constraintStart_toEndOf="@+id/cardSimuHolderTtitleAddCard"
+        app:layout_constraintTop_toTopOf="@+id/cardSimuHolderTtitleAddCard" />
+
+    <TextView
+        android:id="@+id/expDateTitleCardSimulation"
+        style="@style/PoppinsSemiBold_11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/simulDateExpCard"
+        app:layout_constraintBottom_toBottomOf="@+id/yessieTvSimul"
+        app:layout_constraintStart_toStartOf="@+id/vencimientoCardSimuUserAddTV"
+        app:layout_constraintTop_toTopOf="@+id/yessieTvSimul" />
+
+    <EditText
+        android:id="@+id/cardSimulNumCardET"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/morado_background"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:hint="@string/numCardET"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/addCardSimulationImg"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toBottomOf="@+id/addCardSimulationImg" />
+
+    <EditText
+        android:id="@+id/cardSimulNameCardET"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/morado_background"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:hint="@string/nameCardeET"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/addCardSimulationImg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toBottomOf="@+id/cardSimulNumCardET" />
+
+    <EditText
+        android:id="@+id/cardSimulExpCardET"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/morado_background"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:hint="@string/expCardET"
+        android:inputType="date|textPersonName"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/addCardSimulationImg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toBottomOf="@+id/cardSimulNameCardET" />
+
+    <EditText
+        android:id="@+id/cardSimulSecureCodCardET2"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/morado_background"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:hint="@string/secureCodeCardET"
+        android:inputType="number|textPersonName"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/addCardSimulationImg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationImg"
+        app:layout_constraintTop_toBottomOf="@+id/cardSimulExpCardET" />
+
+    <Button
+        android:id="@+id/cardSimulCreateCardBtn"
+        style="@style/PrincipalRectangleRound"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:text="@string/crear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardSimulSecureCodCardET2" />
+
+    <ImageView
+        android:id="@+id/masterCardSimulImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/addCardSimulationNumber"
+        app:layout_constraintTop_toTopOf="@+id/addCardSimulationImg"
+        app:srcCompat="@mipmap/mastercard_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
