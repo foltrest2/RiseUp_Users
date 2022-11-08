@@ -2,39 +2,94 @@ package com.riseup.riseup_users.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.CompoundButton
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityConfigProfileChangeSexBinding
+import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.viewmodel.ConfigProfileChangeSexViewModel
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class ConfigProfileChangeSexActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityConfigProfileChangeSexBinding
+    private val viewModel : ConfigProfileChangeSexViewModel by viewModels()
+    private var newSex : String = ""
+    private lateinit var user : User
 
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.binding = ActivityConfigProfileChangeSexBinding.inflate(this.layoutInflater)
         this.setContentView(this.binding.root)
 
-        this.binding.closeChangeUserSexBtn.setOnClickListener{
-            this.startActivity(Intent(this@ConfigProfileChangeSexActivity, ConfigProfileInfoActivity::class.java))
+        val userFromExtra = intent.getStringExtra("user")!!
+        user = Gson().fromJson(userFromExtra,User::class.java)
+
+        //Inicializacion del viewModel
+        viewModel.setSpUser(user)
+
+        //Listener de la modificacion
+        viewModel.inComingUser.observe(this){
+            Log.e(">>>", "Actualizado en observer: ${it}")
+            saveUserSp(it)
         }
-        this.binding.changeUserSexAcceptBtn.setOnClickListener{
-            this.startActivity(Intent(this@ConfigProfileChangeSexActivity, ConfigurationActivity::class.java))
+
+        binding.closeChangeUserSexBtn.setOnClickListener{
+            finish()
+            startActivity(Intent(this@ConfigProfileChangeSexActivity, ConfigProfileInfoActivity::class.java))
         }
-        this.binding.personalizadoRB.setOnCheckedChangeListener { buttonView, isChecked ->
-            this.showPersonalized(isChecked)
+        binding.changeUserSexAcceptBtn.setOnClickListener{
+            //validateNewSex()
+            GlobalScope.launch {
+                if (newSex.isNotEmpty()){
+                    viewModel.updateSex(newSex, user)
+                } else if (binding.personalizadoET.text.toString().isNotEmpty()){
+                    newSex = binding.personalizadoET.text.toString()
+                    viewModel.updateSex(newSex, user)
+                }
+                finish()
+                startActivity(Intent(this@ConfigProfileChangeSexActivity, ConfigProfileInfoActivity::class.java))
+            }
+        }
+        binding.personalizadoRB.setOnCheckedChangeListener { buttonView, isChecked ->
+            showPersonalized(isChecked)
+        }
+        binding.sexOptionsRadioGroup.setOnCheckedChangeListener { radioGroup, checkedId ->
+            //var newSex : String
+            if(binding.hombreRB.id == checkedId){
+                newSex = binding.hombreRB.text.toString()
+            }
+
+            if(binding.mujerRB.id == checkedId){
+                newSex = binding.mujerRB.text.toString()
+            }
+
+            if(binding.noDecirSexoRB.id == checkedId){
+                newSex = binding.noDecirSexoRB.text.toString()
+
+            }
         }
     }
 
-    fun showPersonalized(isChecked: Boolean) {
+    private fun showPersonalized(isChecked: Boolean) {
         if (isChecked){
-            this.binding.personalizadoET.visibility = View.VISIBLE
+            binding.personalizadoET.visibility = View.VISIBLE
         } else if(!isChecked){
-            this.binding.personalizadoET.visibility = View.GONE
+            binding.personalizadoET.visibility = View.GONE
         }
+    }
 
+
+    private fun saveUserSp(user: User){
+        val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
+        val json = Gson().toJson(user)
+        sp.edit().putString("Usuario",json).apply()
     }
 
 }

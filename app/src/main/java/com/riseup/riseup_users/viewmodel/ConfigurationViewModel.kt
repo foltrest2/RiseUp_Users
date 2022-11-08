@@ -1,4 +1,8 @@
 package com.riseup.riseup_users.viewmodel
 
-class ConfigurationViewModel {
+import androidx.lifecycle.ViewModel
+
+class ConfigurationViewModel : ViewModel(){
+
+
 }

@@ -7,15 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.riseup.riseup_users.databinding.FragmentFaqHelpCenterBinding
 import com.riseup.riseup_users.util.FAQInfoBlockAdapter
+import com.riseup.riseup_users.viewmodel.FaqHelpCenterViewModel
 
 
 class FaqHelpCenterFragment : Fragment(){
 
     private var _binding: FragmentFaqHelpCenterBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel : FaqHelpCenterViewModel by activityViewModels()
 
     private val adapter = FAQInfoBlockAdapter()
 
@@ -37,6 +41,14 @@ class FaqHelpCenterFragment : Fragment(){
         var btnServicio = binding.horizontalFaqSCV.findViewById<Button>(R.id.servicioFAQBtn)
         var btnPagos = binding.horizontalFaqSCV.findViewById<Button>(R.id.pagosFAQBtn)
 
+        viewModel.faqs.observe(viewLifecycleOwner){
+            if(it.isNotEmpty()) {
+                adapter.reset()
+                for (faqs in it) {
+                    adapter.addFaq(faqs)
+                }
+            }
+        }
 
         binding.horizontalFaqSCV.findViewById<Button>(R.id.generalFAQBtn).setOnClickListener {
             resetActualBtn()

@@ -2,11 +2,12 @@ package com.riseup.riseup_users.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
+import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityLoginBinding
+import com.riseup.riseup_users.model.User
 import com.riseup.riseup_users.util.ErrorDialog
 import com.riseup.riseup_users.util.SuccessfulRegisterDialog
 import com.riseup.riseup_users.viewmodel.AuthResult
@@ -46,11 +47,11 @@ class LoginActivity : AppCompatActivity(){
 
                         }
                         "SuccessAndVerified"->{
-                            var currentUser = FirebaseAuth.getInstance().currentUser
-                            var currentUserID = currentUser!!.uid
-                            startActivity(Intent(this@LoginActivity, MenuActivity::class.java).putExtra("Login",currentUserID))
-
-
+                            val thisUserToSave = viewmodel.saveUserFromViewModel()
+                            saveUser(thisUserToSave)
+                            Log.e(">>>", "SAVED: $thisUserToSave")
+                            startActivity(Intent(this@LoginActivity, MenuActivity::class.java))
+                            finish()
                         }
                     }
                 }
@@ -77,6 +78,13 @@ class LoginActivity : AppCompatActivity(){
                             bundle.putString("TEXT","UserNotFound")
                             dialogFragmentU.arguments = bundle
                             dialogFragmentU.show(supportFragmentManager,"userNotFoundDialog")
+                        }
+                        "networkError"->{
+                            val dialogFragmentU = ErrorDialog()
+                            val bundle = Bundle()
+                            bundle.putString("TEXT","NetworkError")
+                            dialogFragmentU.arguments = bundle
+                            dialogFragmentU.show(supportFragmentManager,"networkError")
                         }
                     }
                     /*
@@ -126,9 +134,15 @@ class LoginActivity : AppCompatActivity(){
     }
 
     fun showDialog(){
-
         SuccessfulRegisterDialog().show(supportFragmentManager,"successfullyRegister")
     }
+
+    private fun saveUser(user:User){
+        val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
+        val json = Gson().toJson(user)
+        sp.edit().putString("Usuario",json).apply()
+    }
+
 
 
     /*fun createTextGradient() {
