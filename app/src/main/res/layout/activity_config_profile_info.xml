@@ -70,7 +70,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:text="@string/Juliana"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profileInfoPImg"
@@ -118,7 +117,6 @@
             android:cursorVisible="false"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:text="@string/kamcak"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/configInfoCorreoInstructivo" />
@@ -156,7 +154,6 @@
             android:cursorVisible="false"
             android:ems="10"
             android:inputType="phone"
-            android:text="@string/tel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/configInfoTel" />
@@ -193,7 +190,6 @@
             android:cursorVisible="false"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/HombreET"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/configInfoSexoInstructivo" />
@@ -228,7 +224,6 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="date"
-            android:text="@string/fechaNaci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/configInfoFechaInstructivo" />

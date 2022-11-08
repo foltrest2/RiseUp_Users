@@ -7,14 +7,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.riseup.riseup_users.model.Usuario
+import com.riseup.riseup_users.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -65,8 +64,8 @@ class RegisterViewModel: ViewModel() {
                 val date = df.parse(nacimiento)
                 val edad = calculateAge(date)
 
-                val user = Usuario(celular,correo, diamantes, edad, arrayListOf(),Firebase.auth.currentUser!!.uid,date, nacionalidad, nombre, sexo)
-                Firebase.firestore.collection("Usuarios")
+                val user = User(celular,correo, diamantes, edad, arrayListOf(),Firebase.auth.currentUser!!.uid,date, nacionalidad, nombre, sexo)
+                Firebase.firestore.collection("Users")
                     .document(user.id).set(user).await()
 
                 withContext(Dispatchers.Main){ _authState.value = AuthState(AuthResult.SUCCESS, "Success") }

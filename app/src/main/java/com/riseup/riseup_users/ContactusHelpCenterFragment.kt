@@ -21,10 +21,6 @@ class ContactusHelpCenterFragment : Fragment(){
         _binding = FragmentContactusHelpCenterBinding.inflate(inflater, container, false)
         val view = binding.root
 
-
-
-
-
         return view
     }
 
