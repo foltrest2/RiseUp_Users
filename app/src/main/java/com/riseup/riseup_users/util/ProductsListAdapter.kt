@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.ProductsListModel
-import com.riseup.riseup_users.model.ProductsShoppingCarModel
 import com.riseup.riseup_users.view.ProductsListView
 
 
@@ -18,9 +17,8 @@ class ProductsListAdapter: RecyclerView.Adapter<ProductsListView>() {
 
         //inflate: XML->View
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.products_list_row,parent,false)
-        val productLViewHolder = ProductsListView(view)
-        return productLViewHolder
+        val view = inflater.inflate(R.layout.products_list_row, parent, false)
+        return ProductsListView(view)
     }
 
     override fun onBindViewHolder(holder: ProductsListView, position: Int) {
@@ -30,6 +28,9 @@ class ProductsListAdapter: RecyclerView.Adapter<ProductsListView>() {
         holder.productType.text = producln.type
         holder.productPrice.text = producln.price.toBigDecimal().toString()
         holder.productImage.setImageResource(R.drawable.wineimg)
+        holder.addProductBtn.setOnClickListener {
+            
+        }
     }
 
     override fun getItemCount(): Int {
