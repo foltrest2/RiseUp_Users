@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import com.riseup.riseup_users.ContactusHelpCenterFragment
-import com.riseup.riseup_users.FaqHelpCenterFragment
+import com.riseup.riseup_users.view.fragments.ContactusHelpCenterFragment
+import com.riseup.riseup_users.view.fragments.FaqHelpCenterFragment
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ActivityConfigHelpCenterBinding
 import com.riseup.riseup_users.viewmodel.FaqHelpCenterViewModel

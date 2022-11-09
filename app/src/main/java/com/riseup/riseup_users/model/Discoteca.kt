@@ -1,7 +1,6 @@
 package com.riseup.riseup_users.model
 
-class Discoteca (
-
+data class Discoteca (
     val id:String = "",
     var nombre:String = "",
     var bannerID:String = "",
@@ -10,5 +9,4 @@ class Discoteca (
     var eventosID:ArrayList<Evento> = ArrayList(),
     var productos:ArrayList<Evento> = ArrayList(),
     var ventas:ArrayList<Evento> = ArrayList()
-
-        )
+)

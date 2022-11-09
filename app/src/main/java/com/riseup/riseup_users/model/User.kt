@@ -14,6 +14,5 @@ data class User (
     var nationality:String ="",
     var name:String = "",
     var sex:String ="",
-    var profileImg:String = ""
-
+    var profileImg:String = "",
 )

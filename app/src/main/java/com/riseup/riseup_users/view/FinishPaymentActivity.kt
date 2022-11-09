@@ -3,8 +3,7 @@ package com.riseup.riseup_users.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.riseup.riseup_users.PaymentSelectionFragment
-import com.riseup.riseup_users.ShoppingCarFragment
+import com.riseup.riseup_users.view.fragments.ShoppingCarFragment
 import com.riseup.riseup_users.databinding.FinishPaymentBinding
 import com.riseup.riseup_users.util.OrderDialog
 

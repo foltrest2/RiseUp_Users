@@ -1,4 +1,4 @@
-package com.riseup.riseup_users
+package com.riseup.riseup_users.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentDiamondsPaymentBinding
 import com.riseup.riseup_users.util.DiamondPaymentAdapter
 import com.riseup.riseup_users.view.FinishPaymentActivity

@@ -10,6 +10,7 @@ import com.google.gson.Gson
 import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
 import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.view.fragments.*
 import com.riseup.riseup_users.viewmodel.MenuViewModel
 
 class MenuActivity : AppCompatActivity() {
@@ -112,5 +113,9 @@ class MenuActivity : AppCompatActivity() {
         }else{
             return Gson().fromJson(json, User::class.java)
         }
+    }
+
+    companion object{
+
     }
 }

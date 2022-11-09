@@ -1,4 +1,4 @@
-package com.riseup.riseup_users
+package com.riseup.riseup_users.view.fragments
 
 
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentFaqHelpCenterBinding
 import com.riseup.riseup_users.util.FAQInfoBlockAdapter
 import com.riseup.riseup_users.viewmodel.FaqHelpCenterViewModel
