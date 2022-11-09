@@ -29,7 +29,8 @@ class ConfigProfileInfoViewModel : ViewModel(){
     private val _inComingUser = MutableLiveData<User>()
     val inComingUser : LiveData<User> get() = _inComingUser
 
-    private lateinit var binding : ActivityConfigProfileInfoBinding
+    private val _inComingProfileImg = MutableLiveData<String>()
+    val inComingProfileImg : LiveData<String> get() = _inComingProfileImg
 
     fun setSpUser(user: User){
         _inComingUser.value = user
@@ -86,13 +87,7 @@ class ConfigProfileInfoViewModel : ViewModel(){
     }
 
     fun updateImage(user: User) {
-        viewModelScope.launch(Dispatchers.IO){
-            Firebase.firestore.collection("Users").document(user.id).get().addOnSuccessListener {
-                val updatedUser = it.toObject(User::class.java)
-                val profileID = updatedUser?.profileImg
-                downloadProfileImage(profileID)
-            }.await()
-        }
+                downloadProfileImage(user.profileImg)
     }
 
     private fun downloadProfileImage(profileImg : String?) {
@@ -100,16 +95,16 @@ class ConfigProfileInfoViewModel : ViewModel(){
             viewModelScope.launch(Dispatchers.IO) {
                 Firebase.storage.getReference("/Usuarios perfiles")
                     .child(profileImg).downloadUrl.addOnSuccessListener {
+                        /**
                         Glide.with(binding.profileInfoPImg).load(it)
                             .thumbnail(.5f)
                             .into(binding.profileInfoPImg)
+                        */
+                        _inComingProfileImg.postValue(it.toString())
                 }.await()
             }
         }
     }
 
-    fun setBinding(binding: ActivityConfigProfileInfoBinding) {
-        this.binding = binding
-    }
 
 }
