@@ -57,7 +57,7 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
                 .into(binding.profileInfoPImg)
         }
 
-        viewModel.updateImage(user)
+        viewModel.downloadProfileImage(user.profileImg)
 
 
         galleryLauncher = registerForActivityResult(

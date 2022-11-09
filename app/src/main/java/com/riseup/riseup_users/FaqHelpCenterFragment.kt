@@ -2,6 +2,7 @@ package com.riseup.riseup_users
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.riseup.riseup_users.databinding.FragmentFaqHelpCenterBinding
+import com.riseup.riseup_users.repo.SharedPreferences
 import com.riseup.riseup_users.util.FAQInfoBlockAdapter
 import com.riseup.riseup_users.viewmodel.FaqHelpCenterViewModel
 
@@ -22,6 +24,7 @@ class FaqHelpCenterFragment : Fragment(){
     private val viewModel : FaqHelpCenterViewModel by activityViewModels()
 
     private val adapter = FAQInfoBlockAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -86,20 +86,12 @@ class ConfigProfileInfoViewModel : ViewModel(){
         }
     }
 
-    fun updateImage(user: User) {
-                downloadProfileImage(user.profileImg)
-    }
 
-    private fun downloadProfileImage(profileImg : String?) {
+    fun downloadProfileImage(profileImg : String?) {
         if(!profileImg.isNullOrEmpty()){
             viewModelScope.launch(Dispatchers.IO) {
                 Firebase.storage.getReference("/Usuarios perfiles")
                     .child(profileImg).downloadUrl.addOnSuccessListener {
-                        /**
-                        Glide.with(binding.profileInfoPImg).load(it)
-                            .thumbnail(.5f)
-                            .into(binding.profileInfoPImg)
-                        */
                         _inComingProfileImg.postValue(it.toString())
                 }.await()
             }
