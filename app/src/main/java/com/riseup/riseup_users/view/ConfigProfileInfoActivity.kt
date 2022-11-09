@@ -41,7 +41,6 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
         loadUserInfo(user)
 
         //Inicializacion del viewModel
-        viewModel.setBinding(binding)
         viewModel.setSpUser(user)
 
         //Listener de la modificacion
@@ -50,9 +49,15 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
             saveUserSp(it)
         }
 
-        viewModel.updateImage(user)
-        //Glide.with(binding.profileInfoPImg).load(image).into(binding.profileInfoPImg)
+        //Listener de la imagen
+        viewModel.inComingProfileImg.observe(this){
+            Log.e(">>>", "Actualizado en observer img:${it}")
+            Glide.with(binding.profileInfoPImg).load(it)
+                .centerCrop()
+                .into(binding.profileInfoPImg)
+        }
 
+        viewModel.updateImage(user)
 
 
         galleryLauncher = registerForActivityResult(
