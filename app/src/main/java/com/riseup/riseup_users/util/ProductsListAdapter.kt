@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
-import com.riseup.riseup_users.model.Product
+import com.riseup.riseup_users.model.ProductModel
 import com.riseup.riseup_users.view.ProductsListView
 
 
-class ProductsListAdapter(private val onClickListener:(Product) -> Unit): RecyclerView.Adapter<ProductsListView>() {
+class ProductsListAdapter(private val onClickListener:(ProductModel) -> Unit): RecyclerView.Adapter<ProductsListView>() {
 
-    private val productList = ArrayList<Product>()
+    private val productList = ArrayList<ProductModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsListView {
         //inflate: XML->View
@@ -40,7 +40,7 @@ class ProductsListAdapter(private val onClickListener:(Product) -> Unit): Recycl
 */
     }
 
-    fun addProduct(producto: Product){
+    fun addProduct(producto: ProductModel){
         productList.add(producto)
         notifyItemInserted(productList.lastIndex)
 

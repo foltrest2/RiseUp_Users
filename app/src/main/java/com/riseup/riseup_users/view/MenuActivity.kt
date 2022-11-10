@@ -9,8 +9,9 @@ import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.view.fragments.*
+import com.riseup.riseup_users.viewmodel.DiscoCardViewModel
 import com.riseup.riseup_users.viewmodel.MenuViewModel
 
 class MenuActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var paymentCodeFragment: PaymentCodeFragment
     private lateinit var discoHomeFragment: DiscoHomeFragment
     private val viewModel : MenuViewModel by viewModels()
-    private lateinit var user: User
+    private lateinit var user: UserModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +55,7 @@ class MenuActivity : AppCompatActivity() {
         paymentCodeFragment = PaymentCodeFragment.newInstance()
         discoHomeFragment = DiscoHomeFragment.newInstance()
 
+        viewModel.subscribeRealTimeDiscos()
 
         showFragment(principalFragment)
 
@@ -105,13 +107,13 @@ class MenuActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun loadUser(): User?{
+    private fun loadUser(): UserModel?{
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = sp.getString("Usuario", "NO_USER")
         if(json == "NO_USER"){
             return null
         }else{
-            return Gson().fromJson(json, User::class.java)
+            return Gson().fromJson(json, UserModel::class.java)
         }
     }
 

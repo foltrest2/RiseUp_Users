@@ -1,15 +1,15 @@
 package com.riseup.riseup_users.model
 
-import java.sql.Date
+import java.util.Date
 
-data class Transaction(
+data class TransactionModel(
     val id : String = "",
     var code : String = "",
     var date : Date? = null,
     var diamonds: Int = 0,
     val discoID : String = "",
     var method: String = "",
-    var shoppingCar : ArrayList<Product>? = null,
+    var shoppingCar : ArrayList<ProductsShoppingCarModel>? = null,
     var state : Int = 0,
     val userID : String = ""
 )

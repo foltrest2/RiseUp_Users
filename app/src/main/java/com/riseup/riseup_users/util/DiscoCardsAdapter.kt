@@ -6,22 +6,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.DiscoCardModel
+import com.riseup.riseup_users.model.DiscoModel
+import com.riseup.riseup_users.model.ProductModel
 import com.riseup.riseup_users.view.DiscoCardView
 import com.riseup.riseup_users.view.MenuActivity
 
 
-class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
+class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : RecyclerView.Adapter<DiscoCardView>() {
 
-    private val discoCards = ArrayList<DiscoCardModel>()
-
-    init {
-        discoCards.add(DiscoCardModel("Espacio 10-60", "52583270"))
-        discoCards.add(DiscoCardModel("La Over", "45188520"))
-        discoCards.add(DiscoCardModel("Cardinals", "45187541"))
-        discoCards.add(DiscoCardModel("La Social", "45185204"))
-        discoCards.add(DiscoCardModel("La Premiere", "45175102"))
-        discoCards.add(DiscoCardModel("Living", "45172015"))
-    }
+    private val discoCards = ArrayList<DiscoModel>()
 
     //Genera un esqueleto gracias al XML
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiscoCardView {
@@ -34,19 +27,33 @@ class DiscoCardsAdapter : RecyclerView.Adapter<DiscoCardView>() {
     //Con el esqueleto ya formado, se le ponen los datos correspondientes al esqueleto
     override fun onBindViewHolder(skeleton: DiscoCardView, position: Int) {
         val discoCard = discoCards[position]
-        skeleton.discoName.text = discoCard.name
-        skeleton.visits.text = discoCard.visits
-        skeleton.discoImage.setImageResource(R.mipmap.fondotarjeta1060)
-        val context = skeleton.discoCard.context
-        skeleton.discoCard.setOnClickListener {
-            val switchActivityIntent = Intent(context, MenuActivity::class.java)
-            switchActivityIntent.putExtra("discoHomeFragment", "discoHomeFragment")
-            context.startActivity(switchActivityIntent)
-        }
+        skeleton.render(discoCard, onClickListener)
     }
 
     //Este método permite al adaptador saber cuantos elementos se tienen
     override fun getItemCount(): Int {
         return discoCards.size
     }
+
+    fun removeDiscoCard(order: DiscoModel){
+        val index = discoCards.indexOf(order)
+        discoCards.remove(order)
+        notifyItemRemoved(index)
+    }
+
+    fun addDiscoCard(order : DiscoModel){
+        discoCards.add(order)
+        notifyItemInserted(discoCards.lastIndex)
+    }
+
+    fun addAllDiscos(orders : ArrayList<DiscoModel>){
+        discoCards.addAll(orders)
+        notifyDataSetChanged()
+    }
+
+    fun reset(){
+        discoCards.clear()
+        notifyDataSetChanged()
+    }
+
 }

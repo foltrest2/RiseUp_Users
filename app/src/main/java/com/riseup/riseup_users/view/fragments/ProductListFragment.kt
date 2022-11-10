@@ -5,24 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentProductListBinding
-import com.riseup.riseup_users.model.Product
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.ProductModel
+import com.riseup.riseup_users.model.ProductsShoppingCarModel
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.util.ProductsListAdapter
-import com.riseup.riseup_users.view.MenuActivity
+import kotlin.collections.ArrayList
 
 class ProductListFragment : Fragment() {
 
 
     private var _binding: FragmentProductListBinding?= null
     private val binding get() = _binding!!
-    private lateinit var user: User
+    private lateinit var user: UserModel
+    private var shoppingCar : ArrayList<ProductsShoppingCarModel> = arrayListOf()
 
     private lateinit var discoHomeFragment: DiscoHomeFragment
 
@@ -34,9 +35,13 @@ class ProductListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        // Inflate the layout for this fragment
         _binding = FragmentProductListBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val temp = loadShoppingCar()
+        if (temp != null){
+            shoppingCar = temp!!
+        }
 
         //Recrear el estado
         val productsListRecycler = binding.recyclerViewProductListSC
@@ -54,24 +59,48 @@ class ProductListFragment : Fragment() {
         return view
     }
 
-    private fun loadUser(): User? {
+    private fun loadUser(): UserModel? {
         val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         val json = sp?.getString("Usuario", "NO_USER")
-        if (json == "NO_USER") {
-            return null
+        return if (json == "NO_USER") {
+            null
         } else {
-            return Gson().fromJson(json, User::class.java)
+            Gson().fromJson(json, UserModel::class.java)
         }
     }
 
-    private fun saveUserSp(user: User) {
+    private fun saveUserSp(user: UserModel) {
         val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         val json = Gson().toJson(user)
         sp?.edit()?.putString("Usuario", json)?.apply()
     }
 
-    private fun onClickListener(thisProduct: Product) {
+    private fun onClickListener(thisProduct: ProductModel) {
+        val product = ProductsShoppingCarModel(thisProduct.image, thisProduct.name, thisProduct.price, thisProduct.quantity.inc())
+        if (shoppingCar.contains(product)){
+            var x = shoppingCar[shoppingCar.indexOf(product)].lot.inc()
+            Toast.makeText(requireContext(), "Tienes $x de ${product.name}", Toast.LENGTH_LONG).show()
+        }else{
+            shoppingCar.add(product)
+        }
 
+        saveShoppingCar()
+    }
+
+    private fun saveShoppingCar(){
+        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = Gson().toJson(shoppingCar)
+        sp?.edit()?.putString("shoppingCar", json)?.apply()
+    }
+
+    private fun loadShoppingCar(): ArrayList<ProductsShoppingCarModel>? {
+        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = sp?.getString("shoppingCar", "NO_CAR")
+        return if (json == "NO_USER") {
+            null
+        } else {
+            Gson().fromJson(json, ArrayList<ProductsShoppingCarModel>()::class.java)
+        }
     }
 
     companion object {

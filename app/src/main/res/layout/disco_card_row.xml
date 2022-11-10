@@ -32,8 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/background_disco_selected"
-                android:scaleType="centerCrop"
-                app:srcCompat="@mipmap/fondotarjeta1060" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/title_disco_card"
@@ -43,17 +42,8 @@
                 android:text="@string/espacio_10_60"
                 android:textSize="34sp"
                 android:translationX="24dp"
-                android:translationY="120dp" />
+                android:translationY="140dp" />
 
-            <TextView
-                android:id="@+id/visits_disco_card"
-                style="@style/PoppinsRegular_10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/visits"
-                android:textSize="16sp"
-                android:translationX="24dp"
-                android:translationY="170dp" />
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

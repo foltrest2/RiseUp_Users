@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityLoginBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.util.ErrorDialog
 import com.riseup.riseup_users.util.SuccessfulRegisterDialog
 import com.riseup.riseup_users.viewmodel.AuthResult
@@ -137,7 +137,7 @@ class LoginActivity : AppCompatActivity(){
         SuccessfulRegisterDialog().show(supportFragmentManager,"successfullyRegister")
     }
 
-    private fun saveUser(user:User){
+    private fun saveUser(user:UserModel){
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = Gson().toJson(user)
         sp.edit().putString("Usuario",json).apply()

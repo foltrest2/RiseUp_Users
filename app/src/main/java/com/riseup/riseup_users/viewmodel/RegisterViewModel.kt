@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -64,7 +64,7 @@ class RegisterViewModel: ViewModel() {
                 val date = df.parse(nacimiento)
                 val edad = calculateAge(date)
 
-                val user = User(celular,correo, diamantes, edad, arrayListOf(),Firebase.auth.currentUser!!.uid,date, nacionalidad, nombre, sexo)
+                val user = UserModel(celular,correo, diamantes, edad, arrayListOf(),Firebase.auth.currentUser!!.uid,date, nacionalidad, nombre, sexo)
                 Firebase.firestore.collection("Users")
                     .document(user.id).set(user).await()
 

@@ -3,7 +3,7 @@ package com.riseup.riseup_users.model
 import java.util.*
 import kotlin.collections.ArrayList
 
-data class User (
+data class UserModel (
     var cel:String ="",
     var email:String = "",
     var diamonds:Int = 0,

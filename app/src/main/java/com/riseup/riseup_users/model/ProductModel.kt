@@ -1,11 +1,12 @@
 package com.riseup.riseup_users.model
 
-data class Product (
+data class ProductModel (
     val id:String = "",
     var category:String = "",
-    var price:Double? = null,
+    var price:Double = 0.0,
     var name:String = "",
-    var quantity:Double? = null
+    var quantity:Int = 0,
+    var image:String = ""
 )
 
 

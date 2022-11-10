@@ -1,5 +1,5 @@
 package com.riseup.riseup_users.model
 
-data class Evento (
+data class EventModel (
     val id:String = ""
         )
