@@ -10,6 +10,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityConfigProfileInfoBinding
 import com.riseup.riseup_users.model.UserModel
@@ -37,7 +38,6 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
         loadUserInfo(user)
 
         //Inicializacion del viewModel
-        viewModel.setBinding(binding)
         viewModel.setSpUser(user)
 
         //Listener de la modificacion
@@ -46,9 +46,15 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
             saveUserSp(it)
         }
 
-        viewModel.updateImage(user)
-        //Glide.with(binding.profileInfoPImg).load(image).into(binding.profileInfoPImg)
+        //Listener de la imagen
+        viewModel.inComingProfileImg.observe(this){
+            Log.e(">>>", "Actualizado en observer img:${it}")
+            Glide.with(binding.profileInfoPImg).load(it)
+                .centerCrop()
+                .into(binding.profileInfoPImg)
+        }
 
+        viewModel.downloadProfileImage(user.profileImg)
 
 
         galleryLauncher = registerForActivityResult(

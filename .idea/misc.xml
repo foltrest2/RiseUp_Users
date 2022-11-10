@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.193" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/arrowgo.xml" value="0.193" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/azulNavi_popup.xml" value="0.1265" />
@@ -146,6 +147,8 @@
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/linear_gradient_background.xml" value="0.1945" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
+=======
+>>>>>>> kevin
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/accountcircle.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/combinado.xml" value="0.179" />

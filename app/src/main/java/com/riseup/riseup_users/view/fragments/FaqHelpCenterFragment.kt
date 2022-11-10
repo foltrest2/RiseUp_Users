@@ -24,6 +24,7 @@ class FaqHelpCenterFragment : Fragment(){
 
     private val adapter = FAQInfoBlockAdapter()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
