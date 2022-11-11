@@ -36,6 +36,7 @@ class ConfigHelpActivity : AppCompatActivity() {
                 onSubmitClickListener = { report ->
                     if(report.isNotEmpty()){
                         viewModel.sendReport(report)
+                        Toast.makeText(this,"Gracias por su reporte", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this,"Porfavor especifique la falla", Toast.LENGTH_LONG).show()
                     }

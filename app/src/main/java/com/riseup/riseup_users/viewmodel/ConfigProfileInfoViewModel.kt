@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.riseup.riseup_users.databinding.ActivityConfigProfileInfoBinding
 import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.repo.SharedPreferences
 import kotlinx.android.synthetic.main.activity_config_profile_info.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,6 +32,7 @@ class ConfigProfileInfoViewModel : ViewModel(){
 
     private val _inComingProfileImg = MutableLiveData<String>()
     val inComingProfileImg : LiveData<String> get() = _inComingProfileImg
+
 
     fun setSpUser(user: User){
         _inComingUser.value = user
