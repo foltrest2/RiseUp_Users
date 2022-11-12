@@ -27,7 +27,7 @@ class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>(
         holder.productPrice.text = producn.price.toBigDecimal().toString()
         holder.productName.text = producn.name
         holder.productImage.setImageResource(R.drawable.wineimg)
-        holder.productQuantity.text = producn.quantity.toString()
+        holder.productQuantity.text = producn.lot.toString()
 
 
 
@@ -36,7 +36,6 @@ class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>(
 
     override fun getItemCount(): Int {
         return productShCar.size
-        TODO("Not yet implemented")
     }
 
     init{
