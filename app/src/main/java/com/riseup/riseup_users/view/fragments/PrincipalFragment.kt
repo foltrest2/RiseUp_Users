@@ -40,6 +40,7 @@ class PrincipalFragment : Fragment() {
         productsListRecycler.layoutManager = LinearLayoutManager(activity)
         productsListRecycler.adapter = adapter
 
+
         viewModel.discos.observe(viewLifecycleOwner){ discos ->
             adapter.reset()
             if(discos.isNotEmpty()){
@@ -49,6 +50,7 @@ class PrincipalFragment : Fragment() {
             }
         }
 
+/**
         viewModel.inComingImg.observe(viewLifecycleOwner){
             if(it.isNotEmpty()){
                 for(URL in it){
@@ -62,6 +64,7 @@ class PrincipalFragment : Fragment() {
                 adapter.restart()
             }
         }
+*/
 
         return view
     }

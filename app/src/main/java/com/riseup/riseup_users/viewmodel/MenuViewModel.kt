@@ -42,11 +42,13 @@ class MenuViewModel : ViewModel() {
                         Log.e(">>>", "ADEED: $thisDisco")
                         discoArray.add(thisDisco)
                         _discos.value = discoArray
+                        /**
                         Firebase.storage.getReference(thisDisco.bannerRef)
                             .child(thisDisco.bannerCardID).downloadUrl.addOnSuccessListener {
                                 imageArray.add(it.toString())
                                 _inComingImg.value = imageArray
                             }
+                        */
                     } else if (doc.type.name == "MODIFIED") {
                         val thisDisco = doc.document.toObject(DiscoModel::class.java)
                         Log.e(">>>", "MODIFIED: $thisDisco")
