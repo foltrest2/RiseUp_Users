@@ -5,18 +5,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.DiscoCardModel
 import com.riseup.riseup_users.model.DiscoModel
 import com.riseup.riseup_users.model.ProductModel
 import com.riseup.riseup_users.view.DiscoCardView
 import com.riseup.riseup_users.view.MenuActivity
+import kotlinx.coroutines.delay
 
 
 class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : RecyclerView.Adapter<DiscoCardView>() {
 
     private val discoCards = ArrayList<DiscoModel>()
-    private var _url: String = ""
+    //private var _url: String = ""
 
     //Genera un esqueleto gracias al XML
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiscoCardView {
@@ -29,7 +31,8 @@ class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : Recy
     //Con el esqueleto ya formado, se le ponen los datos correspondientes al esqueleto
     override fun onBindViewHolder(skeleton: DiscoCardView, position: Int) {
         val discoCard = discoCards[position]
-        skeleton.render(discoCard, _url, onClickListener)
+        skeleton.render(discoCard, onClickListener)
+
     }
 
     //Este método permite al adaptador saber cuantos elementos se tienen
@@ -46,7 +49,7 @@ class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : Recy
     }
 
     fun setImage(url: String){
-        _url = url
+
     }
 
     fun removeDiscoCard(discoCard: DiscoModel){
