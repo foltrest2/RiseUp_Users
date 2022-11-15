@@ -18,6 +18,7 @@ import com.riseup.riseup_users.model.UserModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
@@ -35,34 +36,16 @@ class MenuViewModel : ViewModel() {
 
     fun loadDiscos() {
         viewModelScope.launch(Dispatchers.IO) {
-            Firebase.firestore.collection("Discos").addSnapshotListener { data, e ->
-                for (doc in data!!.documentChanges) {
-                    if (doc.type.name == "ADDED") {
-                        val thisDisco = doc.document.toObject(DiscoModel::class.java)
-                        Log.e(">>>", "ADEED: $thisDisco")
-                        discoArray.add(thisDisco)
-                        _discos.value = discoArray
-                        /**
-                        Firebase.storage.getReference(thisDisco.bannerRef)
-                            .child(thisDisco.bannerCardID).downloadUrl.addOnSuccessListener {
-                                imageArray.add(it.toString())
-                                _inComingImg.value = imageArray
-                            }
-                        */
-                    } else if (doc.type.name == "MODIFIED") {
-                        val thisDisco = doc.document.toObject(DiscoModel::class.java)
-                        Log.e(">>>", "MODIFIED: $thisDisco")
-                        for (disco in discoArray) {
-                            if (disco.id == thisDisco.id) {
-                                val index = discoArray.indexOf(disco)
-                                discoArray[index] = thisDisco
-                                _discos.value = discoArray
-                                //Log.e(">>>", "Cambio en array${discoArray[index].state}")
-                                break
-                            }
-                        }
-                    }
-                }
+            val result = Firebase.firestore.collection("Discos").get().await()
+            for(doc in result) {
+                val thisDisco = doc.toObject(DiscoModel::class.java)
+                val url = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
+                Log.e(">>>",url)
+                thisDisco.bannerURL = url
+                discoArray.add(thisDisco)
+            }
+            withContext(Dispatchers.Main){
+                _discos.value = discoArray
             }
         }
     }

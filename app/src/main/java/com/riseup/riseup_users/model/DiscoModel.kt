@@ -10,5 +10,6 @@ data class DiscoModel (
     var eventsID:ArrayList<EventModel> = arrayListOf(),
     var eventsRef:String = "",
     var products:ArrayList<ProductModel> = arrayListOf(),
-    var sales:ArrayList<TransactionModel> = arrayListOf()
+    var sales:ArrayList<TransactionModel> = arrayListOf(),
+    var bannerURL:String? = null
 )

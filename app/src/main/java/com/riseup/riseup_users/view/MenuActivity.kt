@@ -117,6 +117,10 @@ class MenuActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+
+    }
+
     companion object {
 
     }
