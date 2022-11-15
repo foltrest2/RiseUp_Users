@@ -2,6 +2,7 @@ package com.riseup.riseup_users.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +59,8 @@ class MenuActivity : AppCompatActivity() {
         paymentCodeFragment = PaymentCodeFragment.newInstance()
         discoHomeFragment = DiscoHomeFragment.newInstance()
 
-        viewModel.subscribeRealTimeDiscos()
+
+        viewModel.loadDiscos()
         viewModel.loadProducts()
 
         showFragment(principalFragment)

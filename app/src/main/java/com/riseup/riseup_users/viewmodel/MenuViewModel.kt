@@ -33,7 +33,7 @@ class MenuViewModel : ViewModel() {
     private val _inComingImg: MutableLiveData<ArrayList<String>> = MutableLiveData(arrayListOf())
     val inComingImg: LiveData<ArrayList<String>> get() = _inComingImg
 
-    fun subscribeRealTimeDiscos() {
+    fun loadDiscos() {
         viewModelScope.launch(Dispatchers.IO) {
             Firebase.firestore.collection("Discos").addSnapshotListener { data, e ->
                 for (doc in data!!.documentChanges) {
