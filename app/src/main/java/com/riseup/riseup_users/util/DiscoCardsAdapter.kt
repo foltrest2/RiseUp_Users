@@ -1,6 +1,7 @@
 package com.riseup.riseup_users.util
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,7 @@ import com.riseup.riseup_users.view.MenuActivity
 class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : RecyclerView.Adapter<DiscoCardView>() {
 
     private val discoCards = ArrayList<DiscoModel>()
+    private var _url: String = ""
 
     //Genera un esqueleto gracias al XML
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiscoCardView {
@@ -27,7 +29,7 @@ class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : Recy
     //Con el esqueleto ya formado, se le ponen los datos correspondientes al esqueleto
     override fun onBindViewHolder(skeleton: DiscoCardView, position: Int) {
         val discoCard = discoCards[position]
-        skeleton.render(discoCard, onClickListener)
+        skeleton.render(discoCard, _url, onClickListener)
     }
 
     //Este método permite al adaptador saber cuantos elementos se tienen
@@ -35,19 +37,32 @@ class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : Recy
         return discoCards.size
     }
 
-    fun removeDiscoCard(order: DiscoModel){
-        val index = discoCards.indexOf(order)
-        discoCards.remove(order)
+    fun restart(){
+        var copy:ArrayList<DiscoModel> = arrayListOf()
+        copy.addAll(discoCards)
+        discoCards.clear()
+        discoCards.addAll(copy)
+        notifyDataSetChanged()
+    }
+
+    fun setImage(url: String){
+        _url = url
+    }
+
+    fun removeDiscoCard(discoCard: DiscoModel){
+        val index = discoCards.indexOf(discoCard)
+        discoCards.remove(discoCard)
         notifyItemRemoved(index)
     }
 
-    fun addDiscoCard(order : DiscoModel){
-        discoCards.add(order)
+
+    fun addDiscoCard(discoCard : DiscoModel){
+        discoCards.add(discoCard)
         notifyItemInserted(discoCards.lastIndex)
     }
 
-    fun addAllDiscos(orders : ArrayList<DiscoModel>){
-        discoCards.addAll(orders)
+    fun addAllDiscos(discos : ArrayList<DiscoModel>){
+        discoCards.addAll(discos)
         notifyDataSetChanged()
     }
 
@@ -55,5 +70,7 @@ class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : Recy
         discoCards.clear()
         notifyDataSetChanged()
     }
+
+
 
 }

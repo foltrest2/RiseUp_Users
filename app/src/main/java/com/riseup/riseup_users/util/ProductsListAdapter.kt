@@ -40,10 +40,9 @@ class ProductsListAdapter(private val onClickListener:(ProductModel) -> Unit): R
 */
     }
 
-    fun addProduct(producto: ProductModel){
-        productList.add(producto)
-        notifyItemInserted(productList.lastIndex)
-
+    fun addAllProducts(products: List<ProductModel>?){
+        productList.addAll(products!!)
+        notifyItemRangeInserted(0, productList.size)
     }
 
 }

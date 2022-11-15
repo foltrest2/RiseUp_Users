@@ -29,7 +29,7 @@ class RegisterViewModel: ViewModel() {
     val authState : LiveData<AuthState> get() = _authState
 
     //Accion de registro
-    fun signUp(celular:String, correo:String, diamantes:Int, nacimiento:String, nacionalidad:String,nombre:String,sexo:String,pass:String){
+    fun signUp(celular:String, correo:String, diamantes:Double, nacimiento:String, nacionalidad:String,nombre:String,sexo:String,pass:String){
         viewModelScope.launch (Dispatchers.IO){
             try {
                 val result = Firebase.auth.createUserWithEmailAndPassword(

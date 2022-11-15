@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.193" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/arrowgo.xml" value="0.193" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/azulNavi_popup.xml" value="0.1265" />
@@ -17,6 +16,7 @@
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/drawable/states_favorites_icon.xml" value="0.193" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_diamond_historial.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_language.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_profile_info.xml" value="0.21965579710144928" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_security.xml" value="0.20516304347826086" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_user_payments_add_card.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/activity_config_user_pays.xml" value="0.264" />
@@ -31,13 +31,16 @@
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/diamond_payment_row.xml" value="0.4" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/diamonds_trans_row.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/disco_card_row.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/finish_payment.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_diamonds_payment.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_disco_home.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_disco_selection.xml" value="0.20516304347826086" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_last_payments.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_payment_code.xml" value="0.2" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_payment_selection.xml" value="0.1" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_principal.xml" value="0.152" />
-        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_product_list.xml" value="0.20516304347826086" />
-        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_shopping_car.xml" value="0.4" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_product_list.xml" value="0.4" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_shopping_car.xml" value="0.2" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/not_enough_diamonds_dialog.xml" value="0.4" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/products_list_row.xml" value="0.4" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/show_cards_dialog.xml" value="0.4" />
@@ -147,8 +150,6 @@
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1955" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/drawable/linear_gradient_background.xml" value="0.1945" />
         <entry key="..\:/Users/estudiante/Downloads/appsmoviles/RiseUp_Users/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
-=======
->>>>>>> kevin
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/accountcircle.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/arrowback.xml" value="0.224" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/drawable/combinado.xml" value="0.179" />

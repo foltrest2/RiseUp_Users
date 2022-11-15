@@ -1,15 +1,20 @@
 package com.riseup.riseup_users.view.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentDiscoHomeBinding
+import com.riseup.riseup_users.model.DiscoModel
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.util.BannerPartyAdapter
 import com.riseup.riseup_users.viewmodel.DiscoCardViewModel
 import com.riseup.riseup_users.viewmodel.MenuViewModel
@@ -38,6 +43,10 @@ class DiscoHomeFragment : Fragment() {
             transaction.replace(R.id.fragmentContainer, productListFragment)
             transaction.commit()
         }
+        var user : UserModel? = null
+        if (loadUser() != null) user = loadUser()!!
+
+        binding.diamondsInfoDiscoSelected.text = "¡Tienes ${user?.diamonds?.toInt()} diamantes!"
 
         val bannersRecycler = binding.bannersRecyclerView
         bannersRecycler.setHasFixedSize(true)
@@ -45,6 +54,16 @@ class DiscoHomeFragment : Fragment() {
         bannersRecycler.adapter = adapter
 
         return view
+    }
+
+    private fun loadUser(): UserModel? {
+        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = sp?.getString("Usuario", "NO_USER")
+        return if (json == "NO_USER") {
+            null
+        } else {
+            Gson().fromJson(json, UserModel::class.java)
+        }
     }
 
     companion object {

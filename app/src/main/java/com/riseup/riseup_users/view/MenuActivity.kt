@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
 import com.riseup.riseup_users.*
 import com.riseup.riseup_users.databinding.ActivityMenuBinding
@@ -13,6 +14,8 @@ import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.view.fragments.*
 import com.riseup.riseup_users.viewmodel.DiscoCardViewModel
 import com.riseup.riseup_users.viewmodel.MenuViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity() {
 
@@ -24,7 +27,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var diamondPaymentFragment: DiamondsPaymentFragment
     private lateinit var paymentCodeFragment: PaymentCodeFragment
     private lateinit var discoHomeFragment: DiscoHomeFragment
-    private val viewModel : MenuViewModel by viewModels()
+    private val viewModel: MenuViewModel by viewModels()
     private lateinit var user: UserModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,15 +38,15 @@ class MenuActivity : AppCompatActivity() {
 
         //Cargar el usuario de los sp
         val user = loadUser()
-        if(viewModel.isNullUser(user)){
+        if (viewModel.isNullUser(user)) {
             Toast.makeText(this, "A LOGUEAR PAPI", Toast.LENGTH_LONG).show()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
             return
-            } else {
-                this.user = user!!
-                Toast.makeText(this, "Este usuario: ${this.user}", Toast.LENGTH_LONG).show()
+        } else {
+            this.user = user!!
+            Toast.makeText(this, "Este usuario: ${this.user}", Toast.LENGTH_LONG).show()
         }
 
 
@@ -56,10 +59,9 @@ class MenuActivity : AppCompatActivity() {
         discoHomeFragment = DiscoHomeFragment.newInstance()
 
         viewModel.subscribeRealTimeDiscos()
+        viewModel.loadProducts()
 
         showFragment(principalFragment)
-
-
 
         val intentFragment = intent.extras?.get("principalFragment")
         if (intentFragment != null) {
@@ -79,10 +81,6 @@ class MenuActivity : AppCompatActivity() {
             when (intentFragment3) {
                 "discoHomeFragment" -> showFragment(discoHomeFragment)
             }
-        }
-        val intentFragment4 = intent.extras?.getString("Login")
-        if (intentFragment4 != null) {
-          Toast.makeText(this,intent.extras?.get("Login").toString(),Toast.LENGTH_LONG).show()
         }
 
         binding.menuApp.setOnItemSelectedListener { menuItem ->
@@ -107,17 +105,17 @@ class MenuActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-    private fun loadUser(): UserModel?{
+    private fun loadUser(): UserModel? {
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = sp.getString("Usuario", "NO_USER")
-        if(json == "NO_USER"){
+        if (json == "NO_USER") {
             return null
-        }else{
+        } else {
             return Gson().fromJson(json, UserModel::class.java)
         }
     }
 
-    companion object{
+    companion object {
 
     }
 }

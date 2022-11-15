@@ -5,6 +5,7 @@ data class DiscoModel (
     var name:String = "",
     var bannerID:String = "",
     var bannerRef:String = "",
+    var bannerCardID:String = "",
     var email:String = "",
     var eventsID:ArrayList<EventModel> = ArrayList(),
     var eventsRef:String = "",

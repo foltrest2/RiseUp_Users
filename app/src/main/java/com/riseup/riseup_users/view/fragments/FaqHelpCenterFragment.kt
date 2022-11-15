@@ -14,7 +14,6 @@ import com.riseup.riseup_users.databinding.FragmentFaqHelpCenterBinding
 import com.riseup.riseup_users.util.FAQInfoBlockAdapter
 import com.riseup.riseup_users.viewmodel.FaqHelpCenterViewModel
 
-
 class FaqHelpCenterFragment : Fragment(){
 
     private var _binding: FragmentFaqHelpCenterBinding? = null

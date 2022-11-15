@@ -1,29 +1,36 @@
 package com.riseup.riseup_users.view.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentProductListBinding
+import com.riseup.riseup_users.model.DiscoModel
 import com.riseup.riseup_users.model.ProductModel
 import com.riseup.riseup_users.model.ProductsShoppingCarModel
 import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.util.ProductsListAdapter
+import com.riseup.riseup_users.viewmodel.MenuViewModel
 import kotlin.collections.ArrayList
 
 class ProductListFragment : Fragment() {
 
 
-    private var _binding: FragmentProductListBinding?= null
+    private var _binding: FragmentProductListBinding? = null
     private val binding get() = _binding!!
     private lateinit var user: UserModel
-    private var shoppingCar : ArrayList<ProductsShoppingCarModel> = arrayListOf()
+    private var shoppingCar: ArrayList<ProductsShoppingCarModel> = arrayListOf()
+    private val viewModel: MenuViewModel by activityViewModels()
 
     private lateinit var discoHomeFragment: DiscoHomeFragment
 
@@ -38,10 +45,17 @@ class ProductListFragment : Fragment() {
         _binding = FragmentProductListBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        val disco = loadDisco()
         val temp = loadShoppingCar()
-        if (temp != null){
-            shoppingCar = temp!!
+        if (temp != null) shoppingCar = temp!!
+        if (disco != null){
+            if (viewModel.getProducts(disco!!) != null) {
+                adapter.addAllProducts(viewModel.getProducts(disco!!))
+            }
         }
+
+        var user = loadUser()
+
 
         //Recrear el estado
         val productsListRecycler = binding.recyclerViewProductListSC
@@ -56,6 +70,9 @@ class ProductListFragment : Fragment() {
             transaction.commit()
         }
 
+        Log.e(">>>", "$user")
+        binding.youHaveDiamondsTxt.text = "¡Tienes ${user?.diamonds?.toInt()} diamantes!"
+
         return view
     }
 
@@ -69,37 +86,79 @@ class ProductListFragment : Fragment() {
         }
     }
 
-    private fun saveUserSp(user: UserModel) {
-        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        val json = Gson().toJson(user)
-        sp?.edit()?.putString("Usuario", json)?.apply()
+    private fun onClickListener(thisProduct: ProductModel) {
+        if (loadShoppingCar() != null) {
+            var car = loadShoppingCar()!!
+            addToCar(thisProduct, car)
+            saveShoppingCar(car)
+        } else {
+            addToCar(thisProduct, shoppingCar)
+            saveShoppingCar(shoppingCar)
+        }
     }
 
-    private fun onClickListener(thisProduct: ProductModel) {
-        val product = ProductsShoppingCarModel(thisProduct.image, thisProduct.name, thisProduct.price, thisProduct.quantity.inc())
-        if (shoppingCar.contains(product)){
-            var x = shoppingCar[shoppingCar.indexOf(product)].lot.inc()
-            Toast.makeText(requireContext(), "Tienes $x de ${product.name}", Toast.LENGTH_LONG).show()
-        }else{
-            shoppingCar.add(product)
+    private fun addToCar(thisProduct: ProductModel, shoppingCar: ArrayList<ProductsShoppingCarModel>) {
+        if (shoppingCar.isEmpty()) {
+            shoppingCar.add(
+                ProductsShoppingCarModel(
+                    thisProduct.image,
+                    thisProduct.name,
+                    thisProduct.price,
+                    1
+                )
+            )
+            return
+        }
+        val temporal: ArrayList<ProductsShoppingCarModel> = arrayListOf()
+        var found: ProductsShoppingCarModel? = null
+        var index : Int = 0
+        for (i in shoppingCar.indices) {
+            if (shoppingCar[i].name == thisProduct.name) {
+                found = shoppingCar[i]
+                index = i
+            }
         }
 
-        saveShoppingCar()
+        if (found != null) {
+            shoppingCar[index].lot += 1
+        } else {
+            temporal.add(
+                ProductsShoppingCarModel(
+                    thisProduct.image,
+                    thisProduct.name,
+                    thisProduct.price,
+                    1
+                )
+            )
+        }
+
+        shoppingCar.addAll(temporal)
     }
 
-    private fun saveShoppingCar(){
+    private fun saveShoppingCar(car: ArrayList<ProductsShoppingCarModel>) {
         val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        val json = Gson().toJson(shoppingCar)
+        val json = Gson().toJson(car)
         sp?.edit()?.putString("shoppingCar", json)?.apply()
     }
 
     private fun loadShoppingCar(): ArrayList<ProductsShoppingCarModel>? {
         val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         val json = sp?.getString("shoppingCar", "NO_CAR")
-        return if (json == "NO_USER") {
+        return if (json == "NO_CAR") {
             null
         } else {
-            Gson().fromJson(json, ArrayList<ProductsShoppingCarModel>()::class.java)
+            val deserialized = object : TypeToken<ArrayList<ProductsShoppingCarModel>>() {}.type
+            Gson().fromJson(json, deserialized)
+        }
+    }
+
+    private fun loadDisco(): DiscoModel? {
+        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = sp?.getString("Disco", "NO_DISCO")
+        return if (json == "NO_DISCO") {
+            null
+        } else {
+            Gson().fromJson(json, DiscoModel::class.java)
         }
     }
 
