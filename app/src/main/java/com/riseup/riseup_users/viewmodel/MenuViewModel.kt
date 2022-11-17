@@ -72,6 +72,12 @@ class MenuViewModel : ViewModel() {
     }
 
     fun saveTransaction(transaction : TransactionModel, user: UserModel){
+        var totalPay : Int = 0
+        for (shoppingCar in transaction.shoppingCar!!){
+            totalPay += shoppingCar.lot * shoppingCar.price
+        }
+        transaction.totalPay = totalPay
+
         Firebase.firestore.collection("Sales").document(transaction.id).set(transaction)
         val updateMap: MutableMap<String, Any> = HashMap()
         updateMap["id"] = transaction.id

@@ -15,5 +15,6 @@ data class TransactionModel(
     var shoppingCar : ArrayList<ProductsShoppingCarModel>? = null,
     var state : Int = 0,
     val userID : String = "",
-    var discoName : String = ""
+    var discoName : String? = null,
+    var totalPay : Int? = null
 )
