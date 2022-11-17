@@ -17,8 +17,6 @@ class ConfigHelpCenterActivity : AppCompatActivity() {
     private lateinit var faqFragment: FaqHelpCenterFragment
     private lateinit var contatUsFragment: ContactusHelpCenterFragment
 
-
-
     val viewModel:FaqHelpCenterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +48,7 @@ class ConfigHelpCenterActivity : AppCompatActivity() {
         }
 
         binding.backConfigHelpCenterBtn.setOnClickListener {
+            finish()
             startActivity(Intent(this@ConfigHelpCenterActivity, ConfigHelpActivity::class.java))
         }
 

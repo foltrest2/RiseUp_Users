@@ -50,6 +50,7 @@ class ConfigDiamondHistorialActivity : AppCompatActivity() {
         }
 
         binding.atrasHistTrans.setOnClickListener {
+            finish()
             startActivity(Intent(this@ConfigDiamondHistorialActivity, ConfigurationActivity::class.java))
         }
 

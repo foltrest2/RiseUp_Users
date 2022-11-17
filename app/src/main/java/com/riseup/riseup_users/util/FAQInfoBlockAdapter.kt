@@ -1,5 +1,6 @@
 package com.riseup.riseup_users.util
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +38,7 @@ class FAQInfoBlockAdapter : RecyclerView.Adapter<FAQInfoBlocksView>(){
         notifyItemInserted(FAQBlocks.lastIndex)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun reset(){
         FAQBlocks.clear()
         notifyDataSetChanged()
