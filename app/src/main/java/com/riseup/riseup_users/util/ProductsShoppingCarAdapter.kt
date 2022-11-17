@@ -13,13 +13,12 @@ class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>(
 
 
     private val productShCar = ArrayList<ProductsShoppingCarModel>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsShoppingCarView {
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsShoppingCarView {
         //inflate: XML->View
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.products_shoppingcarrow,parent,false)
-        val productSHViewHolder = ProductsShoppingCarView(view)
-        return productSHViewHolder
+        val view = inflater.inflate(R.layout.products_shoppingcarrow, parent, false)
+        return ProductsShoppingCarView(view)
     }
 
     override fun onBindViewHolder(holder: ProductsShoppingCarView, position: Int) {
@@ -29,8 +28,6 @@ class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>(
         holder.productImage.setImageResource(R.drawable.wineimg)
         holder.productQuantity.text = producn.lot.toString()
 
-
-
     }
 
 
@@ -38,14 +35,23 @@ class ProductsShoppingCarAdapter: RecyclerView.Adapter<ProductsShoppingCarView>(
         return productShCar.size
     }
 
-    init{
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
-        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+    fun addProducts(shoppingCar : ArrayList<ProductsShoppingCarModel>) {
+        productShCar.clear()
+        productShCar.addAll(shoppingCar)
     }
+
+    fun deleteProducts(){
+        productShCar.clear()
+    }
+
+//    init{
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//        productShCar.add(ProductsShoppingCarModel("wineimg","Vino azul",180000.0,12))
+//    }
 }

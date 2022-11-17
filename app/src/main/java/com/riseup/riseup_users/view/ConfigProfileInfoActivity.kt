@@ -11,12 +11,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityConfigProfileInfoBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.viewmodel.ConfigProfileInfoViewModel
 import kotlinx.android.synthetic.main.activity_config_profile_info.*
 import java.text.SimpleDateFormat
@@ -27,7 +24,7 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConfigProfileInfoBinding
     private lateinit var galleryLauncher: ActivityResultLauncher<Intent>
-    private lateinit var user : User
+    private lateinit var user : UserModel
     private val viewModel: ConfigProfileInfoViewModel by viewModels()
 
     @SuppressLint("SimpleDateFormat")
@@ -135,18 +132,18 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
         binding.configETFechaUser.setText(newDate)
     }
 
-    private fun loadUser(): User? {
+    private fun loadUser(): UserModel? {
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = sp.getString("Usuario", "NO_USER")
         if (json == "NO_USER") {
             return null
         } else {
-            return Gson().fromJson(json, User::class.java)
+            return Gson().fromJson(json, UserModel::class.java)
         }
     }
 
     @SuppressLint("SimpleDateFormat")
-    private fun loadUserInfo(user: User) {
+    private fun loadUserInfo(user: UserModel) {
         binding.userNameProfileConfig.text = user.name
         binding.correoETConfigUser.hint = user.email
         binding.telETConfigUser.setText(user.cel)
@@ -156,14 +153,14 @@ class ConfigProfileInfoActivity : AppCompatActivity() {
         binding.configETFechaUser.setText(date)
     }
 
-    private fun saveUserSp(user: User) {
+    private fun saveUserSp(user: UserModel) {
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = Gson().toJson(user)
         sp.edit().putString("Usuario", json).apply()
     }
 
     @SuppressLint("SimpleDateFormat")
-    private fun updateDateFirestore(year: Int, month: Int, day: Int, user: User) {
+    private fun updateDateFirestore(year: Int, month: Int, day: Int, user: UserModel) {
         val calendar = Calendar.getInstance()
         calendar.set(year, month, day, 6, 0, 0)
         val sdf = SimpleDateFormat("dd-MM-yyyy 'T' HH:mm:ss")

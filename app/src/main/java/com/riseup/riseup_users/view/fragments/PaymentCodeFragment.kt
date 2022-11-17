@@ -1,4 +1,4 @@
-package com.riseup.riseup_users
+package com.riseup.riseup_users.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentPaymentCodeBinding
 import com.riseup.riseup_users.view.FinishPaymentActivity
 

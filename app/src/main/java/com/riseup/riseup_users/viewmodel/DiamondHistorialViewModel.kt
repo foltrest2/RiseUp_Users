@@ -10,7 +10,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.riseup.riseup_users.model.DiscoModel
 import com.riseup.riseup_users.model.TransactionModel
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -21,7 +21,7 @@ class DiamondHistorialViewModel : ViewModel(){
     private val _transactions: MutableLiveData<ArrayList<TransactionModel>> = MutableLiveData(arrayListOf())
     val transactions: LiveData<ArrayList<TransactionModel>> get() = _transactions
 
-    fun loadTransactions(user: User){
+    fun loadTransactions(user: UserModel){
         viewModelScope.launch(Dispatchers.IO){
             Firebase.firestore.collection("Sales").whereEqualTo("userID",user.id).get().addOnSuccessListener {data ->
                 for(doc in data.documents){

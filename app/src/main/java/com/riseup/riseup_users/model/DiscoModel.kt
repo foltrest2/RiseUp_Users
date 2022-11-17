@@ -7,8 +7,10 @@ data class DiscoModel (
     var bannerRef:String = "",
     var bannerCardID:String = "",
     var email:String = "",
-    var eventsID:ArrayList<EventModel> = ArrayList(),
+    var eventsID:ArrayList<EventModel> = arrayListOf(),
     var eventsRef:String = "",
-    var products:ArrayList<ProductModel> = ArrayList(),
-    var sales:ArrayList<TransactionModel> = ArrayList()
+    var products:ArrayList<ProductModel> = arrayListOf(),
+    var sales:ArrayList<TransactionModel> = arrayListOf(),
+    var bannerURL:String? = null
+
 )

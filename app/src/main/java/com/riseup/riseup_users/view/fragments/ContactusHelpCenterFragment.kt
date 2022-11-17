@@ -1,4 +1,4 @@
-package com.riseup.riseup_users
+package com.riseup.riseup_users.view.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.FragmentContactusHelpCenterBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 
 class ContactusHelpCenterFragment : Fragment(){
 

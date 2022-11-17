@@ -8,7 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityConfigDiamondHistorialBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.util.DiamondHistAdapter
 import com.riseup.riseup_users.viewmodel.DiamondHistorialViewModel
 import com.riseup.riseup_users.viewmodel.MainViewModel
@@ -18,7 +18,7 @@ class ConfigDiamondHistorialActivity : AppCompatActivity() {
 
     private var _binding : ActivityConfigDiamondHistorialBinding? = null
     private val binding get() = _binding!!
-    private lateinit var user : User
+    private lateinit var user : UserModel
 
     private val viewModel : DiamondHistorialViewModel by viewModels()
 
@@ -55,13 +55,13 @@ class ConfigDiamondHistorialActivity : AppCompatActivity() {
 
     }
 
-    private fun loadUser(): User? {
+    private fun loadUser(): UserModel? {
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = sp.getString("Usuario", "NO_USER")
         if (json == "NO_USER") {
             return null
         } else {
-            return Gson().fromJson(json, User::class.java)
+            return Gson().fromJson(json, UserModel::class.java)
         }
     }
 }

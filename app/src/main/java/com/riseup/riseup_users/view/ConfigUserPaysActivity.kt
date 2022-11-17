@@ -4,14 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.riseup.riseup_users.LastPaymentsFragment
+import com.riseup.riseup_users.view.fragments.LastPaymentsFragment
 import com.riseup.riseup_users.R
-import com.riseup.riseup_users.UserCreditCardsPaymentsFragment
+import com.riseup.riseup_users.view.fragments.UserCreditCardsPaymentsFragment
 import com.riseup.riseup_users.databinding.ActivityConfigUserPaysBinding
-import com.riseup.riseup_users.util.UserCardsPaymentAdapter
-import kotlinx.android.synthetic.main.fragment_last_payments.*
 
 class ConfigUserPaysActivity : AppCompatActivity() {
 
