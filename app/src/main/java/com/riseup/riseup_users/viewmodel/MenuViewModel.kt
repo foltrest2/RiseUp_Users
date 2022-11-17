@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -78,11 +79,15 @@ class MenuViewModel : ViewModel() {
         }
         transaction.totalPay = totalPay
 
-        Firebase.firestore.collection("Sales").document(transaction.id).set(transaction)
-        val updateMap: MutableMap<String, Any> = HashMap()
-        updateMap["id"] = transaction.id
-        FirebaseFirestore.getInstance().collection("Users")
-            .document(user.id).collection("Purchase").document(transaction.id).update(updateMap)
+        viewModelScope.launch(Dispatchers.IO) {
+            Firebase.firestore.collection("Sales").document(transaction.id).set(transaction)
+            val updateMap: MutableMap<String, Any> = HashMap()
+            updateMap["id"] = transaction.id
+            val thisID = TransID(transaction.id)
+            Firebase.firestore.collection("Users")
+                .document(user.id).collection("Purchase").document(thisID.id).set(thisID)
+        }
+
     }
 
     fun isNullUser(user: UserModel?): Boolean {
@@ -95,3 +100,4 @@ class MenuViewModel : ViewModel() {
         return state
     }
 }
+data class TransID(val id:String)

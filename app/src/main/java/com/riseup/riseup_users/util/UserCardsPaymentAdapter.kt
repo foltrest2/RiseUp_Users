@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.model.TransactionModel
 import com.riseup.riseup_users.view.CardsLastPaymentsView
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class UserCardsPaymentAdapter : RecyclerView.Adapter<CardsLastPaymentsView>(){
 
@@ -32,7 +35,8 @@ class UserCardsPaymentAdapter : RecyclerView.Adapter<CardsLastPaymentsView>(){
         val sdf = SimpleDateFormat("dd/MM/yyyy")
         val date = sdf.format(payments.date!!).toString()
         skeleton.payDate.setText(date)
-        skeleton.amount.text = payments.totalPay.toString()
+
+        skeleton.amount.text = formatPrice(payments.totalPay!!)
 
     }
 
@@ -49,5 +53,10 @@ class UserCardsPaymentAdapter : RecyclerView.Adapter<CardsLastPaymentsView>(){
     fun reset(){
         paymentsCards.clear()
         notifyDataSetChanged()
+    }
+
+    private fun formatPrice(price: Int): String {
+        val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "US"))
+        return format.format(price)
     }
 }
