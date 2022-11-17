@@ -26,7 +26,7 @@ class MenuViewModel : ViewModel() {
 
     private val discoArray = arrayListOf<DiscoModel>()
     private val imageArray = arrayListOf<String>()
-    private val hashMap: HashMap<DiscoModel, List<ProductModel>> = hashMapOf()
+    private val hashMap: HashMap<String, List<ProductModel>> = hashMapOf()
 
     private val _discos: MutableLiveData<ArrayList<DiscoModel>> = MutableLiveData(arrayListOf())
     val discos: LiveData<ArrayList<DiscoModel>> get() = _discos
@@ -58,8 +58,8 @@ class MenuViewModel : ViewModel() {
                         .collection("Products").get().addOnSuccessListener { products ->
                             val thisProducts = products.toObjects(ProductModel::class.java)
                             val thisDisco = disco.toObject(DiscoModel::class.java)
-                            hashMap[thisDisco] = thisProducts
-                            Log.e(">>>", "Products stored: ${hashMap[thisDisco]}")
+                            hashMap[thisDisco.id] = thisProducts
+                            Log.e(">>>", "Products stored: ${hashMap[thisDisco.id]}")
                         }
                 }
             }
@@ -67,8 +67,8 @@ class MenuViewModel : ViewModel() {
     }
 
     fun getProducts(discoModel: DiscoModel) : List<ProductModel>? {
-        Log.e(">>>", "Products: ${hashMap[discoModel]}")
-        return hashMap[discoModel]
+        Log.e(">>>", "Products: ${hashMap[discoModel.id]}")
+        return hashMap[discoModel.id]
     }
 
     fun saveTransaction(transaction : TransactionModel, user: UserModel){
