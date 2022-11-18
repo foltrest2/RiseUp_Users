@@ -136,7 +136,8 @@ class FinishPaymentActivity : AppCompatActivity() {
             method!!,
             shoppingCar,
             0,
-            user!!.id
+            user!!.id,
+            disco!!.name
         )
     }
 
