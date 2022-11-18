@@ -48,8 +48,15 @@ class FinishPaymentActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = loadUser()
-        val transaction = createTransaction()
-        viewModel.saveTransaction(transaction, user!!)
+        var transaction : TransactionModel? = null
+
+        if (loadMethod() == "Nequi" || loadMethod() == "Daviplata"){
+            transaction = createTransaction(loadCode()!!)
+            viewModel.saveTransaction(transaction, user!!)
+        } else{
+            transaction = createTransaction()
+            viewModel.saveTransaction(transaction, user!!)
+        }
 
         binding.reOrderBtnMain.setOnClickListener {
             shoppingCarFragment = ShoppingCarFragment.newInstance()
@@ -133,6 +140,25 @@ class FinishPaymentActivity : AppCompatActivity() {
         )
     }
 
+    private fun createTransaction(code: String): TransactionModel {
+        val user = loadUser()
+        val shoppingCar = loadShoppingCar()
+        val disco = loadDisco()
+        val method = loadMethod()
+        val date = Calendar.getInstance().time
+        return TransactionModel(
+            UUID.randomUUID().toString(),
+            code,
+            date,
+            0,
+            disco!!.id,
+            method!!,
+            shoppingCar,
+            0,
+            user!!.id
+        )
+    }
+
     private fun deleteShoppingCar() {
         val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         sp?.edit()?.putString("shoppingCar", null)?.apply()
@@ -173,6 +199,16 @@ class FinishPaymentActivity : AppCompatActivity() {
         val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         val json = sp?.getString("method", "NO_METHOD")
         return if (json == "NO_METHOD") {
+            null
+        } else {
+            Gson().fromJson(json, String::class.java)
+        }
+    }
+
+    private fun loadCode(): String? {
+        val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = sp?.getString("Code", "NO_CODE")
+        return if (json == "NO_CODE") {
             null
         } else {
             Gson().fromJson(json, String::class.java)

@@ -54,8 +54,6 @@ class PaymentSelectionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val user = loadUser()
-
         binding.pagarTarjetaBtn.setOnClickListener {
            PaymentDialog(
                 onSubmitClickListener =  {
@@ -69,10 +67,7 @@ class PaymentSelectionFragment : Fragment() {
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainer, paymentCodeFragment)
             transaction.commit()
-            val transactionDone = createTransaction("Nequi")
-            viewModel.saveTransaction(transactionDone, user!!)
-            adapter.deleteProducts()
-            deleteShoppingCar()
+            saveMethod("Nequi")
         }
 
         binding.pagarDaviplataBtn.setOnClickListener {
@@ -80,10 +75,7 @@ class PaymentSelectionFragment : Fragment() {
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainer, paymentCodeFragment)
             transaction.commit()
-            val transactionDone = createTransaction("Daviplata")
-            viewModel.saveTransaction(transactionDone, user!!)
-            adapter.deleteProducts()
-            deleteShoppingCar()
+            saveMethod("Daviplata")
         }
 
         binding.pagarConDiamantesBtn.setOnClickListener {
@@ -91,7 +83,7 @@ class PaymentSelectionFragment : Fragment() {
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainer,  diamondsPaymentFragment)
             transaction.commit()
-            saveMethod("diamantes")
+            saveMethod("Diamantes")
         }
 
     }
@@ -100,62 +92,6 @@ class PaymentSelectionFragment : Fragment() {
         val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         val json = Gson().toJson(method)
         sp?.edit()?.putString("method", json)?.apply()
-    }
-
-    private fun createTransaction(method: String): TransactionModel {
-        val user = loadUser()
-        val shoppingCar = loadShoppingCar()
-        val disco = loadDisco()
-        val code = CodeGenerator().generateCode()
-        val date = Calendar.getInstance().time
-        return TransactionModel(
-            UUID.randomUUID().toString(),
-            code,
-            date,
-            0,
-            disco!!.id,
-            method,
-            shoppingCar,
-            0,
-            user!!.id,
-            disco.name
-        )
-    }
-
-    private fun loadShoppingCar(): ArrayList<ProductsShoppingCarModel>? {
-        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        val json = sp?.getString("shoppingCar", "NO_CAR")
-        return if (json == "NO_CAR") {
-            null
-        } else {
-            val deserialized = object : TypeToken<ArrayList<ProductsShoppingCarModel>>() {}.type
-            Gson().fromJson(json, deserialized)
-        }
-    }
-
-    private fun loadDisco(): DiscoModel? {
-        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        val json = sp?.getString("Disco", "NO_DISCO")
-        return if (json == "NO_DISCO") {
-            null
-        } else {
-            Gson().fromJson(json, DiscoModel::class.java)
-        }
-    }
-
-    private fun loadUser(): UserModel? {
-        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        val json = sp?.getString("Usuario", "NO_USER")
-        return if (json == "NO_USER") {
-            null
-        } else {
-            Gson().fromJson(json, UserModel::class.java)
-        }
-    }
-
-    private fun deleteShoppingCar() {
-        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        sp?.edit()?.putString("shoppingCar", null)?.apply()
     }
 
     companion object {

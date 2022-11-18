@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ProductsListRowBinding
 import com.riseup.riseup_users.model.ProductModel
+import java.text.NumberFormat
+import java.util.*
 
 class ProductsListView(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -19,7 +21,8 @@ class ProductsListView(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun render(product: ProductModel, onClickListener:(ProductModel) -> Unit){
         binding.productTypePLTV.text = product.category
         binding.productListImg.setImageResource(R.drawable.wineimg)
-        binding.productListPriceTV.text = product.price.toString()
+        val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "US"))
+        binding.productListPriceTV.text = format.format(product.price)
         binding.productlistnameTV.text = product.name
         binding.addProductPLBtn.setOnClickListener { onClickListener(product) }
     }
