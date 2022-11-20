@@ -40,9 +40,12 @@ class MenuViewModel : ViewModel() {
             val result = Firebase.firestore.collection("Discos").get().await()
             for(doc in result) {
                 val thisDisco = doc.toObject(DiscoModel::class.java)
-                val url = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
-                Log.e(">>>",url)
-                thisDisco.bannerURL = url
+                val bannercardURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
+                Log.e(">>>",bannercardURL)
+                thisDisco.bannerCardURL = bannercardURL
+                val bannerURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerID).downloadUrl.await().toString()
+                thisDisco.bannerBackgroundURL = bannerURL
+
                 discoArray.add(thisDisco)
             }
             withContext(Dispatchers.Main){
@@ -99,5 +102,6 @@ class MenuViewModel : ViewModel() {
         }
         return state
     }
+
 }
 data class TransID(val id:String)

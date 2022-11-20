@@ -50,22 +50,6 @@ class PrincipalFragment : Fragment() {
             }
         }
 
-/**
-        viewModel.inComingImg.observe(viewLifecycleOwner){
-            if(it.isNotEmpty()){
-                for(URL in it){
-                    Log.e(">>>", "$URL passed")
-                    adapter.setImage(URL)
-                    
-//                    Glide.with().load(url)
-//                        .centerCrop()
-//                        .into(binding.backgroundDiscoCard)
-                }
-                adapter.restart()
-            }
-        }
-*/
-
         return view
     }
 
@@ -80,6 +64,7 @@ class PrincipalFragment : Fragment() {
         val transaction = parentFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentContainer, discoHomeFragment)
         transaction.commit()
+        Log.e(">>>", "Disco guardada SP: ${discoModel}")
         saveDiscoSp(discoModel)
     }
 

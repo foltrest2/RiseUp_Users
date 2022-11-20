@@ -28,18 +28,6 @@ class ProductsListAdapter(private val onClickListener:(ProductModel) -> Unit): R
         return productList.size
     }
 
-    init{
-        /**
-       productList.add(ProductsListModel("wineimg","Vino azul",180000.0,"Tequila"))
-        productList.add(ProductsListModel("wineimg","Vino azul",180000.0,"Tequila"))
-        productList.add(ProductsListModel("wineimg","Whisky Jack Daniels",180000.0,"Whisky"))
-        productList.add(ProductsListModel("wineimg","Whisky Jack Daniels",180000.0,"Whisky"))
-        productList.add(ProductsListModel("wineimg","Whisky Jack Daniels",180000.0,"Whisky"))
-        productList.add(ProductsListModel("wineimg","Aguardiente tapa azul",180000.0,"Aguardiente"))
-        productList.add(ProductsListModel("wineimg","Aguardiente tapa azul",180000.0,"Aguardiente"))
-*/
-    }
-
     fun addAllProducts(products: List<ProductModel>?){
         productList.addAll(products!!)
         notifyItemRangeInserted(0, productList.size)

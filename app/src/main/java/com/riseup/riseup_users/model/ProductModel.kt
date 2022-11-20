@@ -1,5 +1,7 @@
 package com.riseup.riseup_users.model
 
+import java.io.Serializable
+
 data class ProductModel (
     val id:String = "",
     var category:String = "",
@@ -8,6 +10,6 @@ data class ProductModel (
     var name:String = "",
     var quantity:Int = 0,
     var image:String = ""
-)
+) : Serializable
 
 

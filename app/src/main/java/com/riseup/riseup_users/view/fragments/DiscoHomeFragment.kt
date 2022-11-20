@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentDiscoHomeBinding
@@ -36,6 +37,12 @@ class DiscoHomeFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentDiscoHomeBinding.inflate(inflater, container, false)
         val view = binding.root
+        val disco = loadDisco()
+
+        binding.titleDiscoSelected.text = disco!!.name
+
+        Glide.with(this).load(disco.bannerBackgroundURL).into(binding.backgroundDiscoHome)
+
 
         binding.viewAlcoholMenuDiscoSelected.setOnClickListener {
             productListFragment = ProductListFragment.newInstance()
@@ -63,6 +70,16 @@ class DiscoHomeFragment : Fragment() {
             null
         } else {
             Gson().fromJson(json, UserModel::class.java)
+        }
+    }
+
+    private fun loadDisco(): DiscoModel? {
+        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = sp?.getString("Disco", "NO_DISCO")
+        return if (json == "NO_DISCO") {
+            null
+        } else {
+            Gson().fromJson(json, DiscoModel::class.java)
         }
     }
 
