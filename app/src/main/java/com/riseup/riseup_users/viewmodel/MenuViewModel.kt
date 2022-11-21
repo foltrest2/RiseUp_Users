@@ -41,12 +41,17 @@ class MenuViewModel : ViewModel() {
             for(doc in result) {
                 val thisDisco = doc.toObject(DiscoModel::class.java)
                 val bannercardURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
-                Log.e(">>>",bannercardURL)
                 thisDisco.bannerCardURL = bannercardURL
                 val bannerURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerID).downloadUrl.await().toString()
                 thisDisco.bannerBackgroundURL = bannerURL
-
-                discoArray.add(thisDisco)
+                for (event in thisDisco.eventsID){
+                    val posterURL = Firebase.storage.getReference(thisDisco.eventsRef).child(event.posterID).downloadUrl.await().toString()
+                    event.posterURL = posterURL
+                }
+                withContext(Dispatchers.Main){
+                    Log.e(">>>", "Agregada: ${thisDisco}")
+                    discoArray.add(thisDisco)
+                }
             }
             withContext(Dispatchers.Main){
                 _discos.value = discoArray

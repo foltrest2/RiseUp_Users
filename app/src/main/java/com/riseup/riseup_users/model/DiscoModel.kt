@@ -14,5 +14,4 @@ data class DiscoModel (
     var bannerCardURL:String? = null,
     var bannerBackgroundURL:String? = null,
 
-
 )
