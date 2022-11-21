@@ -67,6 +67,12 @@ class MenuViewModel : ViewModel() {
                         .collection("Products").get().addOnSuccessListener { products ->
                             val thisProducts = products.toObjects(ProductModel::class.java)
                             val thisDisco = disco.toObject(DiscoModel::class.java)
+                            for (product in thisProducts){
+                                viewModelScope.launch(Dispatchers.IO) {
+                                    val productImgURL = Firebase.storage.getReference(thisDisco.productsRef).child(product.image).downloadUrl.await().toString()
+                                    product.imageURL = productImgURL
+                                }
+                            }
                             hashMap[thisDisco.id] = thisProducts
                             Log.e(">>>", "Products stored: ${hashMap[thisDisco.id]}")
                         }

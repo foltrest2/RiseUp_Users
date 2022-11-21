@@ -58,7 +58,8 @@ class DiscoHomeFragment : Fragment() {
 
         val bannersRecycler = binding.bannersRecyclerView
         bannersRecycler.setHasFixedSize(true)
-        bannersRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, true)
+        bannersRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
         bannersRecycler.adapter = adapter
 
         //adapter.reset()

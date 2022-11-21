@@ -47,10 +47,10 @@ class ProductListFragment : Fragment() {
 
         val disco = loadDisco()
         val temp = loadShoppingCar()
-        if (temp != null) shoppingCar = temp!!
+        if (temp != null) shoppingCar = temp
         if (disco != null){
-            if (viewModel.getProducts(disco!!) != null) {
-                adapter.addAllProducts(viewModel.getProducts(disco!!))
+            if (viewModel.getProducts(disco) != null) {
+                adapter.addAllProducts(viewModel.getProducts(disco))
             }
         }
 
