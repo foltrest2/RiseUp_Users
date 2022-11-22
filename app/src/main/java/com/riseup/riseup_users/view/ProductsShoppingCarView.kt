@@ -27,7 +27,7 @@ class ProductsShoppingCarView(itemView: View) : RecyclerView.ViewHolder(itemView
         val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "US"))
         binding.productSCPriceTV.text = format.format(product.price)
         binding.productSCQuantityTV.text = product.lot.toString()
-        Glide.with(binding.productSCImg).load(product.imgURL).into(binding.productSCImg)
+        Glide.with(itemView).load(product.imgURL).into(binding.productSCImg)
     }
 
 }

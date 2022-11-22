@@ -95,6 +95,7 @@ class ProductListFragment : Fragment() {
             addToCar(thisProduct, shoppingCar)
             saveShoppingCar(shoppingCar)
         }
+        Toast.makeText(binding.youHaveDiamondsTxt.context, "Producto agregado", Toast.LENGTH_SHORT).show()
     }
 
     private fun addToCar(thisProduct: ProductModel, shoppingCar: ArrayList<ProductsShoppingCarModel>) {
@@ -104,7 +105,8 @@ class ProductListFragment : Fragment() {
                     thisProduct.image,
                     thisProduct.name,
                     thisProduct.price,
-                    1
+                    1,
+                    thisProduct.imageURL
                 )
             )
             return
@@ -127,11 +129,11 @@ class ProductListFragment : Fragment() {
                     thisProduct.image,
                     thisProduct.name,
                     thisProduct.price,
-                    1
+                    1,
+                    thisProduct.imageURL
                 )
             )
         }
-
         shoppingCar.addAll(temporal)
     }
 
