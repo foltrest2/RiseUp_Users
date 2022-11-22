@@ -38,8 +38,10 @@ class FinishPaymentActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = loadUser()
-        val transaction = createTransaction()
-        viewModel.saveTransaction(transaction, user!!)
+        if(loadMethod() != "Nequi" || loadMethod() != "Daviplata") {
+            val transaction = createTransaction()
+            viewModel.saveTransaction(transaction, user!!)
+        }
 
 
         binding.reOrderBtnMain.setOnClickListener {

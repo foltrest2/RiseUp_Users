@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/linear_gradient_background"
     tools:context=".view.RegisterActivity">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/returnLognLY"
         android:layout_width="match_parent"
@@ -140,10 +139,8 @@
                 android:textColor="@color/white"
                 android:inputType="none"
                 android:focusableInTouchMode="false"
-<<<<<<< HEAD
                 android:cursorVisible="false"
-=======
->>>>>>> da154d05b61e5faa6d2cfca8e9700953958bcc73
+
                 app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
