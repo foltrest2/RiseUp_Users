@@ -47,7 +47,6 @@ class MenuActivity : AppCompatActivity() {
             return
         } else {
             this.user = user!!
-            Toast.makeText(this, "Este usuario: ${this.user}", Toast.LENGTH_LONG).show()
         }
 
 

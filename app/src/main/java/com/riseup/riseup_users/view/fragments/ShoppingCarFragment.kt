@@ -1,39 +1,33 @@
 package com.riseup.riseup_users.view.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.FragmentShoppingCarBinding
-import com.riseup.riseup_users.model.DiscoModel
 import com.riseup.riseup_users.model.ProductsShoppingCarModel
-import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.util.ProductsShoppingCarAdapter
-import com.riseup.riseup_users.viewmodel.MenuViewModel
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class ShoppingCarFragment : Fragment() {
+class ShoppingCarFragment : Fragment(){
 
     private var _binding: FragmentShoppingCarBinding?= null
     private val binding get() = _binding!!
     private lateinit var paymentSelectionFragment: PaymentSelectionFragment
     private lateinit var productListFragment: ProductListFragment
+
     //STATE
     private val adapter = ProductsShoppingCarAdapter()
-    private val viewModel : MenuViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +36,12 @@ class ShoppingCarFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentShoppingCarBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        adapter.setOnItemClickListener(object : ProductsShoppingCarAdapter.OnItemClickListener{
+            override fun onItemClick() {
+                binding.DCPriceTV.text = formatPrice(calculatePaymentValue())
+            }
+        })
 
         if (loadShoppingCar() != null) adapter.addProducts(loadShoppingCar()!!)
 
@@ -105,4 +105,6 @@ class ShoppingCarFragment : Fragment() {
         @JvmStatic
         fun newInstance() = ShoppingCarFragment()
     }
+
+
 }

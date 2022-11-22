@@ -1,15 +1,10 @@
 package com.riseup.riseup_users.view
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.riseup.riseup_users.databinding.FinishPaymentBinding
@@ -22,15 +17,10 @@ import com.riseup.riseup_users.util.OrderDialog
 import com.riseup.riseup_users.util.ProductsShoppingCarAdapter
 import com.riseup.riseup_users.view.fragments.ShoppingCarFragment
 import com.riseup.riseup_users.viewmodel.FinishPaymentViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.LocalDateTime.now
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatter.ofPattern
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -48,15 +38,9 @@ class FinishPaymentActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = loadUser()
-        var transaction : TransactionModel? = null
+        val transaction = createTransaction()
+        viewModel.saveTransaction(transaction, user!!)
 
-        if (loadMethod() == "Nequi" || loadMethod() == "Daviplata"){
-            transaction = createTransaction(loadCode()!!)
-            viewModel.saveTransaction(transaction, user!!)
-        } else{
-            transaction = createTransaction()
-            viewModel.saveTransaction(transaction, user!!)
-        }
 
         binding.reOrderBtnMain.setOnClickListener {
             shoppingCarFragment = ShoppingCarFragment.newInstance()
@@ -141,25 +125,6 @@ class FinishPaymentActivity : AppCompatActivity() {
         )
     }
 
-    private fun createTransaction(code: String): TransactionModel {
-        val user = loadUser()
-        val shoppingCar = loadShoppingCar()
-        val disco = loadDisco()
-        val method = loadMethod()
-        val date = Calendar.getInstance().time
-        return TransactionModel(
-            UUID.randomUUID().toString(),
-            code,
-            date,
-            0,
-            disco!!.id,
-            method!!,
-            shoppingCar,
-            0,
-            user!!.id
-        )
-    }
-
     private fun deleteShoppingCar() {
         val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         sp?.edit()?.putString("shoppingCar", null)?.apply()
@@ -200,16 +165,6 @@ class FinishPaymentActivity : AppCompatActivity() {
         val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
         val json = sp?.getString("method", "NO_METHOD")
         return if (json == "NO_METHOD") {
-            null
-        } else {
-            Gson().fromJson(json, String::class.java)
-        }
-    }
-
-    private fun loadCode(): String? {
-        val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
-        val json = sp?.getString("Code", "NO_CODE")
-        return if (json == "NO_CODE") {
             null
         } else {
             Gson().fromJson(json, String::class.java)

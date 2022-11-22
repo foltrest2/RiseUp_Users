@@ -30,8 +30,6 @@ class PaymentSelectionFragment : Fragment() {
     private lateinit var paymentCodeFragment: PaymentCodeFragment
     private lateinit var diamondsPaymentFragment: DiamondsPaymentFragment
     private lateinit var shoppingCarFragment: ShoppingCarFragment
-    private val viewModel : MenuViewModel by activityViewModels()
-    private val adapter = ProductsShoppingCarAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
