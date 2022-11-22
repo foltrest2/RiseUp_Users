@@ -48,10 +48,6 @@ class DiscoCardsAdapter(private val onClickListener:(DiscoModel) -> Unit) : Recy
         notifyDataSetChanged()
     }
 
-    fun setImage(url: String){
-
-    }
-
     fun removeDiscoCard(discoCard: DiscoModel){
         val index = discoCards.indexOf(discoCard)
         discoCards.remove(discoCard)

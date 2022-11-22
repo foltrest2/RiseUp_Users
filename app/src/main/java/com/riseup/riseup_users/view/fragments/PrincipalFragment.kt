@@ -64,6 +64,7 @@ class PrincipalFragment : Fragment() {
         val transaction = parentFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentContainer, discoHomeFragment)
         transaction.commit()
+        Log.e(">>>", "Disco guardada SP: ${discoModel}")
         saveDiscoSp(discoModel)
     }
 

@@ -57,10 +57,18 @@ class MenuViewModel : ViewModel() {
             val result = Firebase.firestore.collection("Discos").get().await()
             for(doc in result) {
                 val thisDisco = doc.toObject(DiscoModel::class.java)
-                val url = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
-                Log.e(">>>",url)
-                thisDisco.bannerURL = url
-                discoArray.add(thisDisco)
+                val bannercardURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
+                thisDisco.bannerCardURL = bannercardURL
+                val bannerURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerID).downloadUrl.await().toString()
+                thisDisco.bannerBackgroundURL = bannerURL
+                for (event in thisDisco.eventsID){
+                    val posterURL = Firebase.storage.getReference(thisDisco.eventsRef).child(event.posterID).downloadUrl.await().toString()
+                    event.posterURL = posterURL
+                }
+                withContext(Dispatchers.Main){
+                    Log.e(">>>", "Agregada: ${thisDisco}")
+                    discoArray.add(thisDisco)
+                }
             }
             withContext(Dispatchers.Main){
                 _discos.value = discoArray
@@ -76,6 +84,12 @@ class MenuViewModel : ViewModel() {
                         .collection("Products").get().addOnSuccessListener { products ->
                             val thisProducts = products.toObjects(ProductModel::class.java)
                             val thisDisco = disco.toObject(DiscoModel::class.java)
+                            for (product in thisProducts){
+                                viewModelScope.launch(Dispatchers.IO) {
+                                    val productImgURL = Firebase.storage.getReference(thisDisco.productsRef).child(product.image).downloadUrl.await().toString()
+                                    product.imageURL = productImgURL
+                                }
+                            }
                             hashMap[thisDisco.id] = thisProducts
                             Log.e(">>>", "Products stored: ${hashMap[thisDisco.id]}")
                         }

@@ -28,7 +28,7 @@ class DiscoCardView(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         binding.discoCard.setOnClickListener { onClickListener(disco) }
 
-        Glide.with(binding.backgroundDiscoCard).load(disco.bannerURL).into(binding.backgroundDiscoCard)
+        Glide.with(binding.backgroundDiscoCard).load(disco.bannerCardURL).into(binding.backgroundDiscoCard)
     }
 
 

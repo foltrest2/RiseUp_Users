@@ -2,6 +2,7 @@ package com.riseup.riseup_users.view
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ProductsListRowBinding
 import com.riseup.riseup_users.model.ProductModel
@@ -20,11 +21,13 @@ class ProductsListView(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun render(product: ProductModel, onClickListener:(ProductModel) -> Unit){
         binding.productTypePLTV.text = product.category
-        binding.productListImg.setImageResource(R.drawable.wineimg)
         val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale("en", "US"))
         binding.productListPriceTV.text = format.format(product.price)
+        //binding.productListImg.setImageResource(R.drawable.wineimg)
         binding.productlistnameTV.text = product.name
         binding.addProductPLBtn.setOnClickListener { onClickListener(product) }
+        Glide.with(itemView).load(product.imageURL).into(binding.productListImg)
+
     }
 
 }
