@@ -22,11 +22,20 @@ class FinishPaymentViewModel : ViewModel() {
     val updatedUser: LiveData<UserModel> get() = _updatedUser
 
     fun saveTransaction(transaction : TransactionModel, user: UserModel){
-        Firebase.firestore.collection("Sales").document(transaction.id).set(transaction)
-        val updateMap: MutableMap<String, Any> = HashMap()
-        updateMap["id"] = transaction.id
-        FirebaseFirestore.getInstance().collection("Users")
-            .document(user.id).collection("Purchase").document(transaction.id).update(updateMap)
+        var totalPay : Int = 0
+        for (shoppingCar in transaction.shoppingCar!!){
+            totalPay += shoppingCar.lot * shoppingCar.price
+        }
+        transaction.totalPay = totalPay
+
+        viewModelScope.launch(Dispatchers.IO) {
+            Firebase.firestore.collection("Sales").document(transaction.id).set(transaction)
+            val updateMap: MutableMap<String, Any> = HashMap()
+            updateMap["id"] = transaction.id
+            val thisID = TransID(transaction.id)
+            Firebase.firestore.collection("Users")
+                .document(user.id).collection("Purchase").document(thisID.id).set(thisID)
+        }
     }
 
     suspend fun updateUser(user : UserModel, newDiamonds : Double) : Boolean = suspendCoroutine{ cont ->

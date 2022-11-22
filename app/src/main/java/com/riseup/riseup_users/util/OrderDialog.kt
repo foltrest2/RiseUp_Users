@@ -19,10 +19,16 @@ import com.riseup.riseup_users.model.ProductsShoppingCarModel
 class OrderDialog:DialogFragment() {
     //STATE
     private val adapter = ProductsShoppingCarAdapter()
+
     private lateinit var binding :ShowOrderDialogBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = ShowOrderDialogBinding.inflate(LayoutInflater.from(context))
+
+        adapter.setOnItemClickListener(object : ProductsShoppingCarAdapter.OnItemClickListener{
+            override fun onItemClick() {
+            }
+        })
 
         adapter.addProducts(loadShoppingCar()!!)
 

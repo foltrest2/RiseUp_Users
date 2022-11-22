@@ -35,46 +35,6 @@ class MenuViewModel : ViewModel() {
     private val _inComingImg: MutableLiveData<ArrayList<String>> = MutableLiveData(arrayListOf())
     val inComingImg: LiveData<ArrayList<String>> get() = _inComingImg
 
-    fun loadDiscos() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val result = Firebase.firestore.collection("Discos").get().await()
-            for(doc in result) {
-                val thisDisco = doc.toObject(DiscoModel::class.java)
-                val bannercardURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
-                Log.e(">>>",bannercardURL)
-                thisDisco.bannerCardURL = bannercardURL
-                val bannerURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerID).downloadUrl.await().toString()
-                thisDisco.bannerBackgroundURL = bannerURL
-
-                discoArray.add(thisDisco)
-            }
-            withContext(Dispatchers.Main){
-                _discos.value = discoArray
-            }
-        }
-    }
-
-    fun loadProducts() {
-        viewModelScope.launch(Dispatchers.IO) {
-            Firebase.firestore.collection("Discos").get().addOnSuccessListener { discos ->
-                for (disco in discos) {
-                    Firebase.firestore.collection("Discos").document(disco.id)
-                        .collection("Products").get().addOnSuccessListener { products ->
-                            val thisProducts = products.toObjects(ProductModel::class.java)
-                            val thisDisco = disco.toObject(DiscoModel::class.java)
-                            hashMap[thisDisco.id] = thisProducts
-                            Log.e(">>>", "Products stored: ${hashMap[thisDisco.id]}")
-                        }
-                }
-            }
-        }
-    }
-
-    fun getProducts(discoModel: DiscoModel) : List<ProductModel>? {
-        Log.e(">>>", "Products: ${hashMap[discoModel.id]}")
-        return hashMap[discoModel.id]
-    }
-
     fun saveTransaction(transaction : TransactionModel, user: UserModel){
         var totalPay : Int = 0
         for (shoppingCar in transaction.shoppingCar!!){
@@ -90,7 +50,57 @@ class MenuViewModel : ViewModel() {
             Firebase.firestore.collection("Users")
                 .document(user.id).collection("Purchase").document(thisID.id).set(thisID)
         }
+    }
 
+    fun loadDiscos() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = Firebase.firestore.collection("Discos").get().await()
+            for(doc in result) {
+                val thisDisco = doc.toObject(DiscoModel::class.java)
+                val bannercardURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerCardID).downloadUrl.await().toString()
+                thisDisco.bannerCardURL = bannercardURL
+                val bannerURL = Firebase.storage.getReference(thisDisco.bannerRef).child(thisDisco.bannerID).downloadUrl.await().toString()
+                thisDisco.bannerBackgroundURL = bannerURL
+                for (event in thisDisco.eventsID){
+                    val posterURL = Firebase.storage.getReference(thisDisco.eventsRef).child(event.posterID).downloadUrl.await().toString()
+                    event.posterURL = posterURL
+                }
+                withContext(Dispatchers.Main){
+                    Log.e(">>>", "Agregada: ${thisDisco}")
+                    discoArray.add(thisDisco)
+                }
+            }
+            withContext(Dispatchers.Main){
+                _discos.value = discoArray
+            }
+        }
+    }
+
+    fun loadProducts() {
+        viewModelScope.launch(Dispatchers.IO) {
+            Firebase.firestore.collection("Discos").get().addOnSuccessListener { discos ->
+                for (disco in discos) {
+                    Firebase.firestore.collection("Discos").document(disco.id)
+                        .collection("Products").get().addOnSuccessListener { products ->
+                            val thisProducts = products.toObjects(ProductModel::class.java)
+                            val thisDisco = disco.toObject(DiscoModel::class.java)
+                            for (product in thisProducts){
+                                viewModelScope.launch(Dispatchers.IO) {
+                                    val productImgURL = Firebase.storage.getReference(thisDisco.productsRef).child(product.image).downloadUrl.await().toString()
+                                    product.imageURL = productImgURL
+                                }
+                            }
+                            hashMap[thisDisco.id] = thisProducts
+                            Log.e(">>>", "Products stored: ${hashMap[thisDisco.id]}")
+                        }
+                }
+            }
+        }
+    }
+
+    fun getProducts(discoModel: DiscoModel) : List<ProductModel>? {
+        Log.e(">>>", "Products: ${hashMap[discoModel.id]}")
+        return hashMap[discoModel.id]
     }
 
     fun isNullUser(user: UserModel?): Boolean {

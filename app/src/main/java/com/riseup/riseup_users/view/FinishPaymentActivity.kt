@@ -1,15 +1,10 @@
 package com.riseup.riseup_users.view
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.riseup.riseup_users.databinding.FinishPaymentBinding
@@ -22,15 +17,10 @@ import com.riseup.riseup_users.util.OrderDialog
 import com.riseup.riseup_users.util.ProductsShoppingCarAdapter
 import com.riseup.riseup_users.view.fragments.ShoppingCarFragment
 import com.riseup.riseup_users.viewmodel.FinishPaymentViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.LocalDateTime.now
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatter.ofPattern
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -50,6 +40,7 @@ class FinishPaymentActivity : AppCompatActivity() {
         val user = loadUser()
         val transaction = createTransaction()
         viewModel.saveTransaction(transaction, user!!)
+
 
         binding.reOrderBtnMain.setOnClickListener {
             shoppingCarFragment = ShoppingCarFragment.newInstance()
@@ -129,7 +120,8 @@ class FinishPaymentActivity : AppCompatActivity() {
             method!!,
             shoppingCar,
             0,
-            user!!.id
+            user!!.id,
+            disco!!.name
         )
     }
 

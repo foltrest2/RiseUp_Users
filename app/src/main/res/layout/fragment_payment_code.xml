@@ -61,7 +61,6 @@
             android:layout_marginRight="30dp"
             android:background="@drawable/rectangle_onlycornerwithborder"
             android:gravity="center"
-            android:text="@string/paymentCodeNTxt"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
