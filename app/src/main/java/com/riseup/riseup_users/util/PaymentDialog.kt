@@ -9,9 +9,11 @@ import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.riseup.riseup_users.R
 import com.riseup.riseup_users.databinding.ShowCardsDialogBinding
 import com.riseup.riseup_users.view.ConfigUserPaymentsAddCardActivity
 import com.riseup.riseup_users.view.FinishPaymentActivity
+import com.riseup.riseup_users.view.fragments.PaymentCodeFragment
 
 class PaymentDialog(
     private val onSubmitClickListener: (String) -> Unit
@@ -19,6 +21,7 @@ class PaymentDialog(
 
     //STATE
     private val adapter = UserAddedCardsAdapter()
+    private lateinit var paymentCodeFragment: PaymentCodeFragment
 
 
     private lateinit var binding : ShowCardsDialogBinding
@@ -51,10 +54,11 @@ class PaymentDialog(
         }
         binding.continuePaymentBtn.setOnClickListener {
 
-            val switchActivityIntent = Intent(requireContext(), FinishPaymentActivity::class.java)
-
-            startActivity(switchActivityIntent)
-
+            paymentCodeFragment = PaymentCodeFragment.newInstance()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer, paymentCodeFragment)
+            transaction.commit()
+            dismiss()
 
         }
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
