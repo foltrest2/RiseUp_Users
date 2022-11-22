@@ -37,11 +37,16 @@ class FinishPaymentActivity : AppCompatActivity() {
         binding = FinishPaymentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+<<<<<<< HEAD
         val user = loadUser()
         if(loadMethod() != "Nequi" || loadMethod() != "Daviplata") {
             val transaction = createTransaction()
             viewModel.saveTransaction(transaction, user!!)
         }
+=======
+        val user = loadUser()!!
+        val transaction = loadTransaction()!!
+>>>>>>> a933cacd4c1882f3328f170065a2c4dcecc43d84
 
 
         binding.reOrderBtnMain.setOnClickListener {
@@ -125,6 +130,15 @@ class FinishPaymentActivity : AppCompatActivity() {
             user!!.id,
             disco!!.name
         )
+    }
+    private fun loadTransaction(): TransactionModel? {
+        val sp = getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = sp?.getString("Transaction", "NO_USER")
+        return if (json == "NO_USER") {
+            null
+        } else {
+            Gson().fromJson(json, TransactionModel::class.java)
+        }
     }
 
     private fun deleteShoppingCar() {

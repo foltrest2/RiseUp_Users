@@ -42,6 +42,7 @@ class PaymentCodeFragment : Fragment() {
 
         val user = loadUser()
         val transaction = createTransaction(code)
+        saveTransactionSp(transaction)
         viewModel.saveTransaction(transaction, user!!)
 
         binding.atrasBtnOrderCode.setOnClickListener{
@@ -118,6 +119,11 @@ class PaymentCodeFragment : Fragment() {
         } else {
             Gson().fromJson(json, String::class.java)
         }
+    }
+    fun saveTransactionSp(transaction: TransactionModel) {
+        val sp = context?.getSharedPreferences("RiseUpUser", AppCompatActivity.MODE_PRIVATE)
+        val json = Gson().toJson(transaction)
+        sp!!.edit().putString("Transaction", json).apply()
     }
 
     companion object {
