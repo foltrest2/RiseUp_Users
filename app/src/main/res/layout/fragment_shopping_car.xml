@@ -78,7 +78,7 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productsSCRV">
@@ -103,7 +103,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/payBtn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <TextView
                 android:id="@+id/totalOriginalPriceTV"
@@ -113,22 +114,9 @@
                 android:text="@string/totalPriceTitle"
                 android:textAppearance="@style/PoppinsMed_26"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toTopOf="@+id/totalPriceWithNoDCTV"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/totalPriceWithNoDCTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/strike"
-                android:text="@string/pricewithoutdiscountText"
-                android:textAppearance="@style/PoppinsMed_30"
-                android:textColor="@color/grey"
-                app:layout_constraintBottom_toTopOf="@+id/DCPriceTV"
-                app:layout_constraintStart_toStartOf="@+id/totalOriginalPriceTV"
-                app:layout_constraintTop_toBottomOf="@+id/totalOriginalPriceTV" />
 
             <TextView
                 android:id="@+id/DCPriceTV"
@@ -138,42 +126,10 @@
                 android:textAppearance="@style/PoppinsMed_30"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/totalPriceWithNoDCTV"
-                app:layout_constraintTop_toBottomOf="@id/totalPriceWithNoDCTV" />
+                app:layout_constraintStart_toStartOf="@+id/totalOriginalPriceTV"
+                app:layout_constraintTop_toBottomOf="@id/totalOriginalPriceTV" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/redimirDiamantesText"
-            style="@style/PoppinsMed_16"
-            android:layout_width="178dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingLeft="15dp"
-            android:text="@string/payWDiamondtxt"
-            android:textAppearance="@style/PoppinsMed_16" />
-
-        <CheckBox
-            android:id="@+id/DiamondPayCB"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="0"
-            android:buttonTint="@color/white"
-            android:checked="true" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

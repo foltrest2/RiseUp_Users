@@ -110,48 +110,13 @@
             style="@style/RectangleAzulCianGradient"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:text="@string/PaymentTitle"
-            app:layout_constraintBottom_toBottomOf="@+id/diamond_payment_total"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/diamond_payment_total"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
-        <TextView
-            android:id="@+id/diamond_payment_total"
-            style="@style/PoppinsBold_18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="@string/totalPriceTitle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/diamond_sum"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/diamond_sum"
-            style="@style/PoppinsBold_18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/_23"
-            app:layout_constraintBottom_toBottomOf="@+id/diamond_payment_total"
-            app:layout_constraintEnd_toStartOf="@+id/diamond_bottom"
-            app:layout_constraintStart_toEndOf="@+id/diamond_payment_total"
-            app:layout_constraintTop_toTopOf="@+id/diamond_payment_total" />
-
-        <ImageView
-            android:id="@+id/diamond_bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
-            android:contentDescription="@string/diamond"
-            android:src="@drawable/diamondicon"
-            app:layout_constraintBottom_toBottomOf="@+id/diamond_payment_total"
-            app:layout_constraintStart_toEndOf="@+id/diamond_sum"
-            app:layout_constraintTop_toTopOf="@+id/diamond_payment_total" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

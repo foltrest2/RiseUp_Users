@@ -9,19 +9,17 @@ import androidx.activity.viewModels
 import androidx.core.text.trimmedLength
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityConfigProfileChangeTelBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.viewmodel.ConfigProfileChangeTelViewModel
-import com.riseup.riseup_users.viewmodel.ConfigProfileInfoViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class ConfigProfileChangeTelActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConfigProfileChangeTelBinding
     private val viewModel : ConfigProfileChangeTelViewModel by viewModels()
-    private lateinit var user : User
+    private lateinit var user : UserModel
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +28,7 @@ class ConfigProfileChangeTelActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val userFromExtra = intent.getStringExtra("user")!!
-        user = Gson().fromJson(userFromExtra,User::class.java)
+        user = Gson().fromJson(userFromExtra,UserModel::class.java)
 
         //Inicializacion del viewModel
         viewModel.setSpUser(user)
@@ -64,7 +62,7 @@ class ConfigProfileChangeTelActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserSp(user: User){
+    private fun saveUserSp(user: UserModel){
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = Gson().toJson(user)
         sp.edit().putString("Usuario",json).apply()

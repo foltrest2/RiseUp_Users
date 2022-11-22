@@ -10,10 +10,11 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.riseup.riseup_users.model.DiscoModel
 import com.riseup.riseup_users.model.TransactionModel
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 class DiamondHistorialViewModel : ViewModel(){
 
@@ -21,21 +22,16 @@ class DiamondHistorialViewModel : ViewModel(){
     private val _transactions: MutableLiveData<ArrayList<TransactionModel>> = MutableLiveData(arrayListOf())
     val transactions: LiveData<ArrayList<TransactionModel>> get() = _transactions
 
-    fun loadTransactions(user: User){
+    fun loadTransactions(user: UserModel){
         viewModelScope.launch(Dispatchers.IO){
-            Firebase.firestore.collection("Sales").whereEqualTo("userID",user.id).get().addOnSuccessListener {data ->
-                for(doc in data.documents){
+            val transactions = Firebase.firestore.collection("Sales").whereEqualTo("userID",user.id).get().await()
+            withContext(Dispatchers.Main){
+                for(doc in transactions.documents){
                     val thisTransaction = doc.toObject(TransactionModel::class.java)
-                    Firebase.firestore.collection("Discos").document(thisTransaction!!.discoID).get().addOnSuccessListener {
-                        val thisDisco = it.toObject(DiscoModel::class.java)
-                        thisTransaction.discoName = thisDisco!!.name
-                        transactionsArray.add(thisTransaction)
-                        _transactions.postValue(transactionsArray)
-                    }
-                    }
+                    transactionsArray.add(thisTransaction!!)
+                    _transactions.postValue(transactionsArray)
                 }
             }
+            }
         }
-
-
 }

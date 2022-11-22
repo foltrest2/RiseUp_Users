@@ -147,7 +147,7 @@ class RegisterActivity : AppCompatActivity() {
               viewmodel.signUp(
                   binding.cellPhoneRegTF.text.toString(),
                   binding.emailRegTF.text.toString(),
-                  0,
+                  0.0,
                   binding.birthdayRegTF.text.toString(),
                   "Colombia",
                   binding.nameRegTF.text.toString(),

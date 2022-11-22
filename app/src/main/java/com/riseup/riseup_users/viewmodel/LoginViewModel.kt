@@ -6,7 +6,7 @@ import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
@@ -20,7 +20,7 @@ class LoginViewModel: ViewModel(){
         AuthState(AuthResult.IDLE, "Starting...")
     )
     val authState : LiveData<AuthState> get() = _authState
-    private lateinit var userReturn : User
+    private lateinit var userReturn : UserModel
 
     //Accion de registro
     fun signIn(correo:String, pass:String){
@@ -48,7 +48,7 @@ class LoginViewModel: ViewModel(){
                             viewModelScope.launch (Dispatchers.IO) {
                                 Firebase.firestore.collection("Users").document(fbuser.uid).get()
                                     .addOnSuccessListener {
-                                    userReturn = it.toObject(User::class.java)!!
+                                    userReturn = it.toObject(UserModel::class.java)!!
                                 }.addOnFailureListener {
                                         _authState.value = AuthState(AuthResult.FAIL, "networkError")
                                         return@addOnFailureListener
@@ -73,7 +73,7 @@ class LoginViewModel: ViewModel(){
         }
     }
 
-    fun saveUserFromViewModel() : User {
+    fun saveUserFromViewModel() : UserModel {
             return userReturn
     }
 

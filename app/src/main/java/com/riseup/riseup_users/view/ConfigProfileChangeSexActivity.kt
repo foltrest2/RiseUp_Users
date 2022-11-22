@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.riseup.riseup_users.databinding.ActivityConfigProfileChangeSexBinding
-import com.riseup.riseup_users.model.User
+import com.riseup.riseup_users.model.UserModel
 import com.riseup.riseup_users.viewmodel.ConfigProfileChangeSexViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
@@ -20,7 +20,7 @@ class ConfigProfileChangeSexActivity : AppCompatActivity() {
     private lateinit var binding : ActivityConfigProfileChangeSexBinding
     private val viewModel : ConfigProfileChangeSexViewModel by viewModels()
     private var newSex : String = ""
-    private lateinit var user : User
+    private lateinit var user : UserModel
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class ConfigProfileChangeSexActivity : AppCompatActivity() {
         this.setContentView(this.binding.root)
 
         val userFromExtra = intent.getStringExtra("user")!!
-        user = Gson().fromJson(userFromExtra,User::class.java)
+        user = Gson().fromJson(userFromExtra,UserModel::class.java)
 
         //Inicializacion del viewModel
         viewModel.setSpUser(user)
@@ -86,7 +86,7 @@ class ConfigProfileChangeSexActivity : AppCompatActivity() {
     }
 
 
-    private fun saveUserSp(user: User){
+    private fun saveUserSp(user: UserModel){
         val sp = getSharedPreferences("RiseUpUser", MODE_PRIVATE)
         val json = Gson().toJson(user)
         sp.edit().putString("Usuario",json).apply()
