@@ -31,6 +31,7 @@
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/diamond_payment_row.xml" value="0.12" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/diamonds_trans_row.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/disco_card_row.xml" value="0.264" />
+        <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/final_order_list_row.xml" value="0.21105072463768115" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/finish_payment.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_diamonds_payment.xml" value="0.264" />
         <entry key="..\:/Users/57350/AndroidStudioProjects/RiseUp_Users/app/src/main/res/layout/fragment_disco_home.xml" value="0.264" />
@@ -183,16 +184,13 @@
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_menu.xml" value="0.18958333333333333" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_profile_info.xml" value="0.24791666666666667" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/activity_register.xml" value="0.18958333333333333" />
-        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/banner_party_row.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/cache_cleaned.xml" value="0.2028985507246377" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/creditcard_row.xml" value="0.18958333333333333" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/disco_card_row.xml" value="0.18958333333333333" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/faq_info_block_row.xml" value="0.18958333333333333" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/fragment_contactus_help_center.xml" value="0.2028985507246377" />
-        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/fragment_disco_home.xml" value="0.21770833333333334" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/fragment_faq_help_center.xml" value="0.2028985507246377" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/fragment_principal.xml" value="0.18958333333333333" />
-        <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/products_list_row.xml" value="0.5" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/layout/report_bug.xml" value="0.1408514492753623" />
         <entry key="..\:/Users/kamca/RiseUp/RiseUp_Users/app/src/main/res/menu/menu_config_help_center.xml" value="0.22708333333333333" />
       </map>

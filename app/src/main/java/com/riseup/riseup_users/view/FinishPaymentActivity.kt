@@ -42,8 +42,6 @@ class FinishPaymentActivity : AppCompatActivity() {
 
 
         binding.reOrderBtnMain.setOnClickListener {
-            shoppingCarFragment = ShoppingCarFragment.newInstance()
-            menuActivity = MenuActivity()
             adapter.deleteProducts()
             deleteShoppingCar()
 
