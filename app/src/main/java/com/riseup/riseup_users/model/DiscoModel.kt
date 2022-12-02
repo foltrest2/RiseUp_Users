@@ -1,5 +1,7 @@
 package com.riseup.riseup_users.model
 
+import java.io.Serializable
+
 data class DiscoModel (
     val id:String = "",
     var name:String = "",
@@ -11,8 +13,7 @@ data class DiscoModel (
     var eventsRef:String = "",
     var products:ArrayList<ProductModel> = arrayListOf(),
     var productsRef:String = "",
-    var sales:ArrayList<TransactionModel> = arrayListOf(),
     var bannerCardURL:String? = null,
     var bannerBackgroundURL:String? = null,
 
-)
+) : Serializable
